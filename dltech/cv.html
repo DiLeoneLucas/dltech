@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<head>    
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo</title>
     <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
-    <title>Touch Game</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
         body {
             margin: 0;
@@ -22,7 +23,6 @@
             color: #fff;
         }
         .content-2 {
-            
             padding: 20px;
             margin: 20px;
             border-radius: 10px;
@@ -52,15 +52,17 @@
         .content-container {
             padding-top: 80px; /* Adjust for fixed navbar height */
         }
-        .carousel-inner img {
-            width: 100%;
-            max-height: 400px; /* Adjusted image size */
-            object-fit: contain;
+
+        /* Centraliza imagens em qualquer elemento .content */
+        .content img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
 <body>
-<br><br>
+    <br><br>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="home.html">DL Tech</a>
@@ -91,40 +93,61 @@
             </div>
         </div>
     </nav>
-<div class="content">
-<div class="container content-container">
-        <h1 class="text-center mb-4">Touch Game</h1>
 
-        <div id="carouselExampleIndicators" class="carousel slide mb-4" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="imagens/tgame1.jpg" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/tgame2.jpg" class="d-block w-100" alt="Second Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/tgame3.jpg" class="d-block w-100" alt="Third Slide">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+    <div class="container mt-4">
+        <div class="content">
+            <h1>Currículo:</h1>
+            <h4>Link para o currículo online</h4>
+           <a style="color: white" target="_blank" href="https://docs.google.com/document/d/1YPtck_xP3BBXzOo-h6_5blpmG-PXacKI/edit?usp=sharing&ouid=109522933209063479542&rtpof=true&sd=true">
+            Currículo</a>
         </div>
-
-        <p class="text-center">Touch Game é um jogo android, não disponível na play store feito inteiramente em JavaScript, onde o seu objetivo é tocar o maior número de vezes possivel na tela em um intervalo de 15 segundos.<br>
-    O jogo pode ser acessado via <a style="color: white;" target="_blank" href="https://github.com/DiLeoneLucas/TouchGameV2">Github</a>.</p>
     </div>
+
+    <div class="container mt-4">
+        <div class="content">
+            <h1>Formações Superiores</h1>
+            <h4>Diploma em Analise e Desenvolvimento de Sistemas - FADERGS</h4>
+            <div class="content">
+                <img src="imagens/diploma_fadergs.png" alt="Diploma FADERGS">
+                <p>Finalizado em 2022.</p>
+            </div>
+    </div>
+    <div class="container mt-4">
+        <div class="content">
+            <h1>Cursos de Extensão</h1>
+            <h4>FADERGS</h4>
+            <div class="content">
+                <img src="imagens/linux.png" alt="Diploma FADERGS">
+            </div>
+            <h4>Thema/Polis</h4>
+            <div class="content">
+                <img src="imagens/complience.png" alt="Diploma FADERGS">
+            </div>
+            <h4>SEBRAE</h4>
+            <div class="content">
+                <img src="imagens/md_1.png" alt="Diploma FADERGS"><br>
+                <img src="imagens/md_2.png" alt="Diploma FADERGS"><br>
+                <img src="imagens/md_3.png" alt="Diploma FADERGS"><br>
+                <img src="imagens/md_4.png" alt="Diploma FADERGS">
+            </div>
+            <h4>EducaTRI - Senac</h4>
+            <div class="content">
+                <img src="imagens/data_security.png" alt="Diploma FADERGS"><br>
+                <img src="imagens/direcao_defensiva.png" alt="Diploma FADERGS"><br>
+                <img src="imagens/flexibilidade_cognitiva.png" alt="Diploma FADERGS"><br>
+                <img src="imagens/lgpd.png" alt="Diploma FADERGS"><br>
+                <img src="imagens/metaverso.png" alt="Diploma FADERGS"><br>
+                <img src="imagens/sos.png" alt="Diploma FADERGS"><br>
+            </div>
+            <h4>AWS</h4>
+            <div class="content">
+                <img src="imagens/AWS.png" alt="Diploma FADERGS">
+            </div>
+            <h4>Cisco</h4>
+            <div class="content">
+                <img src="imagens/python.png" alt="Diploma FADERGS"><br>
+                <img src="imagens/hardware.png" alt="Diploma FADERGS">
+            </div>
     </div>
 
     <!-- Bootstrap JS -->
