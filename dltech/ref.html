@@ -3,7 +3,7 @@
 <head>    
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo</title>
+    <title>Experiências</title>
     <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,12 +22,6 @@
             border-radius: 10px;
             color: #fff;
         }
-        .content-2 {
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            color: #fff;
-        }
 
         .navbar {
             background-color: #033b52;
@@ -36,12 +30,7 @@
         .navbar a {
             color: #fff !important;
         }
-        .img-fluid {
-            border-radius: 15px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+
         .navbar {
             position: fixed;
             top: 0;
@@ -53,11 +42,14 @@
             padding-top: 80px; /* Adjust for fixed navbar height */
         }
 
-        /* Centraliza imagens em qualquer elemento .content */
-        .content img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        .img-fluid {
+            max-width: 100px; /* Tamanho da imagem */
+            height: auto; /* Mantém a proporção */
+            border-radius: 15px; /* Bordas arredondadas */
+        }
+
+        .d-flex {
+            margin-bottom: 20px; /* Espaçamento entre blocos */
         }
     </style>
 </head>
@@ -96,58 +88,19 @@
 
     <div class="container mt-4">
         <div class="content">
-            <h1>Currículo:</h1>
-            <h4>Link para o currículo online</h4>
-           <a style="color: white" target="_blank" href="https://docs.google.com/document/d/1YPtck_xP3BBXzOo-h6_5blpmG-PXacKI/edit?usp=sharing&ouid=109522933209063479542&rtpof=true&sd=true">
-            Currículo</a>
+            <h1>Referências</h1>
+            <div class="content">
+                <div class="d-flex align-items-center">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQGzgIegqsL8tQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728308513319?e=1742428800&v=beta&t=GVBJp5_WxXH_D46bjr9l2jvuXKon6YlVjeq6FJKGgSQ" alt="Leonardo" class="img-fluid me-3">
+                    <div>
+                        <h3>Leonardo Antunes</h3>
+                        <h5>Técnico de Informática</h5>
+                        <p>"Trabalhar com o Lucas para mim foi de certo modo libertador, um rapaz muito dedicado e competente, até mais que eu, sempre me lembrando das minhas responsabilidades ou mesmo me acalmando em momentos difíceis, uma pessoa incrível de conversar e que sabe trabalhar em equipe."</p>
+                        <a style="color: white" href="https://www.linkedin.com/in/leonardoag/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="container mt-4">
-        <div class="content">
-            <h1>Formações Superiores</h1>
-            <h4>Diploma em Analise e Desenvolvimento de Sistemas - FADERGS</h4>
-            <div class="content">
-                <img src="imagens/diploma_fadergs.png" alt="Diploma FADERGS">
-                <p>Finalizado em 2022.</p>
-            </div>
-    </div>
-    <div class="container mt-4">
-        <div class="content">
-            <h1>Cursos de Extensão</h1>
-            <h4>FADERGS</h4>
-            <div class="content">
-                <img src="imagens/linux.png" alt="Diploma FADERGS">
-            </div>
-            <h4>Thema/Polis</h4>
-            <div class="content">
-                <img src="imagens/complience.png" alt="Diploma FADERGS">
-            </div>
-            <h4>SEBRAE</h4>
-            <div class="content">
-                <img src="imagens/md_1.png" alt="Diploma FADERGS"><br>
-                <img src="imagens/md_2.png" alt="Diploma FADERGS"><br>
-                <img src="imagens/md_3.png" alt="Diploma FADERGS"><br>
-                <img src="imagens/md_4.png" alt="Diploma FADERGS">
-            </div>
-            <h4>EducaTRI - Senac</h4>
-            <div class="content">
-                <img src="imagens/data_security.png" alt="Diploma FADERGS"><br>
-                <img src="imagens/direcao_defensiva.png" alt="Diploma FADERGS"><br>
-                <img src="imagens/flexibilidade_cognitiva.png" alt="Diploma FADERGS"><br>
-                <img src="imagens/lgpd.png" alt="Diploma FADERGS"><br>
-                <img src="imagens/metaverso.png" alt="Diploma FADERGS"><br>
-                <img src="imagens/sos.png" alt="Diploma FADERGS"><br>
-            </div>
-            <h4>AWS</h4>
-            <div class="content">
-                <img src="imagens/AWS.png" alt="Diploma FADERGS">
-            </div>
-            <h4>Cisco</h4>
-            <div class="content">
-                <img src="imagens/python.png" alt="Diploma FADERGS"><br>
-                <img src="imagens/hardware.png" alt="Diploma FADERGS">
-            </div>
     </div>
 
     <!-- Bootstrap JS -->
