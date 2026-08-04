@@ -59,24 +59,10 @@
     <div class="container">
         <!-- Card de Redirecionamento para o Vídeo -->
         <div class="card video-card">
-            <a href="https://youtu.be/Vb-sO1zW43s" target="_blank">
+            <a href="https://www.youtube.com/watch?v=CJYJ5lZEf5k" target="_blank">
                 <h4>Assista ao vídeo diretamente no YouTube!</h4>
                 <img src="imagens/youtube.png" class="thumbnail" alt="Thumbnail do vídeo">
                 <p>Canal do YouTube.</p>
-            </a>
-        </div>
-
-        <!-- Card de Redirecionamento para a Twitch -->
-        <div class="card twitch-card">
-            <a href="https://www.twitch.tv/didikogp" target="_blank">
-                <h4>Assista a última transmissão na Twitch!</h4>
-                <?php if ($twitchLiveThumbnail): ?>
-                    <img src="imagens/twitch.webp" class="thumbnail" alt="Thumbnail da Twitch">
-                <?php else: ?>
-                    <!-- Imagem de fallback para quando não há transmissão ao vivo -->
-                    <p>Sem transmissão ao vivo no momento.</p>
-                <?php endif; ?>
-                <p>Canal na Twitch.</p>
             </a>
         </div>
 
@@ -91,7 +77,19 @@
             </div>
         </div>
     </div>
-
+        <!-- Card de Redirecionamento para a Twitch -->
+        <div class="card twitch-card">
+            <a href="https://www.twitch.tv/didikogp" target="_blank">
+                <h4>Assista a última transmissão na Twitch!</h4>
+                <?php if ($twitchLiveThumbnail): ?>
+                    <img src="imagens/twitch.webp" class="thumbnail" alt="Thumbnail da Twitch">
+                <?php else: ?>
+                    <!-- Imagem de fallback para quando não há transmissão ao vivo -->
+                    <p>Sem transmissão ao vivo no momento.</p>
+                <?php endif; ?>
+                <p>Canal na Twitch.</p>
+            </a>
+        </div>
     <!-- Bootstrap JS (opcional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
