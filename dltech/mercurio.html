@@ -1,14 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mercurio</title>
-
     <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
+
+    <title>Mercurio | DL Tech</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -17,6 +18,9 @@
     >
 
     <style>
+
+        /* Configurações gerais */
+
         body {
             margin: 0;
             background-color: #084D6E;
@@ -24,29 +28,43 @@
             color: #fff;
         }
 
+        /* Navbar */
+
         .navbar {
             background-color: #033b52;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1030;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
         }
 
         .navbar a {
             color: #fff !important;
+            transition: color 0.3s ease;
         }
 
+        .navbar a:hover {
+            color: #35c5ff !important;
+        }
+
+        /* Container principal */
+
         .content-container {
-            padding-top: 80px;
+            padding-top: 100px;
+            padding-bottom: 40px;
         }
 
         .content {
-            background-color: rgba(128, 128, 128, 0.7);
-            padding: 25px;
+            background-color: rgba(20, 35, 45, 0.88);
+            padding: 35px;
             margin: 20px;
-            border-radius: 10px;
+            border-radius: 15px;
             color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
         }
+
+        /* Cabeçalho do projeto */
 
         .project-header {
             text-align: center;
@@ -54,14 +72,42 @@
         }
 
         .project-header h1 {
+            color: #35c5ff;
+            font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
         .project-header p {
-            font-size: 1.1rem;
-            color: #f1f1f1;
+            font-size: 1.15rem;
+            color: #d6eaf3;
+            margin-bottom: 20px;
         }
+
+        /* Informações do projeto */
+
+        .project-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .info-item {
+            background-color: rgba(3, 59, 82, 0.8);
+            border: 1px solid rgba(53, 197, 255, 0.3);
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            color: #eaf8ff;
+        }
+
+        .info-item strong {
+            color: #35c5ff;
+        }
+
+        /* Badges de tecnologias */
 
         .tech-badges {
             display: flex;
@@ -75,8 +121,14 @@
             height: 25px;
         }
 
+        /* Carrossel */
+
         .project-carousel {
-            margin-bottom: 35px;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            padding: 15px;
+            background-color: rgba(3, 59, 82, 0.45);
+            border-radius: 12px;
         }
 
         .carousel-inner img {
@@ -86,54 +138,64 @@
             border-radius: 10px;
         }
 
+        /* Documentação */
+
         .documentation {
-            line-height: 1.7;
-            text-align: left;
+            line-height: 1.8;
+            text-align: justify;
         }
 
-        .documentation h2 {
-            color: #8ed8ff;
-            font-size: 1.6rem;
+        .documentation-section {
+            margin-bottom: 35px;
+        }
+
+        .documentation-section h2 {
+            color: #35c5ff;
+            font-size: 1.65rem;
             font-weight: bold;
             margin-top: 35px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-            padding-bottom: 8px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid rgba(53, 197, 255, 0.35);
+            padding-bottom: 10px;
         }
 
-        .documentation h3 {
-            color: #d7efff;
+        .documentation-section h3 {
+            color: #a8e5ff;
             font-size: 1.2rem;
             font-weight: bold;
-            margin-top: 22px;
-            margin-bottom: 10px;
+            margin-top: 25px;
+            margin-bottom: 12px;
         }
 
         .documentation p {
+            color: #e2eaf0;
             margin-bottom: 15px;
         }
 
         .documentation ul,
         .documentation ol {
             padding-left: 25px;
+            color: #e2eaf0;
         }
 
         .documentation li {
-            margin-bottom: 7px;
+            margin-bottom: 8px;
         }
 
         .documentation a {
-            color: #fff;
+            color: #35c5ff;
             font-weight: bold;
         }
 
         .documentation a:hover {
-            color: #8ed8ff;
+            color: #a8e5ff;
         }
 
-        .table-responsive {
+        /* Tabelas */
+
+        .table-container {
             margin-top: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             border-radius: 8px;
             overflow: hidden;
         }
@@ -145,22 +207,27 @@
 
         .documentation table th {
             background-color: #033b52;
-            color: #fff;
+            color: #35c5ff;
+            padding: 12px;
         }
 
         .documentation table td {
-            background-color: rgba(255, 255, 255, 0.08);
-            color: #fff;
+            background-color: rgba(255, 255, 255, 0.06);
+            color: #e2eaf0;
+            padding: 12px;
         }
 
+        /* Blocos de código */
+
         .code-block {
-            background-color: #17212b;
+            background-color: #111d27;
             color: #d8e6f0;
             padding: 18px;
             border-radius: 8px;
             overflow-x: auto;
             margin: 15px 0 20px;
             font-size: 0.9rem;
+            border: 1px solid rgba(53, 197, 255, 0.15);
         }
 
         .code-block code {
@@ -168,40 +235,85 @@
             white-space: pre;
         }
 
-        .github-link {
-            text-align: center;
-            margin-top: 35px;
-            padding: 20px;
-            background-color: rgba(3, 59, 82, 0.55);
-            border-radius: 8px;
+        /* Destaques */
+
+        .highlight-box {
+            background-color: rgba(3, 59, 82, 0.65);
+            border-left: 4px solid #35c5ff;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 6px;
         }
 
-        .github-link a {
-            color: #fff;
+        .important-box {
+            background-color: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        /* Rodapé do projeto */
+
+        .project-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+            background-color: rgba(3, 59, 82, 0.65);
+            border-radius: 10px;
+        }
+
+        .project-footer h3 {
+            color: #35c5ff;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .project-footer p {
+            color: #e2eaf0;
+        }
+
+        .project-footer a {
+            color: #35c5ff;
             font-weight: bold;
             text-decoration: none;
         }
 
-        .github-link a:hover {
-            color: #8ed8ff;
+        .project-footer a:hover {
+            color: #a8e5ff;
             text-decoration: underline;
         }
 
+        /* Responsividade */
+
         @media (max-width: 768px) {
+
             .content {
                 margin: 10px;
-                padding: 15px;
+                padding: 20px 15px;
+            }
+
+            .content-container {
+                padding-top: 85px;
             }
 
             .project-header h1 {
-                font-size: 1.7rem;
+                font-size: 1.9rem;
             }
 
-            .documentation h2 {
-                font-size: 1.35rem;
+            .project-header p {
+                font-size: 1rem;
             }
 
-            .documentation h3 {
+            .documentation {
+                text-align: left;
+            }
+
+            .documentation-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .documentation-section h3 {
                 font-size: 1.1rem;
             }
 
@@ -212,14 +324,29 @@
             .tech-badges img {
                 height: 22px;
             }
+
+            .info-item {
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+
+            .code-block {
+                font-size: 0.8rem;
+                padding: 12px;
+            }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
     <!-- Navbar -->
+
     <nav class="navbar navbar-expand-lg navbar-dark">
+
         <div class="container-fluid">
 
             <a class="navbar-brand" href="home.html">
@@ -235,10 +362,13 @@
                 aria-expanded="false"
                 aria-label="Toggle navigation"
             >
+
                 <span class="navbar-toggler-icon"></span>
+
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
+
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
@@ -278,15 +408,21 @@
                     </li>
 
                 </ul>
+
             </div>
+
         </div>
+
     </nav>
 
     <!-- Conteúdo principal -->
-    <div class="content">
-        <div class="container content-container">
 
-            <!-- Cabeçalho -->
+    <div class="container content-container">
+
+        <div class="content">
+
+            <!-- Cabeçalho do projeto -->
+
             <header class="project-header">
 
                 <h1>
@@ -296,6 +432,30 @@
                 <p>
                     Sistema de Gerenciamento de Estoque
                 </p>
+
+                <!-- Informações do projeto -->
+
+                <div class="project-info">
+
+                    <div class="info-item">
+                        <strong>Projeto:</strong> Mercurio
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Linguagem:</strong> PHP
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Banco de dados:</strong> MySQL
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Plataforma:</strong> Web
+                    </div>
+
+                </div>
+
+                <!-- Tecnologias -->
 
                 <div class="tech-badges">
 
@@ -329,6 +489,7 @@
             </header>
 
             <!-- Carrossel de imagens -->
+
             <div
                 id="carouselExampleIndicators"
                 class="carousel slide project-carousel"
@@ -420,8 +581,13 @@
                     data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev"
                 >
+
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
+
+                    <span class="visually-hidden">
+                        Anterior
+                    </span>
+
                 </button>
 
                 <button
@@ -430,153 +596,217 @@
                     data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="next"
                 >
+
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Próximo</span>
+
+                    <span class="visually-hidden">
+                        Próximo
+                    </span>
+
                 </button>
 
             </div>
 
             <!-- Documentação -->
+
             <main class="documentation" id="texto">
 
-                <h2>📌 Sobre o projeto</h2>
+                <!-- 1. Sobre o projeto -->
 
-                <p>
-                    O <strong>Mercurio</strong> é um sistema web desenvolvido
-                    para gerenciamento e controle de estoque, oferecendo
-                    recursos para administração de produtos, fornecedores,
-                    usuários e movimentações de materiais.
-                </p>
+                <section class="documentation-section">
 
-                <p>
-                    A aplicação foi desenvolvida em PHP e organizada em
-                    módulos, permitindo centralizar operações administrativas
-                    e facilitar o acompanhamento das movimentações realizadas
-                    no estoque.
-                </p>
+                    <h2>
+                        1. Sobre o projeto
+                    </h2>
 
-                <p>
-                    O projeto busca proporcionar maior organização,
-                    rastreabilidade e controle dos processos relacionados
-                    à gestão de materiais.
-                </p>
+                    <p>
+                        O <strong>Mercurio</strong> é um sistema web desenvolvido
+                        para gerenciamento e controle de estoque, oferecendo
+                        recursos para administração de produtos, fornecedores,
+                        usuários e movimentações de materiais.
+                    </p>
 
-                <h2>🎯 Objetivos</h2>
+                    <p>
+                        A aplicação foi desenvolvida em PHP e organizada em
+                        módulos, permitindo centralizar operações administrativas
+                        e facilitar o acompanhamento das movimentações realizadas
+                        no estoque.
+                    </p>
 
-                <ul>
-                    <li>Centralizar o gerenciamento de materiais e produtos.</li>
-                    <li>Controlar entradas e baixas de estoque.</li>
-                    <li>Administrar fornecedores.</li>
-                    <li>Gerenciar usuários e permissões de acesso.</li>
-                    <li>Manter histórico das movimentações.</li>
-                    <li>Disponibilizar relatórios para acompanhamento administrativo.</li>
-                    <li>Facilitar a rotina operacional e o controle de materiais.</li>
-                </ul>
+                    <p>
+                        O projeto busca proporcionar maior organização,
+                        rastreabilidade e controle dos processos relacionados
+                        à gestão de materiais.
+                    </p>
 
-                <h2>⚙️ Funcionalidades</h2>
+                </section>
 
-                <h3>📦 Gestão de estoque</h3>
+                <!-- 2. Objetivos -->
 
-                <ul>
-                    <li>Cadastro de produtos e materiais.</li>
-                    <li>Atualização de informações do estoque.</li>
-                    <li>Registro de movimentações.</li>
-                    <li>Controle de baixas de materiais.</li>
-                    <li>Consulta de informações dos produtos.</li>
-                </ul>
+                <section class="documentation-section">
 
-                <h3>🏢 Gestão de fornecedores</h3>
+                    <h2>
+                        2. Objetivos
+                    </h2>
 
-                <ul>
-                    <li>Cadastro de fornecedores.</li>
-                    <li>Atualização de informações cadastrais.</li>
-                    <li>Consulta e listagem de fornecedores.</li>
-                </ul>
+                    <ul>
+                        <li>Centralizar o gerenciamento de materiais e produtos.</li>
+                        <li>Controlar entradas e baixas de estoque.</li>
+                        <li>Administrar fornecedores.</li>
+                        <li>Gerenciar usuários e permissões de acesso.</li>
+                        <li>Manter histórico das movimentações.</li>
+                        <li>Disponibilizar relatórios para acompanhamento administrativo.</li>
+                        <li>Facilitar a rotina operacional e o controle de materiais.</li>
+                    </ul>
 
-                <h3>👥 Gestão de usuários</h3>
+                </section>
 
-                <ul>
-                    <li>Cadastro de usuários.</li>
-                    <li>Atualização de informações.</li>
-                    <li>Listagem e gerenciamento de contas.</li>
-                    <li>Autenticação de acesso.</li>
-                    <li>Redefinição de senha.</li>
-                </ul>
+                <!-- 3. Funcionalidades -->
 
-                <h3>📊 Relatórios e histórico</h3>
+                <section class="documentation-section">
 
-                <ul>
-                    <li>Consulta do histórico de movimentações.</li>
-                    <li>Geração de relatórios.</li>
-                    <li>Acompanhamento das operações de estoque.</li>
-                </ul>
+                    <h2>
+                        3. Funcionalidades
+                    </h2>
 
-                <h3>🔐 Administração e segurança</h3>
+                    <h3>
+                        3.1. Gestão de estoque
+                    </h3>
 
-                <ul>
-                    <li>Tela de autenticação.</li>
-                    <li>Separação de áreas administrativas.</li>
-                    <li>Gerenciamento de sessões.</li>
-                    <li>Controle de acesso às funcionalidades.</li>
-                </ul>
+                    <ul>
+                        <li>Cadastro de produtos e materiais.</li>
+                        <li>Atualização de informações do estoque.</li>
+                        <li>Registro de movimentações.</li>
+                        <li>Controle de baixas de materiais.</li>
+                        <li>Consulta de informações dos produtos.</li>
+                    </ul>
 
-                <h2>🛠️ Tecnologias utilizadas</h2>
+                    <h3>
+                        3.2. Gestão de fornecedores
+                    </h3>
 
-                <div class="table-responsive">
+                    <ul>
+                        <li>Cadastro de fornecedores.</li>
+                        <li>Atualização de informações cadastrais.</li>
+                        <li>Consulta e listagem de fornecedores.</li>
+                    </ul>
 
-                    <table class="table table-bordered align-middle">
+                    <h3>
+                        3.3. Gestão de usuários
+                    </h3>
 
-                        <thead>
-                            <tr>
-                                <th>Tecnologia</th>
-                                <th>Aplicação</th>
-                            </tr>
-                        </thead>
+                    <ul>
+                        <li>Cadastro de usuários.</li>
+                        <li>Atualização de informações.</li>
+                        <li>Listagem e gerenciamento de contas.</li>
+                        <li>Autenticação de acesso.</li>
+                        <li>Redefinição de senha.</li>
+                    </ul>
 
-                        <tbody>
-                            <tr>
-                                <td>PHP</td>
-                                <td>Desenvolvimento do Back-end e regras de negócio.</td>
-                            </tr>
+                    <h3>
+                        3.4. Relatórios e histórico
+                    </h3>
 
-                            <tr>
-                                <td>MySQL</td>
-                                <td>Persistência e gerenciamento dos dados.</td>
-                            </tr>
+                    <ul>
+                        <li>Consulta do histórico de movimentações.</li>
+                        <li>Geração de relatórios.</li>
+                        <li>Acompanhamento das operações de estoque.</li>
+                    </ul>
 
-                            <tr>
-                                <td>JavaScript</td>
-                                <td>Interatividade e funcionalidades da interface.</td>
-                            </tr>
+                    <h3>
+                        3.5. Administração e segurança
+                    </h3>
 
-                            <tr>
-                                <td>HTML5</td>
-                                <td>Estruturação das páginas.</td>
-                            </tr>
+                    <ul>
+                        <li>Tela de autenticação.</li>
+                        <li>Separação de áreas administrativas.</li>
+                        <li>Gerenciamento de sessões.</li>
+                        <li>Controle de acesso às funcionalidades.</li>
+                    </ul>
 
-                            <tr>
-                                <td>CSS3</td>
-                                <td>Estilização da aplicação.</td>
-                            </tr>
+                </section>
 
-                            <tr>
-                                <td>Composer</td>
-                                <td>Gerenciamento de dependências PHP.</td>
-                            </tr>
-                        </tbody>
+                <!-- 4. Tecnologias -->
 
-                    </table>
+                <section class="documentation-section">
 
-                </div>
+                    <h2>
+                        4. Tecnologias utilizadas
+                    </h2>
 
-                <h2>📂 Estrutura do projeto</h2>
+                    <p>
+                        O Mercurio utiliza tecnologias voltadas ao desenvolvimento
+                        web, integração com banco de dados e organização de
+                        dependências da aplicação.
+                    </p>
 
-                <p>
-                    Abaixo está uma representação resumida dos principais
-                    diretórios e arquivos identificados na estrutura do projeto.
-                </p>
+                    <div class="table-responsive table-container">
 
-                <pre class="code-block"><code>Mercurio/
+                        <table class="table table-bordered align-middle">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Tecnologia</th>
+                                    <th>Aplicação</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>PHP</td>
+                                    <td>Desenvolvimento do Back-end e regras de negócio.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>MySQL</td>
+                                    <td>Persistência e gerenciamento dos dados.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>JavaScript</td>
+                                    <td>Interatividade e funcionalidades da interface.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>HTML5</td>
+                                    <td>Estruturação das páginas.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>CSS3</td>
+                                    <td>Estilização da aplicação.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Composer</td>
+                                    <td>Gerenciamento de dependências PHP.</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+                <!-- 5. Estrutura do projeto -->
+
+                <section class="documentation-section">
+
+                    <h2>
+                        5. Estrutura do projeto
+                    </h2>
+
+                    <p>
+                        Abaixo está uma representação resumida dos principais
+                        diretórios e arquivos identificados na estrutura do projeto.
+                    </p>
+
+                    <pre class="code-block"><code>Mercurio/
 │
 ├── css/                       # Arquivos de estilização
 │
@@ -619,125 +849,195 @@
 │
 └── composer.json              # Configuração do Composer</code></pre>
 
-                <p>
-                    <em>
-                        Estrutura resumida dos principais diretórios e arquivos
-                        identificados no repositório.
-                    </em>
-                </p>
+                    <div class="highlight-box">
 
-                <h2>🚀 Ambiente de desenvolvimento</h2>
+                        <p>
+                            <strong>Observação:</strong> a estrutura apresentada
+                            é uma representação resumida dos principais diretórios
+                            e arquivos identificados no repositório.
+                        </p>
 
-                <p>
-                    Para executar o projeto localmente, recomenda-se utilizar:
-                </p>
+                    </div>
 
-                <ul>
-                    <li>Windows ou Linux.</li>
-                    <li>Servidor web Apache.</li>
-                    <li>PHP.</li>
-                    <li>MySQL ou MariaDB.</li>
-                    <li>XAMPP ou ambiente equivalente.</li>
-                    <li>Composer.</li>
-                </ul>
+                </section>
 
-                <h3>Instalação</h3>
+                <!-- 6. Ambiente de desenvolvimento -->
 
-                <ol>
-                    <li>
-                        Clone o repositório:
+                <section class="documentation-section">
 
-                        <pre class="code-block"><code>git clone https://github.com/DiLeoneLucas/Mercurio.git</code></pre>
-                    </li>
+                    <h2>
+                        6. Ambiente de desenvolvimento
+                    </h2>
 
-                    <li>
-                        Acesse o diretório:
+                    <p>
+                        Para executar o projeto localmente, recomenda-se utilizar:
+                    </p>
 
-                        <pre class="code-block"><code>cd Mercurio</code></pre>
-                    </li>
+                    <ul>
+                        <li>Windows ou Linux.</li>
+                        <li>Servidor web Apache.</li>
+                        <li>PHP.</li>
+                        <li>MySQL ou MariaDB.</li>
+                        <li>XAMPP ou ambiente equivalente.</li>
+                        <li>Composer.</li>
+                    </ul>
 
-                    <li>
-                        Disponibilize o projeto no diretório público
-                        do servidor web.
+                </section>
 
-                        <p>No XAMPP, por exemplo:</p>
+                <!-- 7. Instalação -->
 
-                        <pre class="code-block"><code>C:\xampp\htdocs\Mercurio</code></pre>
-                    </li>
+                <section class="documentation-section">
 
-                    <li>
-                        Inicie os serviços Apache e MySQL.
-                    </li>
+                    <h2>
+                        7. Instalação e configuração
+                    </h2>
 
-                    <li>
+                    <h3>
+                        7.1. Clonar o repositório
+                    </h3>
+
+                    <p>
+                        Clone o repositório do projeto utilizando o Git:
+                    </p>
+
+                    <pre class="code-block"><code>git clone https://github.com/DiLeoneLucas/Mercurio.git</code></pre>
+
+                    <h3>
+                        7.2. Acessar o diretório
+                    </h3>
+
+                    <p>
+                        Entre na pasta do projeto:
+                    </p>
+
+                    <pre class="code-block"><code>cd Mercurio</code></pre>
+
+                    <h3>
+                        7.3. Configurar o servidor web
+                    </h3>
+
+                    <p>
+                        Disponibilize o projeto no diretório público do servidor web.
+                    </p>
+
+                    <p>
+                        No XAMPP, por exemplo:
+                    </p>
+
+                    <pre class="code-block"><code>C:\xampp\htdocs\Mercurio</code></pre>
+
+                    <h3>
+                        7.4. Iniciar os serviços
+                    </h3>
+
+                    <p>
+                        Inicie os serviços Apache e MySQL pelo painel de controle
+                        do XAMPP ou pela ferramenta correspondente ao ambiente
+                        utilizado.
+                    </p>
+
+                    <h3>
+                        7.5. Configurar o banco de dados
+                    </h3>
+
+                    <p>
                         Configure a conexão com o banco de dados conforme
                         os parâmetros utilizados nos arquivos de configuração
                         do projeto.
-                    </li>
-
-                    <li>
-                        Importe a estrutura do banco de dados, caso possua
-                        o respectivo arquivo SQL.
-                    </li>
-
-                    <li>
-                        Acesse pelo navegador:
-
-                        <pre class="code-block"><code>http://localhost/Mercurio/</code></pre>
-                    </li>
-                </ol>
-
-                <p>
-                    <strong>Observação:</strong> os parâmetros de conexão
-                    e a estrutura do banco devem ser conferidos no ambiente
-                    de implantação. O repositório não apresenta um script SQL
-                    de instalação identificado na estrutura principal.
-                </p>
-
-                <h2>🔒 Segurança</h2>
-
-                <p>
-                    Por trabalhar com informações administrativas e dados
-                    de estoque, recomenda-se:
-                </p>
-
-                <ul>
-                    <li>Restringir o acesso às áreas administrativas.</li>
-                    <li>Utilizar senhas seguras.</li>
-                    <li>Proteger as credenciais de conexão com o banco de dados.</li>
-                    <li>Validar os dados recebidos pelos formulários.</li>
-                    <li>Utilizar consultas preparadas para operações SQL.</li>
-                    <li>Implementar controle adequado de sessões.</li>
-                    <li>Manter backups periódicos do banco de dados.</li>
-                </ul>
-
-                <!-- Link do GitHub -->
-                <div class="github-link">
-
-                    <h3>💻 Acesse o repositório</h3>
-
-                    <p>
-                        Confira o código-fonte e os arquivos do projeto
-                        no GitHub.
                     </p>
 
-                    <a
-                        href="https://github.com/DiLeoneLucas/Mercurio"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Visualizar projeto no GitHub
-                    </a>
+                    <h3>
+                        7.6. Importar a estrutura do banco
+                    </h3>
 
-                </div>
+                    <p>
+                        Importe a estrutura do banco de dados, caso possua
+                        o respectivo arquivo SQL.
+                    </p>
+
+                    <h3>
+                        7.7. Acessar a aplicação
+                    </h3>
+
+                    <p>
+                        Após a configuração do ambiente, acesse a aplicação
+                        pelo navegador:
+                    </p>
+
+                    <pre class="code-block"><code>http://localhost/Mercurio/</code></pre>
+
+                    <div class="important-box">
+
+                        <p>
+                            <strong>Importante:</strong> os parâmetros de conexão
+                            e a estrutura do banco devem ser conferidos no ambiente
+                            de implantação. O repositório não apresenta um script
+                            SQL de instalação identificado na estrutura principal.
+                        </p>
+
+                    </div>
+
+                </section>
+
+                <!-- 8. Segurança -->
+
+                <section class="documentation-section">
+
+                    <h2>
+                        8. Segurança e boas práticas
+                    </h2>
+
+                    <p>
+                        Por trabalhar com informações administrativas e dados
+                        de estoque, recomenda-se adotar medidas para proteger
+                        a aplicação e os dados armazenados.
+                    </p>
+
+                    <ul>
+                        <li>Restringir o acesso às áreas administrativas.</li>
+                        <li>Utilizar senhas seguras.</li>
+                        <li>Proteger as credenciais de conexão com o banco de dados.</li>
+                        <li>Validar os dados recebidos pelos formulários.</li>
+                        <li>Utilizar consultas preparadas para operações SQL.</li>
+                        <li>Implementar controle adequado de sessões.</li>
+                        <li>Manter backups periódicos do banco de dados.</li>
+                    </ul>
+
+                </section>
 
             </main>
 
+            <!-- Rodapé / GitHub -->
+
+            <footer class="project-footer">
+
+                <h3>
+                    Acesse o repositório
+                </h3>
+
+                <p>
+                    Confira o código-fonte e os arquivos do projeto Mercurio
+                    diretamente no GitHub.
+                </p>
+
+                <a
+                    href="https://github.com/DiLeoneLucas/Mercurio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Visualizar projeto no GitHub
+                </a>
+
+            </footer>
+
         </div>
+
     </div>
 
     <!-- Bootstrap JS -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

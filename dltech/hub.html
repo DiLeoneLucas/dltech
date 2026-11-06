@@ -1,98 +1,507 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hub do Canal</title>
-    
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Hub do Canal | DL Tech</title>
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="imagens/icones/favicon.ico"
+    >
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
     <style>
+
+        /* CONFIGURAÇÕES GERAIS */
+
         body {
-            background-color: #003366; /* Azul petróleo */
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Alinha no topo */
-            height: 100vh;
             margin: 0;
+            min-height: 100vh;
+            background-color: #084D6E;
             font-family: Arial, sans-serif;
+            color: #ffffff;
         }
-        .container {
-            display: flex;
-            flex-direction: column; /* Alinha os cards na coluna */
-            gap: 20px;
-            align-items: center; /* Centraliza todos os cards */
-            justify-content: flex-start; /* Garante que os cards comecem do topo */
-            padding-top: 20px; /* Ajuste para dar espaço ao primeiro card */
+
+        /* NAVBAR */
+
+        .navbar {
+            position: fixed;
+            top: 0;
             width: 100%;
-            max-width: 800px; /* Limita a largura máxima dos cards */
+            z-index: 1030;
+            background-color: #033b52;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
         }
-        .card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            width: 100%;
+
+        .navbar-brand {
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar a {
+            color: #ffffff !important;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #35c5ff !important;
+        }
+
+        /* CONTEÚDO */
+
+        .content-container {
+            padding-top: 110px;
+            padding-bottom: 40px;
+        }
+
+        .content {
+            background-color: rgba(20, 35, 45, 0.88);
+            padding: 35px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.20);
+        }
+
+        /* CABEÇALHO */
+
+        .hub-header {
             text-align: center;
-            margin: 10px;
+            margin-bottom: 35px;
         }
+
+        .hub-header h1 {
+            color: #35c5ff;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .hub-header p {
+            color: #d6eaf3;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* CARDS */
+
+        .hub-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(3, 59, 82, 0.85);
+            border: 1px solid rgba(53, 197, 255, 0.25);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hub-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+        }
+
+        .hub-card h4,
+        .hub-card h5 {
+            color: #35c5ff;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .hub-card p {
+            color: #d6eaf3;
+            line-height: 1.7;
+            margin-top: 12px;
+            margin-bottom: 18px;
+        }
+
+        /* IMAGENS */
+
         .thumbnail {
             width: 100%;
-            max-width: 500px;
-            margin-bottom: 15px;
-            border-radius: 8px;
+            max-width: 420px;
+            height: 210px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin: 0 auto 15px;
+            background-color: rgba(255, 255, 255, 0.05);
         }
-        .video-card, .twitch-card {
-            cursor: pointer;
+
+        .banner-image {
+            width: 100%;
+            max-height: 210px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
+
+        /* LINKS */
+
+        .hub-card a {
+            text-decoration: none;
+        }
+
+        /* BOTÕES */
+
         .full-width-button {
-            width: 100%; /* Faz o botão ocupar toda a largura do card */
-            padding: 15px; /* Tamanho adequado do botão */
-            font-size: 16px; /* Tamanho da fonte */
+            width: 100%;
+            padding: 13px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: auto;
         }
+
+        .btn-primary {
+            background-color: #087ca8;
+            border-color: #087ca8;
+        }
+
+        .btn-primary:hover {
+            background-color: #35c5ff;
+            border-color: #35c5ff;
+            color: #033b52;
+        }
+
+        .btn-youtube {
+            background-color: #e62117;
+            border-color: #e62117;
+            color: #ffffff;
+        }
+
+        .btn-youtube:hover {
+            background-color: #c51d15;
+            border-color: #c51d15;
+            color: #ffffff;
+        }
+
+        .btn-twitch {
+            background-color: #9147ff;
+            border-color: #9147ff;
+            color: #ffffff;
+        }
+
+        .btn-twitch:hover {
+            background-color: #772ce8;
+            border-color: #772ce8;
+            color: #ffffff;
+        }
+
+        /* STATUS DA TWITCH */
+
+        .live-status {
+            display: inline-block;
+            background-color: rgba(145, 71, 255, 0.15);
+            border: 1px solid rgba(145, 71, 255, 0.5);
+            color: #c9a8ff;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 5px auto 15px;
+        }
+
+        /* RODAPÉ */
+
+        .project-footer {
+            text-align: center;
+            color: #d6eaf3;
+            padding: 20px 10px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(53, 197, 255, 0.25);
+            font-size: 0.9rem;
+        }
+
+        .project-footer strong {
+            color: #35c5ff;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 768px) {
+
+            .content-container {
+                padding-top: 90px;
+            }
+
+            .content {
+                padding: 22px;
+            }
+
+            .hub-header h1 {
+                font-size: 1.7rem;
+            }
+
+            .hub-header p {
+                font-size: 0.95rem;
+            }
+
+            .hub-card {
+                padding: 20px;
+            }
+
+            .thumbnail {
+                height: 180px;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+
+            .content {
+                padding: 16px;
+            }
+
+            .hub-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .hub-card h4 {
+                font-size: 1.15rem;
+            }
+
+        }
+
     </style>
+
 </head>
+
 <body>
 
-    <div class="container">
-        <!-- Card de Redirecionamento para o Vídeo -->
-        <div class="card video-card">
-            <a href="https://youtu.be/hjtZoUIUQTk?is=H56_XGTKv7zOffu4" target="_blank">
-                <h4>Assista ao vídeo diretamente no YouTube!</h4>
-                <img src="imagens/youtube.png" class="thumbnail" alt="Thumbnail do vídeo">
-                <p>Canal do YouTube.</p>
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container-fluid">
+
+            <a
+                class="navbar-brand"
+                href="home.html"
+            >
+                DL Tech
             </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Abrir menu de navegação"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+                class="collapse navbar-collapse"
+                id="navbarNav"
+            >
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="home.html"
+                        >
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="projetos.html"
+                        >
+                            Projetos
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="experi.html"
+                        >
+                            Experiências
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="cv.html"
+                        >
+                            Currículo
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="contato.html"
+                        >
+                            Entrar em Contato
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="ref.html"
+                        >
+                            Referências
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
         </div>
 
-        <!-- Card de Redirecionamento para o site pessoal -->
-        <div class="card">
-            <img src="imagens/icones/Banner.png" class="card-img-top" alt="Card Image 3">
-            <div class="card-body">
-                <h5 class="card-title">DL Tech</h5>
-                <p class="card-text">Acesse para acessar a minha página de currículo.</p>
-                <!-- Botão com largura total -->
-                <a href="home.html" class="btn btn-primary full-width-button">Acessar</a>
-            </div>
-        </div>
-  
-        <!-- Card de Redirecionamento para a Twitch -->
-        <div class="card twitch-card">
-            <a href="https://www.twitch.tv/didikogp" target="_blank">
-                <h4>Assista a última transmissão na Twitch!</h4>
-                <?php if ($twitchLiveThumbnail): ?>
-                    <img src="imagens/twitch.webp" class="thumbnail" alt="Thumbnail da Twitch">
-                <?php else: ?>
-                    <!-- Imagem de fallback para quando não há transmissão ao vivo -->
-                    <p>Sem transmissão ao vivo no momento.</p>
-                <?php endif; ?>
-                <p>Canal na Twitch.</p>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main class="container content-container">
+
+        <section class="content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="hub-header">
+
+                <h1>
+                    Hub do Canal
+                </h1>
+
+                <p>
+                    Acesse meus conteúdos, acompanhe as transmissões
+                    e conheça meu portfólio profissional.
+                </p>
+
+            </header>
+
+
+<!-- CARDS -->
+
+<div class="row g-4">
+
+    <!-- YOUTUBE -->
+
+    <div class="col-12 col-md-6">
+
+        <div class="hub-card">
+
+            <h4>YouTube</h4>
+
+            <a
+                href="https://youtu.be/Vb-sO1zW43s"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="imagens/youtube.png"
+                    class="thumbnail"
+                    alt="Canal do YouTube"
+                >
             </a>
+
+            <p>
+                Assista aos vídeos e acompanhe os conteúdos
+                publicados no canal.
+            </p>
+
+            <a
+                href="https://youtu.be/Vb-sO1zW43s"
+                class="btn btn-youtube full-width-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Acessar YouTube
+            </a>
+
         </div>
-          </div>
-    <!-- Bootstrap JS (opcional) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    </div>
+
+    <!-- DL TECH -->
+
+    <div class="col-12 col-md-6">
+
+        <div class="hub-card">
+
+            <h4>DL Tech</h4>
+
+            <img
+                src="imagens/icones/Banner.png"
+                class="banner-image"
+                alt="Banner da DL Tech"
+            >
+
+            <p>
+                Conheça meus projetos, experiências profissionais,
+                qualificações e trajetória na área de Tecnologia
+                da Informação.
+            </p>
+
+            <a
+                href="home.html"
+                class="btn btn-primary full-width-button"
+            >
+                Acessar Portfólio
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- TWITCH -->
+
+   
+</div>
+
+
+        </section>
+
+        <!-- RODAPÉ -->
+
+        <footer class="project-footer">
+
+            <strong>DL Tech</strong>
+
+            <br>
+
+            Hub de conteúdo e portfólio.
+
+        </footer>
+
+    </main>
+
+    <!-- BOOTSTRAP JS -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
 </body>
+
 </html>

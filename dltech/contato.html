@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -33,222 +33,215 @@
 
     <style>
 
+        /* CONFIGURAÇÕES GERAIS */
+
         body {
-
             margin: 0;
-
             background-color: #084D6E;
-
             font-family: Arial, sans-serif;
-
             min-height: 100vh;
-
+            color: #fff;
         }
 
         /* MENU DE NAVEGAÇÃO */
 
         .navbar {
-
             background-color: #033b52;
-
             position: fixed;
-
             top: 0;
-
             width: 100%;
-
             z-index: 1030;
-
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
         }
 
         .navbar a {
-
             color: #fff !important;
-
         }
 
         .navbar-brand {
-
             font-weight: bold;
-
             letter-spacing: 1px;
-
         }
 
-        .navbar .nav-link:hover {
+        .navbar .nav-link {
+            transition: color 0.3s ease;
+        }
 
-            color: #a8dff5 !important;
-
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: #35c5ff !important;
         }
 
         /* CONTEÚDO PRINCIPAL */
 
         .content-container {
-
             padding-top: 110px;
-
             padding-bottom: 40px;
-
         }
 
         .content {
-
-            background-color: rgba(128, 128, 128, 0.7);
-
+            background-color: rgba(20, 35, 45, 0.88);
             padding: 35px;
-
             margin: 20px auto;
-
-            border-radius: 12px;
-
+            border-radius: 15px;
             color: #fff;
-
             max-width: 850px;
-
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(53, 197, 255, 0.15);
         }
 
+        /* CABEÇALHO */
+
         .contact-header {
-
             text-align: center;
-
-            margin-bottom: 30px;
-
+            margin-bottom: 35px;
         }
 
         .contact-header i {
-
             font-size: 55px;
-
             color: #25D366;
-
         }
 
         .contact-header h1 {
-
-            font-size: 30px;
-
+            font-size: 32px;
             font-weight: bold;
-
             margin-top: 15px;
-
+            margin-bottom: 12px;
+            color: #35c5ff;
         }
 
         .contact-header p {
-
             font-size: 15px;
-
-            color: #f1f1f1;
-
+            color: #d6eaf3;
+            line-height: 1.7;
+            margin-bottom: 0;
         }
 
         /* FORMULÁRIO */
 
         .form-label {
-
             font-weight: bold;
-
+            color: #a8e5ff;
+            margin-bottom: 8px;
         }
 
         .form-control {
-
-            border-radius: 7px;
-
-            padding: 11px;
-
-            border: none;
-
+            background-color: #f5f8fa;
+            color: #243746;
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid rgba(53, 197, 255, 0.25);
+            transition: 0.3s ease;
         }
 
         .form-control:focus {
+            background-color: #fff;
+            border-color: #35c5ff;
+            box-shadow: 0 0 0 3px rgba(53, 197, 255, 0.2);
+            color: #243746;
+        }
 
-            box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.3);
-
+        .form-control::placeholder {
+            color: #82929c;
         }
 
         textarea {
-
             resize: vertical;
-
+            min-height: 130px;
         }
 
         /* BOTÃO WHATSAPP */
 
         .btn-whatsapp {
-
             background-color: #25D366;
-
             color: #fff;
-
             border: none;
-
-            border-radius: 7px;
-
-            padding: 13px 25px;
-
+            border-radius: 8px;
+            padding: 14px 25px;
             font-size: 17px;
-
             font-weight: bold;
-
             width: 100%;
-
-            transition: 0.3s;
-
+            transition: 0.3s ease;
         }
 
         .btn-whatsapp:hover {
-
             background-color: #1ebe5d;
-
             color: #fff;
-
             transform: translateY(-2px);
-
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2);
         }
 
         .btn-whatsapp i {
-
             margin-right: 8px;
-
             font-size: 20px;
-
         }
 
+        /* INFORMAÇÕES DE CONTATO */
+
         .contact-info {
-
             text-align: center;
-
-            margin-top: 25px;
-
+            margin-top: 30px;
+            padding: 18px 15px 5px;
+            border-top: 1px solid rgba(53, 197, 255, 0.2);
             font-size: 13px;
+            color: #d6eaf3;
+        }
 
-            color: #f1f1f1;
+        .contact-info p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
 
+        .contact-info i {
+            color: #35c5ff;
+            margin-right: 5px;
         }
 
         /* RESPONSIVIDADE */
 
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
+
+            .content-container {
+                padding-top: 95px;
+            }
 
             .content {
-
-                padding: 22px;
-
-                margin: 10px;
-
+                padding: 25px;
+                margin: 15px auto;
             }
 
             .contact-header h1 {
+                font-size: 28px;
+            }
 
-                font-size: 24px;
+        }
 
+        @media (max-width: 576px) {
+
+            .content {
+                padding: 22px 18px;
+                margin: 10px;
+            }
+
+            .contact-header i {
+                font-size: 45px;
+            }
+
+            .contact-header h1 {
+                font-size: 25px;
+            }
+
+            .contact-header p {
+                font-size: 14px;
+            }
+
+            .btn-whatsapp {
+                font-size: 15px;
+                padding: 12px;
             }
 
             .content-container {
-
                 padding-top: 90px;
-
             }
 
         }
@@ -556,17 +549,11 @@
         CONFIGURAÇÃO DO WHATSAPP
         =====================================================
 
-        Adicione o número abaixo quando desejar ativar
-        o recebimento das mensagens.
-
         Utilize o formato internacional:
 
         55 + DDD + NÚMERO
 
         Somente números, sem espaços, parênteses ou traços.
-
-        Exemplo de formato:
-        5551999999999
 
         =====================================================
         */
@@ -689,4 +676,3 @@
 </body>
 
 </html>
-```

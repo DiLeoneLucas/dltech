@@ -3,12 +3,14 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>UTI-CTI</title>
-
     <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
+
+    <title>UTI-CTI | DL Tech</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -17,6 +19,8 @@
     >
 
     <style>
+
+        /* Configurações gerais */
         body {
             margin: 0;
             background-color: #084D6E;
@@ -24,53 +28,86 @@
             color: #fff;
         }
 
+        /* Navbar */
         .navbar {
             background-color: #033b52;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1030;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
         }
 
         .navbar a {
             color: #fff !important;
         }
 
-        .content {
-            background-color: rgba(128, 128, 128, 0.7);
-            padding: 30px;
-            margin: 20px;
-            border-radius: 10px;
-            color: #fff;
+        .navbar .nav-link:hover {
+            color: #35c5ff !important;
         }
 
+        /* Container principal */
         .content-container {
-            padding-top: 80px;
+            padding-top: 100px;
+            padding-bottom: 40px;
         }
 
-        /* Cabeçalho */
+        .content {
+            background-color: rgba(20, 35, 45, 0.88);
+            padding: 35px;
+            margin: 20px;
+            border-radius: 15px;
+            color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Cabeçalho do projeto */
         .project-header {
             text-align: center;
             margin-bottom: 30px;
         }
 
         .project-header h1 {
+            color: #35c5ff;
+            font-size: 2.4rem;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
-        .project-subtitle {
-            color: #e6e6e6;
-            font-size: 1rem;
+        .project-header p {
+            color: #d6eaf3;
+            font-size: 1.15rem;
+            margin-bottom: 20px;
         }
 
-        /* Badges de tecnologias */
+        /* Informações do projeto */
+        .project-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            background-color: rgba(3, 59, 82, 0.85);
+            border: 1px solid rgba(53, 197, 255, 0.35);
+            padding: 9px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .info-item strong {
+            color: #35c5ff;
+        }
+
+        /* Badges */
         .tech-badges {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: 15px;
+            margin-bottom: 25px;
         }
 
         .tech-badges img {
@@ -79,97 +116,124 @@
 
         /* Carrossel */
         .project-carousel {
-            max-width: 900px;
-            margin: 0 auto 40px auto;
-            background-color: rgba(0, 0, 0, 0.15);
-            border-radius: 12px;
-            overflow: hidden;
+            max-width: 950px;
+            margin: 0 auto 40px;
+            background-color: rgba(3, 59, 82, 0.65);
             padding: 10px;
+            border-radius: 15px;
         }
 
         .carousel-inner img {
             width: 100%;
-            max-height: 400px;
+            max-height: 450px;
             object-fit: contain;
             border-radius: 10px;
         }
 
         /* Documentação */
         .documentation {
-            max-width: 1000px;
-            margin: auto;
+            text-align: justify;
+            line-height: 1.8;
         }
 
-        .documentation section {
+        .documentation-section {
             margin-bottom: 35px;
         }
 
         .documentation h2 {
-            color: #8ed8ff;
+            color: #35c5ff;
             font-size: 1.6rem;
             font-weight: bold;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.25);
-            padding-bottom: 10px;
+            margin-top: 35px;
             margin-bottom: 18px;
+            border-bottom: 1px solid rgba(53, 197, 255, 0.4);
+            padding-bottom: 10px;
         }
 
         .documentation h3 {
-            color: #fff;
+            color: #a8e5ff;
             font-size: 1.2rem;
             font-weight: bold;
-            margin-top: 22px;
+            margin-top: 25px;
             margin-bottom: 12px;
         }
 
         .documentation p {
-            line-height: 1.7;
-            text-align: justify;
+            color: #e5e5e5;
+            margin-bottom: 15px;
         }
 
         .documentation ul {
             padding-left: 25px;
-            line-height: 1.8;
+            color: #e5e5e5;
         }
 
         .documentation li {
-            margin-bottom: 5px;
+            margin-bottom: 9px;
+        }
+
+        .documentation li::marker {
+            color: #35c5ff;
+        }
+
+        .documentation strong {
+            color: #fff;
         }
 
         /* Tabelas */
-        .table-responsive {
+        .table-container {
+            margin-top: 20px;
+            margin-bottom: 25px;
+            overflow-x: auto;
             border-radius: 8px;
-            overflow: hidden;
-            margin-top: 15px;
         }
 
         .documentation table {
+            color: #fff;
+            vertical-align: middle;
             margin-bottom: 0;
-            color: #fff;
-            background-color: rgba(0, 0, 0, 0.15);
         }
 
-        .documentation table th {
+        .documentation th {
             background-color: #033b52;
-            color: #fff;
-            border-color: rgba(255, 255, 255, 0.2);
+            color: #35c5ff;
+            border-color: rgba(255, 255, 255, 0.15);
+            padding: 12px;
         }
 
-        .documentation table td {
-            background-color: rgba(255, 255, 255, 0.08);
-            color: #fff;
-            border-color: rgba(255, 255, 255, 0.2);
+        .documentation td {
+            background-color: rgba(255, 255, 255, 0.06);
+            color: #e5e5e5;
+            border-color: rgba(255, 255, 255, 0.12);
+            padding: 12px;
+        }
+
+        /* Blocos de destaque */
+        .highlight-box {
+            background-color: rgba(3, 59, 82, 0.65);
+            border-left: 4px solid #35c5ff;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .important-box {
+            background-color: rgba(211, 84, 0, 0.15);
+            border-left: 4px solid #d35400;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 6px;
         }
 
         /* Blocos de código */
         .code-block {
-            background-color: #17212b;
-            color: #d7e3ee;
-            border-radius: 8px;
+            background-color: #111c27;
+            color: #e2e8f0;
             padding: 18px;
+            border-radius: 8px;
             overflow-x: auto;
-            margin-top: 12px;
-            margin-bottom: 15px;
-            border-left: 4px solid #3498db;
+            margin: 15px 0;
+            border: 1px solid rgba(53, 197, 255, 0.2);
         }
 
         .code-block pre {
@@ -180,6 +244,13 @@
             line-height: 1.5;
         }
 
+        .code-block code {
+            color: #a8e5ff;
+            white-space: pre;
+            background: none;
+            padding: 0;
+        }
+
         .command-block {
             background-color: rgba(3, 59, 82, 0.85);
             padding: 12px 16px;
@@ -187,6 +258,7 @@
             margin: 10px 0;
             font-family: Consolas, monospace;
             overflow-x: auto;
+            color: #a8e5ff;
         }
 
         .documentation code {
@@ -196,40 +268,58 @@
             border-radius: 4px;
         }
 
-        .code-block code {
-            color: inherit;
-            background: none;
-            padding: 0;
-        }
-
-        /* Link GitHub */
-        .github-link {
+        /* Rodapé */
+        .project-footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 45px;
             padding-top: 25px;
-            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-top: 1px solid rgba(53, 197, 255, 0.3);
         }
 
-        .github-link a {
-            color: #8ed8ff;
-            font-weight: bold;
-            text-decoration: none;
+        .project-footer p {
+            color: #d6eaf3;
         }
 
-        .github-link a:hover {
+        .github-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background-color: #033b52;
             color: #fff;
-            text-decoration: underline;
+            text-decoration: none;
+            border: 1px solid rgba(53, 197, 255, 0.4);
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .github-link:hover {
+            background-color: #035574;
+            color: #35c5ff;
+            transform: translateY(-2px);
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
+
             .content {
                 margin: 10px;
-                padding: 18px;
+                padding: 20px;
             }
 
             .content-container {
-                padding-top: 70px;
+                padding-top: 85px;
+            }
+
+            .project-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .project-header p {
+                font-size: 1rem;
+            }
+
+            .documentation {
+                text-align: left;
             }
 
             .documentation h2 {
@@ -241,24 +331,29 @@
             }
 
             .carousel-inner img {
-                max-height: 250px;
+                max-height: 280px;
             }
 
-            .documentation p {
-                text-align: left;
+            .info-item {
+                font-size: 0.8rem;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
-    <!-- Barra de navegação -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
 
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="home.html">DL Tech</a>
+            <a class="navbar-brand" href="home.html">
+                DL Tech
+            </a>
 
             <button
                 class="navbar-toggler"
@@ -277,74 +372,115 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="home.html">Home</a>
+                        <a class="nav-link" href="home.html">
+                            Home
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="projetos.html">Projetos</a>
+                        <a class="nav-link active" href="projetos.html">
+                            Projetos
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="experi.html">Experiências</a>
+                        <a class="nav-link" href="experi.html">
+                            Experiências
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="cv.html">Currículo</a>
+                        <a class="nav-link" href="cv.html">
+                            Currículo
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Entrar em Contato</a>
+                        <a class="nav-link" href="contato.html">
+                            Entrar em Contato
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="ref.html">Referências</a>
+                        <a class="nav-link" href="ref.html">
+                            Referências
+                        </a>
                     </li>
 
                 </ul>
 
             </div>
+
         </div>
 
     </nav>
 
     <!-- Conteúdo principal -->
-    <div class="content">
+    <div class="container content-container">
 
-        <div class="container content-container">
+        <main class="content">
 
             <!-- Cabeçalho do projeto -->
             <header class="project-header">
 
-                <h1>UTI-CTI</h1>
+                <h1>
+                    UTI-CTI
+                </h1>
 
-                <p class="project-subtitle">
+                <p>
                     Sistema de Gerenciamento de Chamados de TI
                 </p>
 
+                <!-- Informações do projeto -->
+                <div class="project-info">
+
+                    <div class="info-item">
+                        <strong>Projeto:</strong> UTI-CTI
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Linguagem:</strong> PHP
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Banco de Dados:</strong> MySQL
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Interface:</strong> Bootstrap 5
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Desenvolvimento:</strong> Lucas Fernandes Di Leone
+                    </div>
+
+                </div>
+
+                <!-- Tecnologias -->
                 <div class="tech-badges">
 
                     <img
-                        src="https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white"
+                        src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"
                         alt="PHP"
                     >
 
                     <img
-                        src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white"
+                        src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"
                         alt="MySQL"
                     >
 
                     <img
-                        src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white"
+                        src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"
                         alt="Bootstrap"
                     >
 
                     <img
-                        src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white"
+                        src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
                         alt="HTML5"
                     >
 
                     <img
-                        src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black"
+                        src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
                         alt="JavaScript"
                     >
 
@@ -437,8 +573,16 @@
                     data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev"
                 >
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
+
+                    <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span class="visually-hidden">
+                        Anterior
+                    </span>
+
                 </button>
 
                 <button
@@ -447,8 +591,16 @@
                     data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="next"
                 >
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Próximo</span>
+
+                    <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span class="visually-hidden">
+                        Próximo
+                    </span>
+
                 </button>
 
             </div>
@@ -456,10 +608,12 @@
             <!-- Documentação -->
             <div class="documentation" id="texto">
 
-                <!-- Sobre o projeto -->
-                <section>
+                <!-- 1. Sobre o projeto -->
+                <section class="documentation-section">
 
-                    <h2>📌 Sobre o projeto</h2>
+                    <h2>
+                        1. Sobre o Projeto
+                    </h2>
 
                     <p>
                         O <strong>UTI-CTI</strong> é um sistema web desenvolvido
@@ -482,77 +636,175 @@
                         atividades de suporte técnico.
                     </p>
 
+                    <div class="highlight-box">
+
+                        <strong>Finalidade do sistema:</strong>
+
+                        Centralizar a abertura e o acompanhamento de chamados
+                        de TI, facilitando a comunicação entre os solicitantes
+                        e os profissionais responsáveis pelo suporte técnico.
+
+                    </div>
+
                 </section>
 
-                <!-- Objetivos -->
-                <section>
+                <!-- 2. Objetivos -->
+                <section class="documentation-section">
 
-                    <h2>🎯 Objetivos</h2>
+                    <h2>
+                        2. Objetivos
+                    </h2>
 
                     <ul>
-                        <li>Centralizar a abertura de chamados de suporte técnico.</li>
-                        <li>Facilitar a comunicação entre professores e equipe de TI.</li>
-                        <li>Organizar incidentes e requisições por sala.</li>
-                        <li>Permitir o acompanhamento dos atendimentos.</li>
-                        <li>Disponibilizar um painel visual para monitoramento dos chamados.</li>
-                        <li>Manter histórico das solicitações e atualizações.</li>
-                        <li>Melhorar a organização e o controle operacional do suporte técnico.</li>
+
+                        <li>
+                            Centralizar a abertura de chamados de suporte técnico.
+                        </li>
+
+                        <li>
+                            Facilitar a comunicação entre professores e equipe de TI.
+                        </li>
+
+                        <li>
+                            Organizar incidentes e requisições por sala.
+                        </li>
+
+                        <li>
+                            Permitir o acompanhamento dos atendimentos.
+                        </li>
+
+                        <li>
+                            Disponibilizar um painel visual para monitoramento dos chamados.
+                        </li>
+
+                        <li>
+                            Manter histórico das solicitações e atualizações.
+                        </li>
+
+                        <li>
+                            Melhorar a organização e o controle operacional do suporte técnico.
+                        </li>
+
                     </ul>
 
                 </section>
 
-                <!-- Funcionalidades -->
-                <section>
+                <!-- 3. Funcionalidades -->
+                <section class="documentation-section">
 
-                    <h2>⚙️ Funcionalidades</h2>
+                    <h2>
+                        3. Funcionalidades
+                    </h2>
 
-                    <h3>📝 Abertura de chamados</h3>
+                    <h3>
+                        3.1. Abertura de Chamados
+                    </h3>
 
                     <ul>
-                        <li>Registro de novos incidentes e requisições.</li>
-                        <li>Identificação do professor solicitante.</li>
-                        <li>Identificação do número da sala.</li>
-                        <li>Classificação do tipo de chamado.</li>
-                        <li>Descrição detalhada do problema.</li>
+
+                        <li>
+                            Registro de novos incidentes e requisições.
+                        </li>
+
+                        <li>
+                            Identificação do professor solicitante.
+                        </li>
+
+                        <li>
+                            Identificação do número da sala.
+                        </li>
+
+                        <li>
+                            Classificação do tipo de chamado.
+                        </li>
+
+                        <li>
+                            Descrição detalhada do problema.
+                        </li>
+
                     </ul>
 
-                    <p><strong>Categorias disponíveis:</strong></p>
+                    <p>
+                        <strong>Categorias disponíveis:</strong>
+                    </p>
 
                     <ul>
+
                         <li>PC.</li>
                         <li>Projetor.</li>
                         <li>Rede.</li>
                         <li>Outros.</li>
+
                     </ul>
 
-                    <h3>👨‍💻 Área do técnico</h3>
+                    <h3>
+                        3.2. Área do Técnico
+                    </h3>
 
                     <ul>
-                        <li>Autenticação de técnicos.</li>
-                        <li>Visualização dos chamados em aberto.</li>
-                        <li>Acompanhamento dos incidentes.</li>
-                        <li>Atualização dos chamados.</li>
-                        <li>Criação e gerenciamento de usuários.</li>
-                        <li>Acesso ao histórico de atendimentos.</li>
+
+                        <li>
+                            Autenticação de técnicos.
+                        </li>
+
+                        <li>
+                            Visualização dos chamados em aberto.
+                        </li>
+
+                        <li>
+                            Acompanhamento dos incidentes.
+                        </li>
+
+                        <li>
+                            Atualização dos chamados.
+                        </li>
+
+                        <li>
+                            Criação e gerenciamento de usuários.
+                        </li>
+
+                        <li>
+                            Acesso ao histórico de atendimentos.
+                        </li>
+
                     </ul>
 
-                    <h3>📊 Painel de monitoramento</h3>
+                    <h3>
+                        3.3. Painel de Monitoramento
+                    </h3>
 
                     <p>
                         O sistema possui um painel visual para acompanhamento
                         da quantidade de chamados abertos.
                     </p>
 
-                    <p><strong>Características:</strong></p>
+                    <p>
+                        <strong>Características:</strong>
+                    </p>
 
                     <ul>
-                        <li>Exibição da quantidade de chamados pendentes.</li>
-                        <li>Atualização automática a cada 90 segundos.</li>
-                        <li>Indicação visual de chamados em aberto.</li>
-                        <li>Alteração da cor de fundo conforme a existência de chamados pendentes.</li>
+
+                        <li>
+                            Exibição da quantidade de chamados pendentes.
+                        </li>
+
+                        <li>
+                            Atualização automática a cada 90 segundos.
+                        </li>
+
+                        <li>
+                            Indicação visual de chamados em aberto.
+                        </li>
+
+                        <li>
+                            Alteração da cor de fundo conforme a existência de chamados pendentes.
+                        </li>
+
                     </ul>
 
-                    <h3>🔎 Histórico de incidentes e requisições</h3>
+                    <h3>
+                        3.4. Histórico de Incidentes e Requisições
+                    </h3>
 
                     <p>
                         Permite consultar atendimentos anteriores utilizando
@@ -560,14 +812,18 @@
                     </p>
 
                     <ul>
+
                         <li>Número da sala.</li>
                         <li>Tipo de chamado.</li>
                         <li>Status do atendimento.</li>
                         <li>Técnico responsável.</li>
                         <li>Professor solicitante.</li>
+
                     </ul>
 
-                    <h3>🔔 Notificações</h3>
+                    <h3>
+                        3.5. Notificações
+                    </h3>
 
                     <p>
                         Após a abertura de um chamado, o sistema apresenta
@@ -575,7 +831,9 @@
                         equipe de suporte técnico foi notificada.
                     </p>
 
-                    <h3>🏫 Acompanhamento por sala</h3>
+                    <h3>
+                        3.6. Acompanhamento por Sala
+                    </h3>
 
                     <p>
                         O sistema utiliza o endereço IP do solicitante para
@@ -586,57 +844,75 @@
 
                 </section>
 
-                <!-- Tecnologias -->
-                <section>
+                <!-- 4. Tecnologias -->
+                <section class="documentation-section">
 
-                    <h2>🛠️ Tecnologias utilizadas</h2>
+                    <h2>
+                        4. Tecnologias Utilizadas
+                    </h2>
 
-                    <div class="table-responsive">
+                    <div class="table-container">
 
                         <table class="table table-bordered">
 
                             <thead>
+
                                 <tr>
                                     <th>Tecnologia</th>
                                     <th>Aplicação</th>
                                 </tr>
+
                             </thead>
 
                             <tbody>
 
                                 <tr>
                                     <td>PHP</td>
-                                    <td>Desenvolvimento do Back-end e regras de negócio.</td>
+                                    <td>
+                                        Desenvolvimento do Back-end e regras de negócio.
+                                    </td>
                                 </tr>
 
                                 <tr>
                                     <td>MySQL</td>
-                                    <td>Armazenamento e gerenciamento dos dados.</td>
+                                    <td>
+                                        Armazenamento e gerenciamento dos dados.
+                                    </td>
                                 </tr>
 
                                 <tr>
                                     <td>HTML5</td>
-                                    <td>Estruturação das páginas.</td>
+                                    <td>
+                                        Estruturação das páginas.
+                                    </td>
                                 </tr>
 
                                 <tr>
                                     <td>CSS3</td>
-                                    <td>Estilização da interface.</td>
+                                    <td>
+                                        Estilização da interface.
+                                    </td>
                                 </tr>
 
                                 <tr>
                                     <td>Bootstrap 5.3.3</td>
-                                    <td>Componentes visuais e responsividade.</td>
+                                    <td>
+                                        Componentes visuais e responsividade.
+                                    </td>
                                 </tr>
 
                                 <tr>
                                     <td>JavaScript</td>
-                                    <td>Recursos de interação da interface.</td>
+                                    <td>
+                                        Recursos de interação da interface.
+                                    </td>
                                 </tr>
 
                                 <tr>
                                     <td>MySQLi</td>
-                                    <td>Comunicação entre PHP e banco de dados.</td>
+                                    <td>
+                                        Comunicação entre PHP e banco de dados.
+                                    </td>
                                 </tr>
 
                             </tbody>
@@ -647,10 +923,18 @@
 
                 </section>
 
-                <!-- Estrutura do projeto -->
-                <section>
+                <!-- 5. Estrutura do projeto -->
+                <section class="documentation-section">
 
-                    <h2>📂 Estrutura do projeto</h2>
+                    <h2>
+                        5. Estrutura do Projeto
+                    </h2>
+
+                    <p>
+                        A aplicação está organizada em diretórios que separam
+                        os arquivos de controle, as funcionalidades e os
+                        componentes relacionados ao modelo de dados.
+                    </p>
 
                     <div class="code-block">
 
@@ -684,7 +968,7 @@
 
                     </div>
 
-                    <p class="text-center">
+                    <p>
                         <em>
                             Estrutura resumida dos principais arquivos e
                             módulos do projeto.
@@ -693,57 +977,74 @@
 
                 </section>
 
-                <!-- Ambiente de desenvolvimento -->
-                <section>
+                <!-- 6. Ambiente de desenvolvimento -->
+                <section class="documentation-section">
 
-                    <h2>🚀 Ambiente de desenvolvimento</h2>
+                    <h2>
+                        6. Ambiente de Desenvolvimento
+                    </h2>
 
                     <p>
-                        Para executar o projeto localmente, recomenda-se:
+                        Para executar o projeto localmente, recomenda-se
+                        a utilização dos seguintes componentes:
                     </p>
 
                     <ul>
+
                         <li>Windows ou Linux.</li>
                         <li>Apache.</li>
                         <li>PHP.</li>
                         <li>MySQL ou MariaDB.</li>
                         <li>XAMPP ou ambiente equivalente.</li>
                         <li>Navegador web atualizado.</li>
+
                     </ul>
 
                 </section>
 
-                <!-- Instalação -->
-                <section>
+                <!-- 7. Instalação -->
+                <section class="documentation-section">
 
-                    <h2>📥 Instalação</h2>
+                    <h2>
+                        7. Instalação
+                    </h2>
 
-                    <h3>1. Clonar o repositório</h3>
+                    <h3>
+                        7.1. Clonar o Repositório
+                    </h3>
 
                     <div class="command-block">
                         git clone https://github.com/DiLeoneLucas/UTI-CTI.git
                     </div>
 
-                    <h3>2. Acessar o diretório</h3>
+                    <h3>
+                        7.2. Acessar o Diretório
+                    </h3>
 
                     <div class="command-block">
                         cd UTI-CTI
                     </div>
 
-                    <h3>3. Configurar o servidor</h3>
+                    <h3>
+                        7.3. Configurar o Servidor
+                    </h3>
 
                     <p>
                         Disponibilize os arquivos do projeto no diretório
                         público do Apache.
                     </p>
 
-                    <p><strong>Exemplo utilizando XAMPP:</strong></p>
+                    <p>
+                        <strong>Exemplo utilizando XAMPP:</strong>
+                    </p>
 
                     <div class="command-block">
                         C:\xampp\htdocs\UTI-CTI
                     </div>
 
-                    <h3>4. Configurar o banco de dados</h3>
+                    <h3>
+                        7.4. Configurar o Banco de Dados
+                    </h3>
 
                     <p>
                         O arquivo <code>control/db_classes.php</code> contém
@@ -763,11 +1064,19 @@ private $database = 'dbcti_homolog';</code></pre>
 
                     </div>
 
-                    <p>
-                        Ajuste os parâmetros conforme o ambiente de instalação.
-                    </p>
+                    <div class="important-box">
 
-                    <h3>5. Preparar o banco de dados</h3>
+                        <strong>Importante:</strong>
+
+                        Ajuste os parâmetros de conexão conforme o ambiente
+                        de instalação. Evite utilizar credenciais padrão
+                        em ambientes de produção.
+
+                    </div>
+
+                    <h3>
+                        7.5. Preparar o Banco de Dados
+                    </h3>
 
                     <p>
                         É necessário disponibilizar a estrutura do banco
@@ -775,7 +1084,9 @@ private $database = 'dbcti_homolog';</code></pre>
                         tabelas e views consultadas pelo sistema.
                     </p>
 
-                    <h3>6. Acessar a aplicação</h3>
+                    <h3>
+                        7.6. Acessar a Aplicação
+                    </h3>
 
                     <div class="command-block">
                         http://localhost/UTI-CTI/
@@ -783,50 +1094,84 @@ private $database = 'dbcti_homolog';</code></pre>
 
                 </section>
 
-                <!-- Segurança -->
-                <section>
+                <!-- 8. Segurança -->
+                <section class="documentation-section">
 
-                    <h2>🔐 Segurança e controle de acesso</h2>
+                    <h2>
+                        8. Segurança e Controle de Acesso
+                    </h2>
 
                     <p>
                         O sistema possui autenticação para acesso à área
                         administrativa dos técnicos.
                     </p>
 
-                    <p><strong>Recomendações para implantação:</strong></p>
+                    <p>
+                        <strong>Recomendações para implantação:</strong>
+                    </p>
 
                     <ul>
-                        <li>Restringir o acesso às funcionalidades administrativas.</li>
-                        <li>Utilizar senhas seguras e armazenamento com hash.</li>
-                        <li>Validar os dados recebidos pelos formulários.</li>
-                        <li>Utilizar consultas preparadas para operações SQL.</li>
-                        <li>Proteger as sessões dos usuários.</li>
-                        <li>Restringir o acesso ao banco de dados.</li>
-                        <li>Evitar exposição de informações internas da infraestrutura.</li>
+
+                        <li>
+                            Restringir o acesso às funcionalidades administrativas.
+                        </li>
+
+                        <li>
+                            Utilizar senhas seguras e armazenamento com hash.
+                        </li>
+
+                        <li>
+                            Validar os dados recebidos pelos formulários.
+                        </li>
+
+                        <li>
+                            Utilizar consultas preparadas para operações SQL.
+                        </li>
+
+                        <li>
+                            Proteger as sessões dos usuários.
+                        </li>
+
+                        <li>
+                            Restringir o acesso ao banco de dados.
+                        </li>
+
+                        <li>
+                            Evitar exposição de informações internas da infraestrutura.
+                        </li>
+
                     </ul>
 
                 </section>
 
-                <!-- Link do GitHub -->
-                <div class="github-link">
-
-                    <p>
-                        Confira o código-fonte e acompanhe o projeto no GitHub:
-                    </p>
-
-                    <a
-                        href="https://github.com/DiLeoneLucas/UTI-CTI"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Acessar repositório UTI-CTI
-                    </a>
-
-                </div>
-
             </div>
 
-        </div>
+            <!-- Rodapé do projeto -->
+            <footer class="project-footer">
+
+                <h2>
+                    Repositório do Projeto
+                </h2>
+
+                <p>
+                    Confira o código-fonte e acompanhe o desenvolvimento
+                    do UTI-CTI no GitHub.
+                </p>
+
+                <a
+                    href="https://github.com/DiLeoneLucas/UTI-CTI"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="github-link"
+                >
+                    <strong>
+                        Acessar repositório no GitHub
+                    </strong>
+                </a>
+
+            </footer>
+
+        </main>
 
     </div>
 
@@ -836,4 +1181,5 @@ private $database = 'dbcti_homolog';</code></pre>
     ></script>
 
 </body>
+
 </html>

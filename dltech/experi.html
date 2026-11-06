@@ -1,160 +1,783 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>    
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiências</title>
-    <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Experiências | DL Tech</title>
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="imagens/icones/favicon.ico"
+    >
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
     <style>
+
+        /* CONFIGURAÇÕES GERAIS */
+
         body {
             margin: 0;
             background-color: #084D6E;
             font-family: Arial, sans-serif;
+            min-height: 100vh;
+            color: #fff;
         }
 
-        .content {
-            background-color: rgba(128, 128, 128, 0.7);
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            color: #fff;
-        }
-        .content-2 {
-            
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            color: #fff;
-        }
+        /* MENU DE NAVEGAÇÃO */
 
         .navbar {
             background-color: #033b52;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
         }
 
         .navbar a {
             color: #fff !important;
         }
-        .img-fluid {
-            border-radius: 15px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            
+
+        .navbar-brand {
+            font-weight: bold;
+            letter-spacing: 1px;
         }
-        
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1030;
+
+        .navbar .nav-link {
+            transition: color 0.3s ease;
         }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: #35c5ff !important;
+        }
+
+        /* CONTEÚDO PRINCIPAL */
 
         .content-container {
-            padding-top: 80px; /* Adjust for fixed navbar height */
+            padding-top: 110px;
+            padding-bottom: 40px;
         }
+
+        .content {
+            background-color: rgba(20, 35, 45, 0.88);
+            padding: 35px;
+            margin: 20px auto;
+            border-radius: 15px;
+            color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(53, 197, 255, 0.15);
+        }
+
+        /* CABEÇALHOS DAS SEÇÕES */
+
+        .section-header {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(53, 197, 255, 0.25);
+        }
+
+        .section-header h1 {
+            color: #35c5ff;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: #d6eaf3;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* CARTÕES DE EXPERIÊNCIA */
+
+        .experience-card {
+            background-color: #142d3b;
+            border: 1px solid rgba(53, 197, 255, 0.2);
+            border-radius: 10px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            transition: all 0.25s ease;
+        }
+
+        .experience-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-card:hover {
+            border-color: rgba(53, 197, 255, 0.65);
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .experience-card-header {
+            background-color: #033b52;
+            padding: 18px 22px;
+            border-bottom: 1px solid rgba(53, 197, 255, 0.2);
+        }
+
+        .experience-card-header h2 {
+            color: #35c5ff;
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .experience-card-header h3 {
+            color: #a8e5ff;
+            font-size: 15px;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+
+        .experience-card-body {
+            padding: 22px;
+        }
+
+        /* PERÍODO DA EXPERIÊNCIA */
+
+        .experience-period {
+            display: inline-block;
+            background-color: rgba(53, 197, 255, 0.12);
+            border: 1px solid rgba(53, 197, 255, 0.25);
+            border-radius: 20px;
+            color: #a8e5ff;
+            padding: 7px 13px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .experience-period i {
+            margin-right: 6px;
+        }
+
+        /* DESTAQUE */
+
+        .experience-highlight {
+            background-color: rgba(53, 197, 255, 0.08);
+            border-left: 4px solid #35c5ff;
+            padding: 13px 16px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #d6eaf3;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .experience-highlight i {
+            color: #35c5ff;
+            margin-right: 7px;
+        }
+
+        /* LISTA DE ATIVIDADES */
+
+        .experience-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .experience-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 13px;
+            color: #d6eaf3;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .experience-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-list li::before {
+            content: "\f26a";
+            font-family: "bootstrap-icons";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #35c5ff;
+            font-size: 15px;
+        }
+
+        .experience-list a {
+            color: #35c5ff;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .experience-list a:hover {
+            color: #a8e5ff;
+            text-decoration: underline;
+        }
+
+        /* RODAPÉ */
+
+        .project-footer {
+            text-align: center;
+            color: #d6eaf3;
+            font-size: 13px;
+            padding: 20px 10px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(53, 197, 255, 0.2);
+        }
+
+        .project-footer p {
+            margin-bottom: 5px;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 768px) {
+
+            .content-container {
+                padding-top: 95px;
+            }
+
+            .content {
+                padding: 25px;
+                margin: 15px auto;
+            }
+
+            .section-header h1 {
+                font-size: 27px;
+            }
+
+            .experience-card-header h2 {
+                font-size: 19px;
+            }
+
+            .experience-card-body {
+                padding: 18px;
+            }
+
+        }
+
+        @media (max-width: 576px) {
+
+            .content-container {
+                padding-top: 90px;
+            }
+
+            .content {
+                padding: 22px 18px;
+                margin: 10px auto;
+            }
+
+            .section-header h1 {
+                font-size: 24px;
+            }
+
+            .experience-card-header {
+                padding: 16px;
+            }
+
+            .experience-card-header h2 {
+                font-size: 18px;
+            }
+
+            .experience-card-body {
+                padding: 16px;
+            }
+
+            .experience-list li {
+                font-size: 13px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 <body>
-    <br><br>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+
     <nav class="navbar navbar-expand-lg navbar-dark">
+
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html">DL Tech</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <a
+                class="navbar-brand"
+                href="home.html"
+            >
+                DL Tech
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Abrir menu"
+            >
+
                 <span class="navbar-toggler-icon"></span>
+
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+
+            <div
+                class="collapse navbar-collapse"
+                id="navbarNav"
+            >
+
                 <ul class="navbar-nav">
+
                     <li class="nav-item">
-                        <a class="nav-link active" href="home.html">Home</a>
+
+                        <a
+                            class="nav-link"
+                            href="home.html"
+                        >
+                            Home
+                        </a>
+
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="projetos.html">Projetos</a>
+
+                        <a
+                            class="nav-link"
+                            href="projetos.html"
+                        >
+                            Projetos
+                        </a>
+
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="experi.html">Experiências</a>
+
+                        <a
+                            class="nav-link active"
+                            href="experi.html"
+                            aria-current="page"
+                        >
+                            Experiências
+                        </a>
+
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="cv.html">Currículo</a>
+
+                        <a
+                            class="nav-link"
+                            href="cv.html"
+                        >
+                            Currículo
+                        </a>
+
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Entrar em Contato</a>
+
+                        <a
+                            class="nav-link"
+                            href="contato.html"
+                        >
+                            Entre em Contato
+                        </a>
+
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="ref.html">Referências</a>
+
+                        <a
+                            class="nav-link"
+                            href="ref.html"
+                        >
+                            Referências
+                        </a>
+
                     </li>
+
                 </ul>
+
             </div>
+
         </div>
+
     </nav>
 
-    <div class="container mt-4">
-        <div class="content">
-            <h1>Emprego CLT:</h1>
-            <h4>UniSenac Porto Alegre</h4>
-            <div class="content">
-                <ul class="list-gorup">
-                    <h5>Desde 19 de Setembro de 2022</h5>
-                    <li class="list-gorup-item">Suporte físico para professores, alunos e colaboradores;</li>
-                    <li class="list-gorup-item">Utilização do AD (Active Directory) para realizar reset de senhas para professores, alunos e colaboradores;</li>
-                    <li class="list-gorup-item">Utilização de banco de imagens FOG para formatação de máquinas;</li>
-                    <li clss="list-gorup-item">Suporte físico em geral, arrumando computadores, impressoras e projetores;</li>
-                    <li clss="list-gorup-item">Passagem de cabos de rede para infraestrutura do prédio;</li>
-                    <li clss="list-gorup-item">Criação do sistema <a href="cti.html" style="color: white"><b>CTI</b></a> que auxilia a resolução de problemas que os professores possuem em sala de aula;</li>
-                    <li clss="list-gorup-item">Criação do robô <a href="resbot.html" style="color: white"><b>ResBot</b></a> que reseta senhas de usuários no intune em lote utilizando Python e as blibliotecas do Selenium e Pandas;</li>
-                    <li clss="list-gorup-item">Criação do sistema <a href="forseti.html" style="color: white"><b>ForseTi</b></a> que organiza filas para atendimento físico do setor de vendas;</li>
-                </ul>
-            </div>
-            <h4>SEG Cursos Técnicos</h4>
-            <div class="content">
-                <ul class="list-gorup">
-                    <h5>Desde Setembro de 2024</h5>
-                    <li class="list-gorup-item">Leciono aulas de Linguagem HTML e CSS;</li>
-                    <li class="list-gorup-item">Leciono aulas de programação Web com ênfase em PHP;</li>
-                    <li class="list-gorup-item">Leciono aulas de de Arquitetura de Hardware;</li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
-    <div class="container mt-4">
-        <div class="content">
-            <h1>Estágios</h1>
-            <h4>Câmara de Vereadores de Viamão</h4>
-            <div class="content">
-                <ul class="list-gorup">
-                    <h5>De Maio de 2021 até Setembro de 2022</h5>
-                    <h6>Aprovado em 1º Lugar no concurso para ADS (Analise e Desenvolvimento de Sistema)</h6>
-                    <li class="list-gorup-item">Suporte físico para vereadores e colaboradores;</li>
-                    <li clss="list-gorup-item">Suporte físico em geral, arrumando computadores, impressoras e nobreaks;</li>
-                    <li clss="list-gorup-item">Realização de transmissão das Sessões Extraordinárias da Câmara no Facebook utilizando o OBS;</li>
-                    <li clss="list-gorup-item">Criação do sistema <a href="#.html" style="color: white"><b>HelpDesk CMV</b></a>, um sistema de chamados internos;</li>
-                    <li clss="list-gorup-item">No sistema em questão foi responsável por: Banco de Dados, Back End em PHP e SM (Scrum Master);</li>
-                </ul>
-            </div>
-            <h4>Thema/Polis</h4>
-            <div class="content">
-                <ul class="list-gorup">
-                    <h5>De Dezembro de 2019 até Maio de 2020</h5>
-                    <li class="list-gorup-item">Utilização do Sistema IReport para criação de relatórios e contratos;</li>
-                </ul>
-            </div>
-            <h4>TJRS - Tribunal de Justiça do Estado do Rio Grande do Sul</h4>
-            <div class="content">
-                <ul class="list-gorup">
-                    <h5>De Julho de 2017 até Junho de 2019</h5>
-                    <li class="list-gorup-item">Atualização e criação de páginas HTML no site do TJRS;</li>
-                    <li class="list-gorup-item">Publicação de editais de convocação;</li>
-                    <li clss="list-gorup-item">Implementação da Nova Intranet do TJRS;</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main class="container content-container">
 
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- EXPERIÊNCIAS PROFISSIONAIS -->
+
+        <section class="content">
+
+            <div class="section-header">
+
+                <h1>
+                    <i class="bi bi-briefcase"></i>
+                    Experiências Profissionais
+                </h1>
+
+                <p>
+                    Minha trajetória profissional na área de Tecnologia
+                    da Informação, suporte técnico, desenvolvimento
+                    de sistemas e docência.
+                </p>
+
+            </div>
+
+
+            <!-- UNISENAC -->
+
+            <article class="experience-card">
+
+                <div class="experience-card-header">
+
+                    <h2>
+                        UniSenac Porto Alegre
+                    </h2>
+
+                    <h3>
+                        Emprego CLT
+                    </h3>
+
+                </div>
+
+                <div class="experience-card-body">
+
+                    <span class="experience-period">
+
+                        <i class="bi bi-calendar3"></i>
+
+                        Desde 19 de Setembro de 2022
+
+                    </span>
+
+                    <ul class="experience-list">
+
+                        <li>
+                            Suporte físico para professores, alunos e colaboradores;
+                        </li>
+
+                        <li>
+                            Utilização do AD (Active Directory) para realizar
+                            reset de senhas para professores, alunos e colaboradores;
+                        </li>
+
+                        <li>
+                            Utilização de banco de imagens FOG para formatação de máquinas;
+                        </li>
+
+                        <li>
+                            Suporte físico em geral, arrumando computadores,
+                            impressoras e projetores;
+                        </li>
+
+                        <li>
+                            Passagem de cabos de rede para infraestrutura do prédio;
+                        </li>
+
+                        <li>
+                            Criação do sistema
+                            <a href="cti.html">CTI</a>,
+                            que auxilia a resolução de problemas que os
+                            professores possuem em sala de aula;
+                        </li>
+
+                        <li>
+                            Criação do robô
+                            <a href="resbot.html">ResBot</a>,
+                            que reseta senhas de usuários no Intune em lote
+                            utilizando Python e as bibliotecas do Selenium e Pandas;
+                        </li>
+
+                        <li>
+                            Criação do sistema
+                            <a href="forseti.html">ForseTI</a>,
+                            que organiza filas para atendimento físico
+                            do setor de vendas;
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+            <!-- SEG CURSOS TÉCNICOS -->
+
+            <article class="experience-card">
+
+                <div class="experience-card-header">
+
+                    <h2>
+                        SEG Cursos Técnicos
+                    </h2>
+
+                    <h3>
+                        Docência
+                    </h3>
+
+                </div>
+
+                <div class="experience-card-body">
+
+                    <span class="experience-period">
+
+                        <i class="bi bi-calendar3"></i>
+
+                        Desde Setembro de 2024
+
+                    </span>
+
+                    <ul class="experience-list">
+
+                        <li>
+                            Leciono aulas de Linguagem HTML e CSS;
+                        </li>
+
+                        <li>
+                            Leciono aulas de programação Web com ênfase em PHP;
+                        </li>
+
+                        <li>
+                            Leciono aulas de Arquitetura de Hardware;
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- ESTÁGIOS -->
+
+        <section class="content">
+
+            <div class="section-header">
+
+                <h1>
+                    <i class="bi bi-person-workspace"></i>
+                    Estágios
+                </h1>
+
+                <p>
+                    Experiências anteriores que contribuíram para
+                    minha formação profissional e desenvolvimento
+                    na área de Tecnologia da Informação.
+                </p>
+
+            </div>
+
+
+            <!-- CÂMARA DE VEREADORES -->
+
+            <article class="experience-card">
+
+                <div class="experience-card-header">
+
+                    <h2>
+                        Câmara de Vereadores de Viamão
+                    </h2>
+
+                    <h3>
+                        Estágio - Análise e Desenvolvimento de Sistemas
+                    </h3>
+
+                </div>
+
+                <div class="experience-card-body">
+
+                    <span class="experience-period">
+
+                        <i class="bi bi-calendar3"></i>
+
+                        De Maio de 2021 até Setembro de 2022
+
+                    </span>
+
+                    <div class="experience-highlight">
+
+                        <i class="bi bi-award"></i>
+
+                        Aprovado em 1º Lugar no concurso para ADS
+                        (Análise e Desenvolvimento de Sistema).
+
+                    </div>
+
+                    <ul class="experience-list">
+
+                        <li>
+                            Suporte físico para vereadores e colaboradores;
+                        </li>
+
+                        <li>
+                            Suporte físico em geral, arrumando computadores,
+                            impressoras e nobreaks;
+                        </li>
+
+                        <li>
+                            Realização de transmissão das Sessões Extraordinárias
+                            da Câmara no Facebook utilizando o OBS;
+                        </li>
+
+                        <li>
+                            Criação do sistema
+                            <a href="#.html">HelpDesk CMV</a>,
+                            um sistema de chamados internos;
+                        </li>
+
+                        <li>
+                            No sistema em questão foi responsável por:
+                            Banco de Dados, Back End em PHP e SM (Scrum Master);
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+            <!-- THEMA/POLIS -->
+
+            <article class="experience-card">
+
+                <div class="experience-card-header">
+
+                    <h2>
+                        Thema/Polis
+                    </h2>
+
+                    <h3>
+                        Estágio
+                    </h3>
+
+                </div>
+
+                <div class="experience-card-body">
+
+                    <span class="experience-period">
+
+                        <i class="bi bi-calendar3"></i>
+
+                        De Dezembro de 2019 até Maio de 2020
+
+                    </span>
+
+                    <ul class="experience-list">
+
+                        <li>
+                            Utilização do Sistema IReport para criação
+                            de relatórios e contratos;
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+            <!-- TJRS -->
+
+            <article class="experience-card">
+
+                <div class="experience-card-header">
+
+                    <h2>
+                        TJRS - Tribunal de Justiça do Estado do Rio Grande do Sul
+                    </h2>
+
+                    <h3>
+                        Estágio
+                    </h3>
+
+                </div>
+
+                <div class="experience-card-body">
+
+                    <span class="experience-period">
+
+                        <i class="bi bi-calendar3"></i>
+
+                        De Julho de 2017 até Junho de 2019
+
+                    </span>
+
+                    <ul class="experience-list">
+
+                        <li>
+                            Atualização e criação de páginas HTML no site do TJRS;
+                        </li>
+
+                        <li>
+                            Publicação de editais de convocação;
+                        </li>
+
+                        <li>
+                            Implementação da Nova Intranet do TJRS;
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+
+        <footer class="project-footer">
+
+            <p>
+                DL Tech | Portfólio de projetos e desenvolvimento.
+            </p>
+
+            <p>
+                Tecnologia, desenvolvimento e soluções.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
 </body>
+
 </html>

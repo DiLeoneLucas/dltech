@@ -1,112 +1,482 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>    
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Home | DL Tech</title>
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="imagens/icones/favicon.ico"
+    >
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
     <style>
+
+        /* CONFIGURAÇÕES GERAIS */
+
         body {
             margin: 0;
             background-color: #084D6E;
             font-family: Arial, sans-serif;
+            color: #ffffff;
         }
 
-        .content {
-            background-color: rgba(128, 128, 128, 0.7);
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            color: #fff;
-        }
-        .content-2 {
-            
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            color: #fff;
-        }
+        /* NAVBAR */
 
-        .navbar {
-            background-color: #033b52;
-        }
-
-        .navbar a {
-            color: #fff !important;
-        }
-        .img-fluid {
-            border-radius: 15px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1030;
+            background-color: #033b52;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
         }
+
+        .navbar-brand {
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar a {
+            color: #ffffff !important;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #35c5ff !important;
+        }
+
+        .navbar .nav-link.active {
+            color: #35c5ff !important;
+            font-weight: bold;
+        }
+
+        /* CONTAINER PRINCIPAL */
 
         .content-container {
-            padding-top: 80px; /* Adjust for fixed navbar height */
+            padding-top: 110px;
+            padding-bottom: 40px;
         }
+
+        .content {
+            background-color: rgba(20, 35, 45, 0.88);
+            padding: 35px;
+            margin: 20px 0;
+            border-radius: 15px;
+            color: #ffffff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.20);
+        }
+
+        /* CABEÇALHO */
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .profile-header h1 {
+            color: #35c5ff;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .profile-header h5 {
+            color: #d6eaf3;
+            font-size: 1rem;
+            line-height: 1.9;
+            font-weight: normal;
+        }
+
+        .profile-header a {
+            color: #35c5ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .profile-header a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* FOTO DE PERFIL */
+
+        .profile-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .profile-image {
+            width: 280px;
+            height: 280px;
+            max-width: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            border: 4px solid #35c5ff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        /* APRESENTAÇÃO PROFISSIONAL */
+
+        .presentation {
+            background-color: rgba(3, 59, 82, 0.75);
+            padding: 25px;
+            margin-top: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(53, 197, 255, 0.25);
+        }
+
+        .presentation h2 {
+            color: #35c5ff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(53, 197, 255, 0.3);
+        }
+
+        .presentation ul {
+            padding-left: 22px;
+            margin-bottom: 0;
+        }
+
+        .presentation li {
+            color: #e1eaf0;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: justify;
+            padding-left: 5px;
+        }
+
+        .presentation li::marker {
+            color: #35c5ff;
+        }
+
+        .presentation li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* RODAPÉ */
+
+        .project-footer {
+            text-align: center;
+            color: #d6eaf3;
+            padding: 20px 10px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(53, 197, 255, 0.25);
+            font-size: 0.9rem;
+        }
+
+        .project-footer strong {
+            color: #35c5ff;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 768px) {
+
+            .content-container {
+                padding-top: 90px;
+            }
+
+            .content {
+                padding: 22px;
+                margin: 12px 0;
+            }
+
+            .profile-header h1 {
+                font-size: 1.7rem;
+            }
+
+            .profile-header h5 {
+                font-size: 0.9rem;
+            }
+
+            .profile-image {
+                width: 220px;
+                height: 220px;
+            }
+
+            .presentation {
+                padding: 20px;
+            }
+
+            .presentation h2 {
+                font-size: 1.3rem;
+            }
+
+            .presentation li {
+                text-align: left;
+                font-size: 0.95rem;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+
+            .profile-header h1 {
+                font-size: 1.45rem;
+            }
+
+            .profile-image {
+                width: 190px;
+                height: 190px;
+            }
+
+            .content {
+                padding: 18px;
+            }
+
+            .presentation {
+                padding: 16px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 <body>
-    <br><br>
+
+    <!-- NAVBAR -->
+
     <nav class="navbar navbar-expand-lg navbar-dark">
+
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html">DL Tech</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <a
+                class="navbar-brand"
+                href="home.html"
+            >
+                DL Tech
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Abrir menu de navegação"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+
+            <div
+                class="collapse navbar-collapse"
+                id="navbarNav"
+            >
+
                 <ul class="navbar-nav">
+
                     <li class="nav-item">
-                        <a class="nav-link active" href="home.html">Home</a>
+                        <a
+                            class="nav-link active"
+                            href="home.html"
+                        >
+                            Home
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="projetos.html">Projetos</a>
+                        <a
+                            class="nav-link"
+                            href="projetos.html"
+                        >
+                            Projetos
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="experi.html">Experiências</a>
+                        <a
+                            class="nav-link"
+                            href="experi.html"
+                        >
+                            Experiências
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="cv.html">Currículo</a>
+                        <a
+                            class="nav-link"
+                            href="cv.html"
+                        >
+                            Currículo
+                        </a>
                     </li>
-                                        <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Entrar em Contato</a>
-                    </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="ref.html">Referências</a>
+                        <a
+                            class="nav-link"
+                            href="contato.html"
+                        >
+                            Entrar em Contato
+                        </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="ref.html"
+                        >
+                            Referências
+                        </a>
+                    </li>
+
                 </ul>
+
             </div>
+
         </div>
+
     </nav>
 
-    <div class="container mt-4">
-        <div class="content">
-            <h1>Lucas Fernandes Di Leone</h1>
-            <h5>Viamópolis - Viamão - RS | <b>Celular:</b> (51) 9 9455-6329<br><b>E-mail:</b> <a style="color: white;" target="_blank" href="mailto: dileonelucas@outlook.com">dileonelucas@outlook.com</a> | <b>LinkedIn: </b> <a style="color: white;" target="_blank" href="https://www.linkedin.com/in/lucas-fernandes-di-leone/">Lucas Fernandes Di Leone no LinkedIn</a></h5>
-            <div class="content-2">
-            <img src="imagens/Foto.jpg" alt="Foto de Perfil" class="img-fluid mt-4">
-            </div>
-            <div class="content">
-                <ul class="list-gorup">
-                    <li class="list-gorup-item">Profissional com sólida experiência na área de TI, desenvolvimento web e suporte técnico, com foco em soluções personalizadas; atuou em projetos estratégicos no Tribunal de Justiça do RS e na Câmara Municipal de Vereadores de Viamão, desenvolvendo e implementando sistemas, além de prestar suporte técnico a usuários.</li>
-                    <li class="list-gorup-item">Possui 7 anos de experiência em metodologias ágeis, banco de dados e desenvolvimento Full Stack; habilidades em ferramentas como WordPress, Scrum Master e Linguagens de Programação.</li>
-                    <li class="list-gorup-item">Profissional com expertise em Front-end, Back-end e banco de dados e suporte técnico em ambientes Windows e Linux, desenvolvendo soluções personalizadas para atender às necessidades dos professores e colaboradores.</li>
-                    <li clss="list-gorup-item">Leciona aulas de Linguagem de Programação Web, com ênfase em PHP, e HTML5, CSS e Bootstrap.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <!-- CONTEÚDO PRINCIPAL -->
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <main class="container content-container">
+
+        <section class="content">
+
+            <!-- IDENTIFICAÇÃO -->
+
+            <header class="profile-header">
+
+                <h1>
+                    Lucas Fernandes Di Leone
+                </h1>
+
+                <h5>
+
+                    Viamópolis - Viamão - RS
+
+                    <br>
+
+                    <strong>Celular:</strong>
+                    (51) 9 9455-6329
+
+                    <br>
+
+                    <strong>E-mail:</strong>
+
+                    <a
+                        href="mailto:dileonelucas@outlook.com"
+                        target="_blank"
+                    >
+                        dileonelucas@outlook.com
+                    </a>
+
+                    <br>
+
+                    <strong>LinkedIn:</strong>
+
+                    <a
+                        href="https://www.linkedin.com/in/lucas-fernandes-di-leone/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Lucas Fernandes Di Leone no LinkedIn
+                    </a>
+
+                </h5>
+
+            </header>
+
+            <!-- FOTO DE PERFIL -->
+
+            <div class="profile-image-container">
+
+                <img
+                    src="imagens/Foto.jpg"
+                    alt="Foto de perfil de Lucas Fernandes Di Leone"
+                    class="profile-image"
+                >
+
+            </div>
+
+            <!-- APRESENTAÇÃO PROFISSIONAL -->
+
+            <section class="presentation">
+
+                <h2>
+                    Sobre mim
+                </h2>
+
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item bg-transparent text-light border-0">
+                        Profissional com sólida experiência na área de TI,
+                        desenvolvimento web e suporte técnico, com foco em
+                        soluções personalizadas; atuou em projetos estratégicos
+                        no Tribunal de Justiça do RS e na Câmara Municipal de
+                        Vereadores de Viamão, desenvolvendo e implementando
+                        sistemas, além de prestar suporte técnico a usuários.
+                    </li>
+
+                    <li class="list-group-item bg-transparent text-light border-0">
+                        Possui 7 anos de experiência em metodologias ágeis,
+                        banco de dados e desenvolvimento Full Stack; habilidades
+                        em ferramentas como WordPress, Scrum Master e
+                        Linguagens de Programação.
+                    </li>
+
+                    <li class="list-group-item bg-transparent text-light border-0">
+                        Profissional com expertise em Front-end, Back-end e
+                        banco de dados e suporte técnico em ambientes Windows
+                        e Linux, desenvolvendo soluções personalizadas para
+                        atender às necessidades dos professores e colaboradores.
+                    </li>
+
+                    <li class="list-group-item bg-transparent text-light border-0">
+                        Leciona aulas de Linguagem de Programação Web, com
+                        ênfase em PHP, e HTML5, CSS e Bootstrap.
+                    </li>
+
+                </ul>
+
+            </section>
+
+        </section>
+
+        <!-- RODAPÉ -->
+
+        <footer class="project-footer">
+
+            <strong>DL Tech</strong>
+
+            <br>
+
+            Portfólio de projetos e desenvolvimento.
+
+        </footer>
+
+    </main>
+
+    <!-- BOOTSTRAP JS -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
 </body>
+
 </html>

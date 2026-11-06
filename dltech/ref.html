@@ -1,109 +1,713 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>    
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiências</title>
-    <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Referências | DL Tech</title>
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="imagens/icones/favicon.ico"
+    >
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
     <style>
+
+        /* CONFIGURAÇÕES GERAIS */
+
         body {
             margin: 0;
             background-color: #084D6E;
             font-family: Arial, sans-serif;
+            color: #ffffff;
         }
 
-        .content {
-            background-color: rgba(128, 128, 128, 0.7);
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            color: #fff;
-        }
-
-        .navbar {
-            background-color: #033b52;
-        }
-
-        .navbar a {
-            color: #fff !important;
-        }
+        /* NAVBAR */
 
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1030;
+            background-color: #033b52;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
         }
+
+        .navbar-brand {
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar a {
+            color: #ffffff !important;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #35c5ff !important;
+        }
+
+        .navbar .nav-link.active {
+            color: #35c5ff !important;
+            font-weight: bold;
+        }
+
+        /* CONTEÚDO PRINCIPAL */
 
         .content-container {
-            padding-top: 80px; /* Adjust for fixed navbar height */
+            padding-top: 110px;
+            padding-bottom: 40px;
         }
 
-        .img-fluid {
-            max-width: 100px; /* Tamanho da imagem */
-            height: auto; /* Mantém a proporção */
-            border-radius: 15px; /* Bordas arredondadas */
+        .content {
+            background-color: rgba(20, 35, 45, 0.88);
+            padding: 35px;
+            margin: 20px 0;
+            border-radius: 15px;
+            color: #ffffff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.20);
         }
 
-        .d-flex {
-            margin-bottom: 20px; /* Espaçamento entre blocos */
+        /* CABEÇALHO */
+
+        .references-header {
+            text-align: center;
+            margin-bottom: 30px;
         }
+
+        .references-header h1 {
+            color: #35c5ff;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .references-header p {
+            color: #d6eaf3;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* ÁREA DO CARROSSEL */
+
+        .references-container {
+            background-color: rgba(3, 59, 82, 0.65);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(53, 197, 255, 0.25);
+        }
+
+        /* CARD DE REFERÊNCIA */
+
+        .reference-card {
+            background-color: rgba(20, 35, 45, 0.95);
+            border: 1px solid rgba(53, 197, 255, 0.3);
+            border-radius: 15px;
+            padding: 35px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.20);
+        }
+
+        /* FOTO */
+
+        .reference-image-container {
+            flex: 0 0 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .reference-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #35c5ff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* INFORMAÇÕES */
+
+        .reference-info {
+            flex: 1;
+        }
+
+        .reference-info h3 {
+            color: #35c5ff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .reference-info h5 {
+            color: #a8e5ff;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .reference-info p {
+            color: #e1eaf0;
+            line-height: 1.8;
+            font-size: 1rem;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* LINK LINKEDIN */
+
+        .reference-link {
+            display: inline-block;
+            color: #35c5ff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .reference-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* CONTROLES DO CARROSSEL */
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 7%;
+            opacity: 0.9;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #087ca8;
+            border-radius: 50%;
+            padding: 18px;
+            background-size: 55%;
+        }
+
+        .carousel-indicators {
+            position: relative;
+            margin: 25px 0 0;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #35c5ff;
+            border: none;
+            opacity: 0.4;
+            margin: 0 6px;
+        }
+
+        .carousel-indicators .active {
+            opacity: 1;
+        }
+
+        /* RODAPÉ */
+
+        .project-footer {
+            text-align: center;
+            color: #d6eaf3;
+            padding: 20px 10px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(53, 197, 255, 0.25);
+            font-size: 0.9rem;
+        }
+
+        .project-footer strong {
+            color: #35c5ff;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 768px) {
+
+            .content-container {
+                padding-top: 90px;
+            }
+
+            .content {
+                padding: 22px;
+            }
+
+            .references-header h1 {
+                font-size: 1.7rem;
+            }
+
+            .references-header p {
+                font-size: 0.95rem;
+            }
+
+            .references-container {
+                padding: 15px;
+            }
+
+            .reference-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 20px;
+                gap: 20px;
+            }
+
+            .reference-image-container {
+                flex: none;
+            }
+
+            .reference-image {
+                width: 125px;
+                height: 125px;
+            }
+
+            .reference-info h3 {
+                font-size: 1.3rem;
+            }
+
+            .reference-info p {
+                text-align: left;
+                font-size: 0.95rem;
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 10%;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+
+            .content {
+                padding: 16px;
+            }
+
+            .reference-card {
+                padding: 20px 15px;
+            }
+
+            .reference-image {
+                width: 110px;
+                height: 110px;
+            }
+
+            .reference-info h3 {
+                font-size: 1.2rem;
+            }
+
+            .reference-info h5 {
+                font-size: 0.9rem;
+            }
+
+            .reference-info p {
+                font-size: 0.9rem;
+            }
+
+        }
+
     </style>
+
 </head>
+
 <body>
-    <br><br>
+
+    <!-- NAVBAR -->
+
     <nav class="navbar navbar-expand-lg navbar-dark">
+
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html">DL Tech</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <a
+                class="navbar-brand"
+                href="home.html"
+            >
+                DL Tech
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Abrir menu de navegação"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+
+            <div
+                class="collapse navbar-collapse"
+                id="navbarNav"
+            >
+
                 <ul class="navbar-nav">
+
                     <li class="nav-item">
-                        <a class="nav-link active" href="home.html">Home</a>
+                        <a
+                            class="nav-link"
+                            href="home.html"
+                        >
+                            Home
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="projetos.html">Projetos</a>
+                        <a
+                            class="nav-link"
+                            href="projetos.html"
+                        >
+                            Projetos
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="experi.html">Experiências</a>
+                        <a
+                            class="nav-link"
+                            href="experi.html"
+                        >
+                            Experiências
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="cv.html">Currículo</a>
+                        <a
+                            class="nav-link"
+                            href="cv.html"
+                        >
+                            Currículo
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Entrar em Contato</a>
+                        <a
+                            class="nav-link"
+                            href="contato.html"
+                        >
+                            Entrar em Contato
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="ref.html">Referências</a>
+                        <a
+                            class="nav-link active"
+                            href="ref.html"
+                        >
+                            Referências
+                        </a>
                     </li>
+
                 </ul>
+
             </div>
+
         </div>
+
     </nav>
 
-    <div class="container mt-4">
-        <div class="content">
-            <h1>Referências</h1>
-            <div class="content">
-                <div class="d-flex align-items-center">
-                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQGzgIegqsL8tQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1728308513295?e=1779321600&v=beta&t=Q7F21A3-ZfuWcz9HuWIA0MH1PLB2_o4t6qXewrRYL-g" alt="Leonardo" class="img-fluid me-3">
-                    <div>
-                        <h3>Leonardo Antunes</h3>
-                        <h5>Técnico de Informática</h5>
-                        <p>"Trabalhar com o Lucas para mim foi de certo modo libertador, um rapaz muito dedicado e competente, até mais que eu, sempre me lembrando das minhas responsabilidades ou mesmo me acalmando em momentos difíceis, uma pessoa incrível de conversar e que sabe trabalhar em equipe."</p>
-                        <a style="color: white" href="https://www.linkedin.com/in/leonardoag/" target="_blank">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- CONTEÚDO PRINCIPAL -->
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <main class="container content-container">
+
+        <section class="content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="references-header">
+
+                <h1>
+                    Referências Profissionais
+                </h1>
+
+                <p>
+                    Depoimentos e recomendações de pessoas
+                    que fizeram parte da minha trajetória profissional.
+                </p>
+
+            </header>
+
+            <!-- CARROSSEL DE REFERÊNCIAS -->
+
+            <section class="references-container">
+
+                <div
+                    id="referencesCarousel"
+                    class="carousel slide"
+                    data-bs-ride="false"
+                >
+
+                    <div class="carousel-inner">
+
+                        <!-- REFERÊNCIA 1 -->
+
+                        <div class="carousel-item active">
+
+                            <article class="reference-card">
+
+                                <div class="reference-image-container">
+
+                                    <img
+                                        src="https://media.licdn.com/dms/image/v2/D4E03AQGzgIegqsL8tQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1728308513295?e=1795651200&v=beta&t=L3r7fU6fmhqtKgR74xTNuMQLya1sk8J9vZeQ0QV_9jI"
+                                        alt="Leonardo Antunes"
+                                        class="reference-image"
+                                    >
+
+                                </div>
+
+                                <div class="reference-info">
+
+                                    <h3>
+                                        Leonardo Antunes
+                                    </h3>
+
+                                    <h5>
+                                        Técnico de Informática
+                                    </h5>
+
+                                    <p>
+                                        "Trabalhar com o Lucas para mim foi de certo modo libertador, um rapaz muito dedicado e competente, até mais que eu, sempre me lembrando das minhas responsabilidades ou mesmo me acalmando em momentos difíceis, uma pessoa incrível de conversar e que sabe trabalhar em equipe."
+                                    </p>
+
+                                    <a
+                                        class="reference-link"
+                                        href="https://www.linkedin.com/in/leonardoag/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Ver perfil no LinkedIn
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                        <!-- REFERÊNCIA 2 - ESPAÇO RESERVADO -->
+
+                        <!--
+                            Para adicionar uma nova referência:
+
+                            1. Remova os comentários deste bloco.
+                            2. Preencha imagem, nome, cargo e depoimento.
+                            3. Informe o endereço do LinkedIn.
+                            4. Remova o atributo "disabled" do indicador
+                               correspondente, logo abaixo.
+                        -->
+
+                        <!--
+
+                        <div class="carousel-item">
+
+                            <article class="reference-card">
+
+                                <div class="reference-image-container">
+
+                                    <img
+                                        src="imagens/referencias/referencia2.jpg"
+                                        alt="Nome da segunda referência"
+                                        class="reference-image"
+                                    >
+
+                                </div>
+
+                                <div class="reference-info">
+
+                                    <h3>
+                                        Nome da Referência
+                                    </h3>
+
+                                    <h5>
+                                        Cargo / Profissão
+                                    </h5>
+
+                                    <p>
+                                        "Adicione aqui o depoimento
+                                        da segunda referência profissional."
+                                    </p>
+
+                                    <a
+                                        class="reference-link"
+                                        href="https://www.linkedin.com/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Ver perfil no LinkedIn
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                        -->
+
+                        <!-- REFERÊNCIA 3 - ESPAÇO RESERVADO -->
+
+                        <!--
+
+                        <div class="carousel-item">
+
+                            <article class="reference-card">
+
+                                <div class="reference-image-container">
+
+                                    <img
+                                        src="imagens/referencias/referencia3.jpg"
+                                        alt="Nome da terceira referência"
+                                        class="reference-image"
+                                    >
+
+                                </div>
+
+                                <div class="reference-info">
+
+                                    <h3>
+                                        Nome da Referência
+                                    </h3>
+
+                                    <h5>
+                                        Cargo / Profissão
+                                    </h5>
+
+                                    <p>
+                                        "Adicione aqui o depoimento
+                                        da terceira referência profissional."
+                                    </p>
+
+                                    <a
+                                        class="reference-link"
+                                        href="https://www.linkedin.com/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Ver perfil no LinkedIn
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                        -->
+
+                    </div>
+
+                    <!-- SETA ANTERIOR -->
+
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#referencesCarousel"
+                        data-bs-slide="prev"
+                        aria-label="Referência anterior"
+                    >
+
+                        <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                        ></span>
+
+                    </button>
+
+                    <!-- PRÓXIMA REFERÊNCIA -->
+
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#referencesCarousel"
+                        data-bs-slide="next"
+                        aria-label="Próxima referência"
+                    >
+
+                        <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                        ></span>
+
+                    </button>
+
+                    <!-- INDICADORES -->
+
+                    <div class="carousel-indicators">
+
+                        <button
+                            type="button"
+                            data-bs-target="#referencesCarousel"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Referência 1"
+                        ></button>
+
+                        <!-- Indicador da referência 2 -->
+
+                        <!--
+                        <button
+                            type="button"
+                            data-bs-target="#referencesCarousel"
+                            data-bs-slide-to="1"
+                            aria-label="Referência 2"
+                        ></button>
+                        -->
+
+                        <!-- Indicador da referência 3 -->
+
+                        <!--
+                        <button
+                            type="button"
+                            data-bs-target="#referencesCarousel"
+                            data-bs-slide-to="2"
+                            aria-label="Referência 3"
+                        ></button>
+                        -->
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+        <!-- RODAPÉ -->
+
+        <footer class="project-footer">
+
+            <strong>DL Tech</strong>
+
+            <br>
+
+            Portfólio de projetos e desenvolvimento.
+
+        </footer>
+
+    </main>
+
+    <!-- BOOTSTRAP JS -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
 </body>
+
 </html>

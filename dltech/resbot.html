@@ -1,14 +1,16 @@
-
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ResBot</title>
-
     <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
+
+    <title>ReBot | DL Tech</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -17,6 +19,7 @@
     >
 
     <style>
+
         body {
             margin: 0;
             background-color: #084D6E;
@@ -24,59 +27,104 @@
             color: #fff;
         }
 
+        /* NAVBAR */
+
         .navbar {
             background-color: #033b52;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1030;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.25);
         }
 
         .navbar a {
             color: #fff !important;
         }
 
+        .navbar .nav-link:hover {
+            color: #35c5ff !important;
+        }
+
+        /* CONTEÚDO */
+
         .content-container {
-            padding-top: 80px;
+            padding-top: 100px;
+            padding-bottom: 40px;
         }
 
         .content {
-            background-color: rgba(128, 128, 128, 0.7);
-            padding: 25px;
+            background-color: rgba(20, 35, 45, 0.88);
+            padding: 35px;
             margin: 20px;
-            border-radius: 10px;
+            border-radius: 15px;
             color: #fff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
+
+        /* CABEÇALHO DO PROJETO */
 
         .project-header {
             text-align: center;
-            margin-bottom: 30px;
+            padding: 20px 10px 35px;
         }
 
         .project-header h1 {
+            font-size: 2.8rem;
             font-weight: bold;
+            color: #35c5ff;
             margin-bottom: 10px;
         }
 
-        .project-header p {
-            font-size: 1.1rem;
-            color: #f1f1f1;
+        .project-header h2 {
+            font-size: 1.3rem;
+            color: #d6eaf3;
+            font-weight: normal;
+            margin-bottom: 25px;
         }
+
+        .project-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .info-item {
+            background-color: rgba(3, 59, 82, 0.8);
+            border: 1px solid rgba(53, 197, 255, 0.3);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .info-item strong {
+            color: #35c5ff;
+        }
+
+        /* BADGES DE TECNOLOGIAS */
 
         .tech-badges {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 20px 0 30px;
+            margin-top: 20px;
         }
 
         .tech-badges img {
             height: 25px;
         }
 
+        /* CARROSSEL */
+
         .project-carousel {
-            margin-bottom: 35px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            background-color: rgba(3, 59, 82, 0.5);
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 10px;
         }
 
         .carousel-inner video {
@@ -86,123 +134,223 @@
             border-radius: 10px;
         }
 
+        /* DOCUMENTAÇÃO */
+
         .documentation {
-            line-height: 1.7;
-            text-align: left;
+            max-width: 1000px;
+            margin: auto;
         }
 
-        .documentation h2 {
-            color: #8ed8ff;
-            font-size: 1.6rem;
-            font-weight: bold;
+        .documentation-section {
             margin-top: 35px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-            padding-bottom: 8px;
+            padding-top: 20px;
         }
 
-        .documentation h3 {
-            color: #d7efff;
+        .documentation-section h2 {
+            color: #35c5ff;
+            font-size: 1.65rem;
+            font-weight: bold;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(53, 197, 255, 0.4);
+        }
+
+        .documentation-section h3 {
+            color: #a8e5ff;
             font-size: 1.2rem;
             font-weight: bold;
-            margin-top: 22px;
-            margin-bottom: 10px;
-        }
-
-        .documentation p {
+            margin-top: 25px;
             margin-bottom: 15px;
         }
 
-        .documentation ul,
-        .documentation ol {
+        .documentation-section p {
+            color: #e4edf2;
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        /* LISTAS */
+
+        .documentation-section ul,
+        .documentation-section ol {
             padding-left: 25px;
-        }
-
-        .documentation li {
-            margin-bottom: 7px;
-        }
-
-        .documentation a {
-            color: #fff;
-            font-weight: bold;
-        }
-
-        .documentation a:hover {
-            color: #8ed8ff;
-        }
-
-        .table-responsive {
-            margin-top: 15px;
             margin-bottom: 20px;
-            border-radius: 8px;
+        }
+
+        .documentation-section li {
+            color: #e4edf2;
+            line-height: 1.9;
+            padding-left: 5px;
+        }
+
+        .documentation-section li::marker {
+            color: #35c5ff;
+        }
+
+        .documentation-section a {
+            color: #35c5ff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .documentation-section a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* TABELAS */
+
+        .table-container {
+            background-color: rgba(3, 59, 82, 0.5);
+            border-radius: 10px;
             overflow: hidden;
+            margin: 20px 0;
         }
 
-        .documentation table {
-            color: #fff;
+        .table {
             margin-bottom: 0;
+            color: #fff;
         }
 
-        .documentation table th {
+        .table thead th {
             background-color: #033b52;
-            color: #fff;
+            color: #35c5ff;
+            border-color: rgba(255,255,255,0.15);
+            padding: 14px;
         }
 
-        .documentation table td {
-            background-color: rgba(255, 255, 255, 0.08);
-            color: #fff;
+        .table tbody td {
+            background-color: rgba(255,255,255,0.04);
+            color: #e4edf2;
+            border-color: rgba(255,255,255,0.1);
+            padding: 12px 14px;
         }
+
+        /* BLOCOS DE CÓDIGO */
 
         .code-block {
             background-color: #17212b;
-            color: #d8e6f0;
-            padding: 18px;
+            color: #d7e3ee;
             border-radius: 8px;
+            padding: 18px;
             overflow-x: auto;
-            margin: 15px 0 20px;
+            margin: 20px 0;
+            border-left: 4px solid #35c5ff;
+        }
+
+        .code-block pre {
+            margin: 0;
+            white-space: pre;
+            font-family: Consolas, monospace;
             font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         .code-block code {
             color: inherit;
-            white-space: pre;
+            background: none;
+            padding: 0;
+        }
+
+        .documentation-section code {
+            color: #ffe08a;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        /* DESTAQUES */
+
+        .highlight-box {
+            background-color: rgba(3, 59, 82, 0.65);
+            border-left: 4px solid #35c5ff;
+            border-radius: 6px;
+            padding: 18px 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .important-box {
+            background-color: rgba(130, 90, 20, 0.25);
+            border-left: 4px solid #ffc107;
+            border-radius: 6px;
+            padding: 18px 20px;
+            margin: 20px 0;
+        }
+
+        .important-box p {
+            margin-bottom: 0;
+        }
+
+        /* RODAPÉ */
+
+        .project-footer {
+            text-align: center;
+            margin-top: 45px;
+            padding: 30px 15px;
+            border-top: 1px solid rgba(53, 197, 255, 0.3);
+        }
+
+        .project-footer h3 {
+            color: #35c5ff;
+            font-size: 1.3rem;
+            font-weight: bold;
+            line-height: 1.6;
         }
 
         .github-link {
             text-align: center;
-            margin-top: 35px;
-            padding: 20px;
-            background-color: rgba(3, 59, 82, 0.55);
-            border-radius: 8px;
+            margin-top: 25px;
         }
 
         .github-link a {
-            color: #fff;
+            color: #35c5ff;
             font-weight: bold;
             text-decoration: none;
         }
 
         .github-link a:hover {
-            color: #8ed8ff;
+            color: #fff;
             text-decoration: underline;
         }
 
+        /* RESPONSIVIDADE */
+
         @media (max-width: 768px) {
+
             .content {
                 margin: 10px;
-                padding: 15px;
+                padding: 20px 16px;
+            }
+
+            .content-container {
+                padding-top: 90px;
             }
 
             .project-header h1 {
-                font-size: 1.7rem;
+                font-size: 2.2rem;
             }
 
-            .documentation h2 {
-                font-size: 1.35rem;
-            }
-
-            .documentation h3 {
+            .project-header h2 {
                 font-size: 1.1rem;
+            }
+
+            .documentation-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .documentation-section p {
+                text-align: left;
+                font-size: 0.95rem;
+            }
+
+            .info-item {
+                width: 100%;
             }
 
             .carousel-inner video {
@@ -212,13 +360,17 @@
             .tech-badges img {
                 height: 22px;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
-    <!-- Navbar -->
+    <!-- MENU DE NAVEGAÇÃO -->
+
     <nav class="navbar navbar-expand-lg navbar-dark">
 
         <div class="container-fluid">
@@ -236,7 +388,9 @@
                 aria-expanded="false"
                 aria-label="Toggle navigation"
             >
+
                 <span class="navbar-toggler-icon"></span>
+
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -244,65 +398,74 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="home.html">
-                            Home
-                        </a>
+                        <a class="nav-link" href="home.html">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="projetos.html">
-                            Projetos
-                        </a>
+                        <a class="nav-link active" href="projetos.html">Projetos</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="experi.html">
-                            Experiências
-                        </a>
+                        <a class="nav-link" href="experi.html">Experiências</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="cv.html">
-                            Currículo
-                        </a>
+                        <a class="nav-link" href="cv.html">Currículo</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">
-                            Entrar em Contato
-                        </a>
+                        <a class="nav-link" href="contato.html">Entrar em Contato</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="ref.html">
-                            Referências
-                        </a>
+                        <a class="nav-link" href="ref.html">Referências</a>
                     </li>
 
                 </ul>
 
             </div>
+
         </div>
 
     </nav>
 
-    <!-- Conteúdo principal -->
-    <div class="content">
 
-        <div class="container content-container">
+    <!-- CONTEÚDO PRINCIPAL -->
 
-            <!-- Cabeçalho -->
+    <div class="container content-container">
+
+        <div class="content">
+
+            <!-- CABEÇALHO -->
+
             <header class="project-header">
 
-                <h1>
-                    ReBot
-                </h1>
+                <h1>ReBot</h1>
 
-                <p>
+                <h2>
                     Automação de Redefinição de Senhas no Microsoft Intune
-                </p>
+                </h2>
 
-                <!-- Badges das tecnologias -->
+                <div class="project-info">
+
+                    <div class="info-item">
+                        <strong>Versão:</strong> 1.0
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Plataforma:</strong> Windows
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Linguagem:</strong> Python
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Desenvolvimento:</strong> Lucas Fernandes Di Leone
+                    </div>
+
+                </div>
+
                 <div class="tech-badges">
 
                     <img
@@ -334,7 +497,9 @@
 
             </header>
 
-            <!-- Carrossel de vídeos -->
+
+            <!-- CARROSSEL DE VÍDEOS -->
+
             <div
                 id="carouselExampleIndicators"
                 class="carousel slide project-carousel"
@@ -372,12 +537,14 @@
                             muted
                             playsinline
                         >
+
                             <source
                                 src="imagens/videos/res_bot (1).mp4"
                                 type="video/mp4"
                             >
 
                             Seu navegador não suporta vídeo HTML5.
+
                         </video>
 
                     </div>
@@ -391,12 +558,14 @@
                             muted
                             playsinline
                         >
+
                             <source
                                 src="imagens/videos/res_bot (2).mp4"
                                 type="video/mp4"
                             >
 
                             Seu navegador não suporta vídeo HTML5.
+
                         </video>
 
                     </div>
@@ -409,6 +578,7 @@
                     data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev"
                 >
+
                     <span
                         class="carousel-control-prev-icon"
                         aria-hidden="true"
@@ -417,6 +587,7 @@
                     <span class="visually-hidden">
                         Anterior
                     </span>
+
                 </button>
 
                 <button
@@ -425,6 +596,7 @@
                     data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="next"
                 >
+
                     <span
                         class="carousel-control-next-icon"
                         aria-hidden="true"
@@ -433,214 +605,254 @@
                     <span class="visually-hidden">
                         Próximo
                     </span>
+
                 </button>
 
             </div>
 
-            <!-- Documentação -->
+
+            <!-- DOCUMENTAÇÃO -->
+
             <main class="documentation" id="texto">
 
-                <h2>📌 Sobre o projeto</h2>
 
-                <p>
-                    O <strong>ReBot</strong> é uma ferramenta de automação
-                    desenvolvida em Python para agilizar o processo de
-                    redefinição de senhas de usuários em lote no ambiente
-                    Microsoft Intune.
-                </p>
+                <!-- 1. SOBRE O PROJETO -->
 
-                <p>
-                    A solução utiliza a biblioteca <strong>Pandas</strong>
-                    para realizar a leitura e o processamento de uma lista
-                    de usuários disponibilizada em arquivo CSV e o
-                    <strong>Selenium</strong> para automatizar as operações
-                    realizadas no navegador.
-                </p>
+                <section class="documentation-section">
 
-                <p>
-                    O objetivo principal é reduzir o trabalho operacional
-                    repetitivo, aumentar a produtividade da equipe de suporte
-                    técnico e otimizar atividades relacionadas ao
-                    gerenciamento de contas de usuários.
-                </p>
+                    <h2>1. Sobre o projeto</h2>
 
-                <h2>🎯 Objetivos</h2>
+                    <p>
+                        O ReBot é uma ferramenta de automação desenvolvida
+                        em Python para agilizar o processo de redefinição
+                        de senhas de usuários em lote no ambiente
+                        Microsoft Intune.
+                    </p>
 
-                <ul>
-                    <li>
-                        Automatizar a redefinição de senhas em lote.
-                    </li>
+                    <p>
+                        A solução utiliza a biblioteca Pandas para realizar
+                        a leitura e o processamento de listas de usuários
+                        disponibilizadas em arquivos CSV, enquanto o
+                        Selenium automatiza as interações com o navegador
+                        para executar as operações no ambiente administrativo.
+                    </p>
 
-                    <li>
-                        Processar listas de usuários através de arquivos CSV.
-                    </li>
+                    <p>
+                        A aplicação foi desenvolvida para reduzir atividades
+                        operacionais repetitivas, otimizar o atendimento
+                        técnico e aumentar a produtividade da equipe de TI,
+                        oferecendo maior agilidade e padronização aos
+                        procedimentos de gerenciamento de contas.
+                    </p>
 
-                    <li>
-                        Reduzir intervenções manuais nas atividades de suporte.
-                    </li>
+                </section>
 
-                    <li>
-                        Diminuir o tempo necessário para execução de tarefas
-                        repetitivas.
-                    </li>
 
-                    <li>
-                        Aumentar a produtividade da equipe de TI.
-                    </li>
+                <!-- 2. OBJETIVOS -->
 
-                    <li>
-                        Padronizar processos operacionais de atendimento.
-                    </li>
-                </ul>
+                <section class="documentation-section">
 
-                <h2>⚙️ Funcionamento</h2>
+                    <h2>2. Objetivos</h2>
 
-                <p>
-                    O fluxo de funcionamento da ferramenta é dividido em
-                    etapas:
-                </p>
+                    <ul>
 
-                <ol>
+                        <li>Automatizar a redefinição de senhas em lote.</li>
 
-                    <li>
-                        <strong>Inicialização:</strong>
-                        abertura do Google Chrome com depuração remota
-                        habilitada.
-                    </li>
+                        <li>Processar listas de usuários através de arquivos CSV.</li>
 
-                    <li>
-                        <strong>Leitura dos dados:</strong>
-                        utilização do Pandas para carregar os usuários
-                        disponibilizados em CSV.
-                    </li>
+                        <li>Reduzir intervenções manuais nas atividades de suporte.</li>
 
-                    <li>
-                        <strong>Automação:</strong>
-                        utilização do Selenium para interagir com o navegador
+                        <li>Diminuir o tempo necessário para execução de tarefas repetitivas.</li>
+
+                        <li>Aumentar a produtividade da equipe de TI.</li>
+
+                        <li>Padronizar processos operacionais de atendimento.</li>
+
+                    </ul>
+
+                </section>
+
+
+                <!-- 3. FUNCIONAMENTO -->
+
+                <section class="documentation-section">
+
+                    <h2>3. Funcionamento</h2>
+
+                    <p>
+                        O fluxo de funcionamento da ferramenta é dividido
+                        em etapas:
+                    </p>
+
+                    <h3>3.1 Inicialização</h3>
+
+                    <p>
+                        Abertura do Google Chrome com depuração remota
+                        habilitada para permitir a comunicação com o
+                        Selenium.
+                    </p>
+
+                    <h3>3.2 Leitura dos dados</h3>
+
+                    <p>
+                        Utilização do Pandas para carregar e processar
+                        a relação de usuários disponibilizada em arquivo CSV.
+                    </p>
+
+                    <h3>3.3 Automação</h3>
+
+                    <p>
+                        Utilização do Selenium para interagir com o navegador
                         e executar as operações no Microsoft Intune.
-                    </li>
+                    </p>
 
-                    <li>
-                        <strong>Processamento em lote:</strong>
-                        execução sequencial das redefinições de senha dos
-                        usuários selecionados.
-                    </li>
+                    <h3>3.4 Processamento em lote</h3>
 
-                </ol>
+                    <p>
+                        Execução sequencial das redefinições de senha
+                        dos usuários selecionados.
+                    </p>
 
-                <h2>📊 Resultados</h2>
+                </section>
 
-                <p>
-                    De acordo com os resultados obtidos no ambiente de
-                    utilização, a ferramenta apresenta capacidade de
-                    processamento de aproximadamente:
-                </p>
 
-                <div class="table-responsive">
+                <!-- 4. RESULTADOS -->
 
-                    <table class="table table-bordered align-middle">
+                <section class="documentation-section">
 
-                        <thead>
-                            <tr>
-                                <th>Indicador</th>
-                                <th>Resultado</th>
-                            </tr>
-                        </thead>
+                    <h2>4. Resultados</h2>
 
-                        <tbody>
+                    <p>
+                        De acordo com os resultados obtidos no ambiente
+                        de utilização, a ferramenta apresenta capacidade
+                        de processamento de aproximadamente:
+                    </p>
 
-                            <tr>
-                                <td>Redefinições de senha</td>
-                                <td>240</td>
-                            </tr>
+                    <div class="table-container table-responsive">
 
-                            <tr>
-                                <td>Tempo estimado</td>
-                                <td>1 hora</td>
-                            </tr>
+                        <table class="table">
 
-                            <tr>
-                                <td>Média de processamento</td>
-                                <td>4 usuários por minuto</td>
-                            </tr>
+                            <thead>
 
-                        </tbody>
+                                <tr>
+                                    <th>Indicador</th>
+                                    <th>Resultado</th>
+                                </tr>
 
-                    </table>
+                            </thead>
 
-                </div>
+                            <tbody>
 
-                <p>
-                    A produtividade pode variar conforme a conexão,
-                    o desempenho do ambiente e o tempo de resposta
-                    do Microsoft Intune.
-                </p>
+                                <tr>
+                                    <td>Redefinições de senha</td>
+                                    <td>240</td>
+                                </tr>
 
-                <h2>🛠️ Tecnologias utilizadas</h2>
+                                <tr>
+                                    <td>Tempo estimado</td>
+                                    <td>1 hora</td>
+                                </tr>
 
-                <div class="table-responsive">
+                                <tr>
+                                    <td>Média de processamento</td>
+                                    <td>4 usuários por minuto</td>
+                                </tr>
 
-                    <table class="table table-bordered align-middle">
+                            </tbody>
 
-                        <thead>
-                            <tr>
-                                <th>Tecnologia</th>
-                                <th>Aplicação</th>
-                            </tr>
-                        </thead>
+                        </table>
 
-                        <tbody>
+                    </div>
 
-                            <tr>
-                                <td>Python</td>
-                                <td>
-                                    Linguagem principal da automação.
-                                </td>
-                            </tr>
+                    <p>
+                        A produtividade pode variar conforme a conexão,
+                        o desempenho do ambiente e o tempo de resposta
+                        do Microsoft Intune.
+                    </p>
 
-                            <tr>
-                                <td>Pandas</td>
-                                <td>
-                                    Leitura e processamento dos arquivos CSV.
-                                </td>
-                            </tr>
+                    <div class="important-box">
 
-                            <tr>
-                                <td>Selenium</td>
-                                <td>
-                                    Automação das interações com o navegador.
-                                </td>
-                            </tr>
+                        <p>
+                            <strong>Importante:</strong> os resultados
+                            apresentados são estimativas obtidas no
+                            ambiente de utilização e podem variar
+                            conforme as condições de execução.
+                        </p>
 
-                            <tr>
-                                <td>Google Chrome</td>
-                                <td>
-                                    Navegador utilizado na execução da automação.
-                                </td>
-                            </tr>
+                    </div>
 
-                            <tr>
-                                <td>Microsoft Intune</td>
-                                <td>
-                                    Ambiente de gerenciamento de usuários e
-                                    redefinição de senhas.
-                                </td>
-                            </tr>
+                </section>
 
-                        </tbody>
 
-                    </table>
+                <!-- 5. TECNOLOGIAS -->
 
-                </div>
+                <section class="documentation-section">
 
-                <h2>📂 Estrutura do repositório</h2>
+                    <h2>5. Tecnologias utilizadas</h2>
 
-                <p>
-                    Abaixo está uma representação resumida da organização
-                    dos arquivos do projeto.
-                </p>
+                    <div class="table-container table-responsive">
 
-                <pre class="code-block"><code>ReBot/
+                        <table class="table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Tecnologia</th>
+                                    <th>Aplicação</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Python</td>
+                                    <td>Linguagem principal da automação.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Pandas</td>
+                                    <td>Leitura e processamento dos arquivos CSV.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Selenium</td>
+                                    <td>Automação das interações com o navegador.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Google Chrome</td>
+                                    <td>Navegador utilizado na execução da automação.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Microsoft Intune</td>
+                                    <td>Ambiente de gerenciamento de usuários e redefinição de senhas.</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+                <!-- 6. ESTRUTURA DO REPOSITÓRIO -->
+
+                <section class="documentation-section">
+
+                    <h2>6. Estrutura do repositório</h2>
+
+                    <p>
+                        Abaixo está uma representação resumida da organização
+                        dos arquivos do projeto.
+                    </p>
+
+                    <div class="code-block">
+
+<pre><code>ReBot/
 │
 ├── Scripts/
 │   └── Scripts de automação Python
@@ -649,132 +861,148 @@
 │
 └── .gitignore</code></pre>
 
-                <h2>🚀 Pré-requisitos</h2>
+                    </div>
 
-                <p>
-                    Para executar o projeto, é necessário:
-                </p>
+                </section>
 
-                <ul>
 
-                    <li>Windows.</li>
+                <!-- 7. PRÉ-REQUISITOS -->
 
-                    <li>Python instalado.</li>
+                <section class="documentation-section">
 
-                    <li>Google Chrome instalado.</li>
-
-                    <li>Bibliotecas Pandas e Selenium.</li>
-
-                    <li>
-                        Acesso autorizado ao ambiente Microsoft Intune.
-                    </li>
-
-                    <li>
-                        Permissões necessárias para realizar a redefinição
-                        de senhas.
-                    </li>
-
-                </ul>
-
-                <h2>▶️ Inicialização</h2>
-
-                <p>
-                    O repositório disponibiliza o arquivo
-                    <strong>Abre chrome.bat</strong>, utilizado para iniciar
-                    o Google Chrome com a porta de depuração remota
-                    <strong>9222</strong>.
-                </p>
-
-                <p>
-                    O comando utilizado para inicializar o navegador é:
-                </p>
-
-                <pre class="code-block"><code>@echo off
-start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222</code></pre>
-
-                <p>
-                    Para iniciar:
-                </p>
-
-                <ol>
-
-                    <li>
-                        Abra o diretório do projeto.
-                    </li>
-
-                    <li>
-                        Execute <strong>Abre chrome.bat</strong>.
-                    </li>
-
-                    <li>
-                        Aguarde a inicialização do navegador.
-                    </li>
-
-                    <li>
-                        Execute os scripts Python conforme a configuração
-                        do ambiente.
-                    </li>
-
-                </ol>
-
-                <h2>🔐 Segurança</h2>
-
-                <p>
-                    Como a ferramenta realiza operações administrativas
-                    relacionadas a contas de usuários, alguns cuidados
-                    são fundamentais:
-                </p>
-
-                <ul>
-
-                    <li>
-                        Utilizar exclusivamente em ambientes autorizados.
-                    </li>
-
-                    <li>
-                        Proteger os arquivos CSV utilizados no processamento.
-                    </li>
-
-                    <li>
-                        Não armazenar senhas ou credenciais diretamente
-                        no código.
-                    </li>
-
-                    <li>
-                        Não compartilhar informações pessoais dos usuários.
-                    </li>
-
-                    <li>
-                        Restringir o acesso aos arquivos e ao ambiente
-                        de execução.
-                    </li>
-
-                    <li>
-                        Garantir que as operações sejam realizadas por
-                        profissionais autorizados.
-                    </li>
-
-                </ul>
-
-                <!-- Link do GitHub -->
-                <div class="github-link">
-
-                    <h3>💻 Acesse o repositório</h3>
+                    <h2>7. Pré-requisitos</h2>
 
                     <p>
-                        Confira o código-fonte e os arquivos do projeto
-                        no GitHub.
+                        Para executar o projeto, é necessário:
                     </p>
 
-                    <a
-                        href="https://github.com/DiLeoneLucas/ReBot"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Visualizar projeto no GitHub
-                    </a>
+                    <ul>
 
-                </div>
+                        <li>Windows.</li>
+
+                        <li>Python instalado.</li>
+
+                        <li>Google Chrome instalado.</li>
+
+                        <li>Bibliotecas Pandas e Selenium.</li>
+
+                        <li>Acesso autorizado ao ambiente Microsoft Intune.</li>
+
+                        <li>Permissões necessárias para realizar a redefinição de senhas.</li>
+
+                    </ul>
+
+                </section>
+
+
+                <!-- 8. INICIALIZAÇÃO -->
+
+                <section class="documentation-section">
+
+                    <h2>8. Inicialização</h2>
+
+                    <p>
+                        O repositório disponibiliza o arquivo
+                        <strong>Abre chrome.bat</strong>, utilizado para
+                        iniciar o Google Chrome com a porta de depuração
+                        remota 9222.
+                    </p>
+
+                    <h3>8.1 Comando de inicialização</h3>
+
+                    <div class="code-block">
+
+<pre><code>@echo off
+start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222</code></pre>
+
+                    </div>
+
+                    <h3>8.2 Etapas para execução</h3>
+
+                    <ol>
+
+                        <li>Abra o diretório do projeto.</li>
+
+                        <li>Execute o arquivo <strong>Abre chrome.bat</strong>.</li>
+
+                        <li>Aguarde a inicialização do navegador.</li>
+
+                        <li>Execute os scripts Python conforme a configuração do ambiente.</li>
+
+                    </ol>
+
+                </section>
+
+
+                <!-- 9. SEGURANÇA -->
+
+                <section class="documentation-section">
+
+                    <h2>9. Segurança</h2>
+
+                    <p>
+                        Como a ferramenta realiza operações administrativas
+                        relacionadas a contas de usuários, alguns cuidados
+                        são fundamentais:
+                    </p>
+
+                    <ul>
+
+                        <li>Utilizar exclusivamente em ambientes autorizados.</li>
+
+                        <li>Proteger os arquivos CSV utilizados no processamento.</li>
+
+                        <li>Não armazenar senhas ou credenciais diretamente no código.</li>
+
+                        <li>Não compartilhar informações pessoais dos usuários.</li>
+
+                        <li>Restringir o acesso aos arquivos e ao ambiente de execução.</li>
+
+                        <li>Garantir que as operações sejam realizadas por profissionais autorizados.</li>
+
+                    </ul>
+
+                    <div class="important-box">
+
+                        <p>
+                            <strong>Recomendação:</strong> a automação deve
+                            ser executada somente por profissionais com
+                            autorização administrativa, respeitando as
+                            políticas internas de segurança e proteção
+                            de dados da organização.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- RODAPÉ -->
+
+                <footer class="project-footer">
+
+                    <h3>
+                        ReBot — Automatize processos.<br>
+                        Reduza tarefas repetitivas. Ganhe produtividade.
+                    </h3>
+
+                    <div class="github-link">
+
+                        <p>
+                            O código-fonte do projeto pode ser acessado pelo GitHub:
+                        </p>
+
+                        <a
+                            href="https://github.com/DiLeoneLucas/ReBot"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Acessar repositório ReBot
+                        </a>
+
+                    </div>
+
+                </footer>
 
             </main>
 
@@ -782,8 +1010,14 @@ start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugg
 
     </div>
 
+
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
 </body>
+
 </html>
+```
