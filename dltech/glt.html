@@ -1,0 +1,1254 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
+
+    <title>GLT | DL Tech</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        body {
+            margin: 0;
+            background-color: #084D6E;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background-color: #033b52;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+        }
+
+        .navbar a {
+            color: #fff !important;
+        }
+
+        .navbar .nav-link:hover {
+            color: #35c5ff !important;
+        }
+
+        /* CONTEÚDO */
+
+        .content-container {
+            padding-top: 100px;
+            padding-bottom: 40px;
+        }
+
+        .content {
+            background-color: rgba(20, 35, 45, 0.88);
+            padding: 35px;
+            margin: 20px;
+            border-radius: 15px;
+            color: #fff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        /* CABEÇALHO DO PROJETO */
+
+        .project-header {
+            text-align: center;
+            padding: 20px 10px 35px;
+        }
+
+        .project-header h1 {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #35c5ff;
+            margin-bottom: 10px;
+        }
+
+        .project-header h2 {
+            font-size: 1.3rem;
+            color: #d6eaf3;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+
+        .project-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .info-item {
+            background-color: rgba(3, 59, 82, 0.8);
+            border: 1px solid rgba(53, 197, 255, 0.3);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .info-item strong {
+            color: #35c5ff;
+        }
+
+        /* CARROSSEL */
+
+        .project-carousel {
+            max-width: 950px;
+            margin: 0 auto 35px;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 15px;
+        }
+
+        /* SEÇÕES */
+
+        .documentation-section {
+            margin-top: 35px;
+            padding-top: 20px;
+        }
+
+        .documentation-section h2 {
+            color: #35c5ff;
+            font-size: 1.65rem;
+            font-weight: bold;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(53, 197, 255, 0.4);
+        }
+
+        .documentation-section h3 {
+            color: #a8e5ff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .documentation-section p {
+            color: #e4edf2;
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        /* LISTAS */
+
+        .documentation-section ul {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .documentation-section li {
+            color: #e4edf2;
+            line-height: 1.9;
+            padding-left: 5px;
+        }
+
+        .documentation-section li::marker {
+            color: #35c5ff;
+        }
+
+        /* TABELAS */
+
+        .table-container {
+            background-color: rgba(3, 59, 82, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .table {
+            margin-bottom: 0;
+            color: #fff;
+        }
+
+        .table thead th {
+            background-color: #033b52;
+            color: #35c5ff;
+            border-color: rgba(255,255,255,0.15);
+            padding: 14px;
+        }
+
+        .table tbody td {
+            background-color: rgba(255,255,255,0.04);
+            color: #e4edf2;
+            border-color: rgba(255,255,255,0.1);
+            padding: 12px 14px;
+        }
+
+        /* DESTAQUES */
+
+        .highlight-box {
+            background-color: rgba(3, 59, 82, 0.65);
+            border-left: 4px solid #35c5ff;
+            border-radius: 6px;
+            padding: 18px 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .important-box {
+            background-color: rgba(130, 90, 20, 0.25);
+            border-left: 4px solid #ffc107;
+            border-radius: 6px;
+            padding: 18px 20px;
+            margin: 20px 0;
+        }
+
+        .important-box p {
+            margin-bottom: 0;
+        }
+
+        /* ETAPAS */
+
+        .stage-box {
+            background-color: rgba(3, 59, 82, 0.55);
+            border: 1px solid rgba(53, 197, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .stage-box h3 {
+            color: #35c5ff;
+            margin-top: 0;
+        }
+
+        .stage-box ul {
+            margin-bottom: 0;
+        }
+
+        /* BLOCO DE CÓDIGO */
+
+        .code-block {
+            background-color: #172b38;
+            border: 1px solid rgba(53, 197, 255, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            color: #d6eaf3;
+            margin: 0;
+            white-space: pre;
+            font-size: 0.9rem;
+        }
+
+        /* RODAPÉ */
+
+        .project-footer {
+            text-align: center;
+            margin-top: 45px;
+            padding: 30px 15px;
+            border-top: 1px solid rgba(53, 197, 255, 0.3);
+        }
+
+        .project-footer h3 {
+            color: #35c5ff;
+            font-size: 1.3rem;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        .github-link {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .github-link a {
+            color: #35c5ff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .github-link a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 768px) {
+
+            .content {
+                margin: 10px;
+                padding: 20px 16px;
+            }
+
+            .content-container {
+                padding-top: 90px;
+            }
+
+            .project-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .project-header h2 {
+                font-size: 1.1rem;
+            }
+
+            .documentation-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .documentation-section p {
+                text-align: left;
+                font-size: 0.95rem;
+            }
+
+            .info-item {
+                width: 100%;
+            }
+
+            .carousel-inner img {
+                max-height: 280px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="home.html">
+                DL Tech
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="projetos.html">Projetos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="experi.html">Experiências</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv.html">Currículo</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Entrar em Contato</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="ref.html">Referências</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <div class="container content-container">
+
+        <div class="content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="project-header">
+
+                <h1>GLT</h1>
+
+                <h2>
+                    Goal Line Technology — Análise Geométrica de Contato entre Bola e Linha
+                </h2>
+
+                <div class="project-info">
+
+                    <div class="info-item">
+                        <strong>Versão:</strong> Android
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Plataforma:</strong> Android
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Projeto:</strong> GLT
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Desenvolvimento:</strong> Lucas Fernandes Di Leone
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CARROSSEL -->
+
+            <div
+                id="carouselExampleIndicators"
+                class="carousel slide project-carousel mb-4"
+                data-bs-ride="carousel"
+            >
+
+                <div class="carousel-indicators">
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="Slide 1"
+                    ></button>
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="1"
+                        aria-label="Slide 2"
+                    ></button>
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="2"
+                        aria-label="Slide 3"
+                    ></button>
+                                        <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="3"
+                        aria-label="Slide 4"
+                    ></button>
+
+                </div>
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img
+                            src="imagens/glt (1).jpeg"
+                            class="d-block w-100"
+                            alt="Tela do aplicativo GLT - imagem 1"
+                        >
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                            src="imagens/glt (2).jpeg"
+                            class="d-block w-100"
+                            alt="Tela do aplicativo GLT - imagem 2"
+                        >
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                            src="imagens/glt (3).jpeg"
+                            class="d-block w-100"
+                            alt="Tela do aplicativo GLT - imagem 3"
+                        >
+                    </div>
+                                        <div class="carousel-item">
+                        <img
+                            src="imagens/glt (4).jpeg"
+                            class="d-block w-100"
+                            alt="Tela do aplicativo GLT - imagem 4"
+                        >
+                    </div>
+
+                </div>
+
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev"
+                >
+
+                    <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span class="visually-hidden">
+                        Anterior
+                    </span>
+
+                </button>
+
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next"
+                >
+
+                    <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span class="visually-hidden">
+                        Próximo
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- DOCUMENTAÇÃO -->
+
+            <div id="texto">
+
+                <!-- 1. SOBRE O PROJETO -->
+
+                <section class="documentation-section">
+
+                    <h2>1. Sobre o projeto</h2>
+
+                    <p>
+                        O <strong>GLT (Goal Line Technology)</strong> é um
+                        aplicativo Android desenvolvido para auxiliar na análise
+                        visual e geométrica de situações de contato entre uma
+                        bola e uma linha de referência.
+                    </p>
+
+                    <p>
+                        O aplicativo utiliza a câmera do dispositivo para exibir
+                        a situação analisada e permite que o usuário posicione
+                        manualmente elementos geométricos sobre a imagem,
+                        ajustando dimensões, ângulos e posições para realizar
+                        a verificação.
+                    </p>
+
+                    <p>
+                        A proposta é oferecer uma ferramenta de análise visual
+                        com controle manual, simplicidade de utilização e
+                        flexibilidade para diferentes perspectivas de câmera.
+                    </p>
+
+                </section>
+
+
+                <!-- 2. OBJETIVOS -->
+
+                <section class="documentation-section">
+
+                    <h2>2. Objetivos</h2>
+
+                    <ul>
+
+                        <li>
+                            Facilitar a análise de contato entre bola e linha.
+                        </li>
+
+                        <li>
+                            Permitir ajustes geométricos manuais.
+                        </li>
+
+                        <li>
+                            Simular visualmente recursos de análise inspirados no VAR.
+                        </li>
+
+                        <li>
+                            Oferecer uma interface simples e intuitiva.
+                        </li>
+
+                        <li>
+                            Permitir a utilização da câmera do smartphone durante toda a análise.
+                        </li>
+
+                    </ul>
+
+                </section>
+
+
+                <!-- 3. FUNCIONALIDADES -->
+
+                <section class="documentation-section">
+
+                    <h2>3. Funcionalidades</h2>
+
+                    <h3>3.1. Câmera</h3>
+
+                    <ul>
+
+                        <li>
+                            Utilização da câmera do dispositivo Android.
+                        </li>
+
+                        <li>
+                            Priorização da melhor qualidade de câmera disponível.
+                        </li>
+
+                        <li>
+                            Controle para ativar e desativar o flash.
+                        </li>
+
+                        <li>
+                            Visualização da imagem durante os ajustes.
+                        </li>
+
+                    </ul>
+
+
+                    <h3>3.2. Marcação geométrica</h3>
+
+                    <ul>
+
+                        <li>
+                            Seleção manual da linha de referência.
+                        </li>
+
+                        <li>
+                            Marcação manual dos dois elementos utilizados na análise.
+                        </li>
+
+                        <li>
+                            Posicionamento independente dos elementos na imagem.
+                        </li>
+
+                        <li>
+                            Movimentação livre dos elementos.
+                        </li>
+
+                    </ul>
+
+
+                    <h3>3.3. Ajustes de diâmetro e formato</h3>
+
+                    <ul>
+
+                        <li>
+                            Inserção manual do diâmetro em milímetros.
+                        </li>
+
+                        <li>
+                            Ajuste de diâmetro por controle circular (dial).
+                        </li>
+
+                        <li>
+                            Possibilidade de utilizar formato oval.
+                        </li>
+
+                        <li>
+                            Ajuste do ângulo de inclinação.
+                        </li>
+
+                        <li>
+                            Adaptação geométrica para diferentes perspectivas da câmera.
+                        </li>
+
+                    </ul>
+
+
+                    <h3>3.4. Travamento geométrico</h3>
+
+                    <p>
+                        O recurso <strong>Travar Diâmetro</strong> permite
+                        bloquear as configurações geométricas dos elementos.
+                    </p>
+
+                    <div class="highlight-box">
+
+                        <p>
+                            <strong>Com o travamento ativado:</strong>
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                O diâmetro não pode ser alterado.
+                            </li>
+
+                            <li>
+                                O ângulo não pode ser alterado.
+                            </li>
+
+                            <li>
+                                O formato não pode ser editado.
+                            </li>
+
+                            <li>
+                                A movimentação dos elementos continua permitida.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <h3>3.5. Interface</h3>
+
+                    <ul>
+
+                        <li>
+                            Tela inicial com identidade visual própria.
+                        </li>
+
+                        <li>
+                            Mensagem de abertura: <strong>"Chama o VAR"</strong>.
+                        </li>
+
+                        <li>
+                            Painel de configurações deslizante na parte inferior.
+                        </li>
+
+                        <li>
+                            Área de configurações com rolagem.
+                        </li>
+
+                        <li>
+                            Preservação da visualização da câmera durante os ajustes.
+                        </li>
+
+                        <li>
+                            Botão de ação: <strong>"Verificar Falta"</strong>.
+                        </li>
+
+                    </ul>
+
+                </section>
+
+
+                <!-- 4. FILOSOFIA DO PROJETO -->
+
+                <section class="documentation-section">
+
+                    <h2>4. Filosofia do projeto</h2>
+
+                    <p>
+                        O GLT utiliza uma abordagem de
+                        <strong>análise manual assistida</strong>.
+                    </p>
+
+                    <p>
+                        O reconhecimento automático por inteligência artificial
+                        foi retirado da proposta devido às inconsistências
+                        encontradas na identificação da bola e da linha.
+                    </p>
+
+                    <p>
+                        A prioridade do desenvolvimento é garantir:
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Precisão nos ajustes manuais.
+                        </li>
+
+                        <li>
+                            Controle geométrico dos elementos.
+                        </li>
+
+                        <li>
+                            Estabilidade da interface.
+                        </li>
+
+                        <li>
+                            Facilidade de utilização.
+                        </li>
+
+                        <li>
+                            Previsibilidade no comportamento dos controles.
+                        </li>
+
+                    </ul>
+
+                    <div class="important-box">
+
+                        <p>
+                            <strong>Diretriz de desenvolvimento:</strong>
+                            o reconhecimento automático por IA não deve ser
+                            reintroduzido. O foco do GLT permanece nos ajustes
+                            geométricos realizados manualmente pelo usuário.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- 5. TECNOLOGIAS -->
+
+                <section class="documentation-section">
+
+                    <h2>5. Tecnologias e ferramentas</h2>
+
+                    <div class="table-container table-responsive">
+
+                        <table class="table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Tecnologia</th>
+                                    <th>Utilização</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Android</td>
+                                    <td>Plataforma do aplicativo.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Java 17</td>
+                                    <td>Ambiente de desenvolvimento.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Gradle 8.9</td>
+                                    <td>Sistema de compilação.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Android SDK 35</td>
+                                    <td>Ferramentas e APIs Android.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Android Build Tools 35.0.0</td>
+                                    <td>Compilação do aplicativo.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>GitHub</td>
+                                    <td>Controle de versão e armazenamento.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>GitHub Actions</td>
+                                    <td>Automação da compilação do APK.</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+                <!-- 6. ESTRUTURA DO PROJETO -->
+
+                <section class="documentation-section">
+
+                    <h2>6. Estrutura do projeto</h2>
+
+                    <p>
+                        O projeto Android está organizado no diretório:
+                    </p>
+
+                    <div class="code-block">
+
+                        <pre><code>GLT/
+│
+├── .github/
+│   └── workflows/
+│       └── android.yml
+│
+├── VerificadorContato/
+│   ├── app/
+│   ├── gradle/
+│   ├── build.gradle
+│   ├── settings.gradle
+│   └── ...
+│
+└── README.md</code></pre>
+
+                    </div>
+
+                    <p>
+                        <em>
+                            Observação: a estrutura interna pode variar conforme
+                            a evolução das versões.
+                        </em>
+                    </p>
+
+                </section>
+
+
+                <!-- 7. COMPILAÇÃO -->
+
+                <section class="documentation-section">
+
+                    <h2>7. Compilação do aplicativo</h2>
+
+                    <p>
+                        O projeto utiliza o <strong>GitHub Actions</strong>
+                        para automatizar a geração do APK, dispensando a
+                        necessidade de instalar o Android Studio na máquina
+                        utilizada para o desenvolvimento.
+                    </p>
+
+                    <h3>7.1. Configuração do ambiente</h3>
+
+                    <div class="table-container table-responsive">
+
+                        <table class="table">
+
+                            <thead>
+                                <tr>
+                                    <th>Componente</th>
+                                    <th>Versão</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Java</td>
+                                    <td>17</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Gradle</td>
+                                    <td>8.9</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Android SDK</td>
+                                    <td>35</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Build Tools</td>
+                                    <td>35.0.0</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <h3>7.2. Processo de compilação</h3>
+
+                    <div class="stage-box">
+
+                        <ul>
+
+                            <li>
+                                Acesse o repositório no GitHub.
+                            </li>
+
+                            <li>
+                                Entre na aba <strong>Actions</strong>.
+                            </li>
+
+                            <li>
+                                Selecione o workflow <strong>Android</strong>.
+                            </li>
+
+                            <li>
+                                Execute a compilação ou aguarde a execução
+                                automática após o envio das alterações.
+                            </li>
+
+                            <li>
+                                Aguarde a conclusão do processo.
+                            </li>
+
+                            <li>
+                                Acesse os artefatos gerados pelo workflow.
+                            </li>
+
+                            <li>
+                                Baixe o APK para instalação no dispositivo Android.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </section>
+
+
+                <!-- 8. VERSIONAMENTO -->
+
+                <section class="documentation-section">
+
+                    <h2>8. Versionamento</h2>
+
+                    <p>
+                        O projeto utiliza versionamento sequencial para
+                        identificar as entregas compactadas.
+                    </p>
+
+                    <p><strong>Exemplo de nomenclatura:</strong></p>
+
+                    <div class="code-block">
+
+                        <pre><code>GLT-V6.zip
+GLT-V7.zip
+GLT-V8.zip
+GLT-V9.zip
+GLT-V10.zip
+GLT-V11.zip</code></pre>
+
+                    </div>
+
+                    <p>
+                        Cada nova entrega deve incrementar a numeração,
+                        mantendo o histórico organizado e evitando a
+                        substituição indevida de versões anteriores.
+                    </p>
+
+                </section>
+
+
+                <!-- 9. DIRETRIZES -->
+
+                <section class="documentation-section">
+
+                    <h2>9. Diretrizes de desenvolvimento</h2>
+
+                    <p>
+                        As próximas atualizações devem respeitar os seguintes
+                        princípios:
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Preservar funcionalidades já implementadas e validadas.
+                        </li>
+
+                        <li>
+                            Não reintroduzir o reconhecimento automático por IA.
+                        </li>
+
+                        <li>
+                            Manter a movimentação dos elementos mesmo com o
+                            travamento geométrico ativado.
+                        </li>
+
+                        <li>
+                            Preservar a visualização da câmera durante os ajustes.
+                        </li>
+
+                        <li>
+                            Validar o funcionamento de todos os botões e menus.
+                        </li>
+
+                        <li>
+                            Revisar os arquivos antes de cada nova entrega.
+                        </li>
+
+                        <li>
+                            Evitar arquivos desnecessários ou suspeitos no pacote.
+                        </li>
+
+                        <li>
+                            Documentar alterações relevantes no código.
+                        </li>
+
+                        <li>
+                            Manter a compatibilidade com o ambiente de compilação configurado.
+                        </li>
+
+                    </ul>
+
+                </section>
+
+
+                <!-- 10. ROADMAP -->
+
+                <section class="documentation-section">
+
+                    <h2>10. Roadmap</h2>
+
+                    <p>
+                        A evolução do GLT contempla as seguintes etapas:
+                    </p>
+
+
+                    <div class="stage-box">
+
+                        <h3>Etapa 1 — Estrutura inicial</h3>
+
+                        <ul>
+                            <li>Desenvolvimento da estrutura inicial do aplicativo.</li>
+                            <li>Implementação da identidade visual GLT.</li>
+                            <li>Configuração da câmera.</li>
+                        </ul>
+
+                    </div>
+
+
+                    <div class="stage-box">
+
+                        <h3>Etapa 2 — Controles geométricos</h3>
+
+                        <ul>
+                            <li>Controles geométricos manuais.</li>
+                            <li>Ajustes de diâmetro.</li>
+                            <li>Suporte a formatos ovais.</li>
+                            <li>Ajuste de inclinação.</li>
+                            <li>Conceito de travamento geométrico.</li>
+                        </ul>
+
+                    </div>
+
+
+                    <div class="stage-box">
+
+                        <h3>Etapa 3 — Compilação e estabilidade</h3>
+
+                        <ul>
+                            <li>Configuração de compilação via GitHub Actions.</li>
+                            <li>Consolidar uma versão estável de referência.</li>
+                            <li>Validar o comportamento geométrico em diferentes perspectivas.</li>
+                            <li>Realizar testes completos em dispositivos Android.</li>
+                        </ul>
+
+                    </div>
+
+
+                    <div class="stage-box">
+
+                        <h3>Etapa 4 — Evolução</h3>
+
+                        <ul>
+                            <li>Aprimorar a apresentação dos resultados da verificação.</li>
+                        </ul>
+
+                    </div>
+
+                </section>
+
+
+                <!-- 11. OBSERVAÇÕES -->
+
+                <section class="documentation-section">
+
+                    <h2>11. Observações</h2>
+
+                    <div class="important-box">
+
+                        <p>
+                            O GLT é um projeto experimental de análise geométrica
+                            e visual. Não deve ser considerado um equipamento
+                            oficial de arbitragem nem substitui os sistemas
+                            certificados de Goal-Line Technology utilizados
+                            em competições profissionais.
+                        </p>
+
+                    </div>
+
+                    <p>
+                        Os resultados dependem do posicionamento da câmera,
+                        da qualidade da imagem e da precisão dos ajustes
+                        realizados pelo usuário.
+                    </p>
+
+                </section>
+
+
+                <!-- RODAPÉ DO PROJETO -->
+
+                <footer class="project-footer">
+
+                    <h3>
+                        GLT — Chama o VAR! ⚽
+                    </h3>
+
+                    <p>
+                        Desenvolvido por Lucas Fernandes Di Leone
+                    </p>
+
+                    <p>
+                        Desenvolvimento de Sistemas | Aplicações Android | Tecnologia
+                    </p>
+
+                    <div class="github-link">
+
+                        <p>
+                            O código-fonte do projeto pode ser acessado pelo GitHub:
+                        </p>
+
+                        <a
+                            href="https://github.com/DiLeoneLucas/GLT"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Acessar repositório GLT
+                        </a>
+
+                    </div>
+
+                </footer>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
