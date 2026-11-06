@@ -1,186 +1,743 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercúrio</title>
+
+    <title>Mercurio</title>
+
     <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
     <style>
         body {
             margin: 0;
             background-color: #084D6E;
             font-family: Arial, sans-serif;
-        }
-
-        .content {
-            background-color: rgba(128, 128, 128, 0.7);
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            color: #fff;
-        }
-        .content-2 {
-            
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
             color: #fff;
         }
 
         .navbar {
             background-color: #033b52;
-        }
-
-        .navbar a {
-            color: #fff !important;
-        }
-        .img-fluid {
-            border-radius: 15px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .navbar {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1030;
         }
 
-        .content-container {
-            padding-top: 80px; /* Adjust for fixed navbar height */
+        .navbar a {
+            color: #fff !important;
         }
+
+        .content-container {
+            padding-top: 80px;
+        }
+
+        .content {
+            background-color: rgba(128, 128, 128, 0.7);
+            padding: 25px;
+            margin: 20px;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .project-header h1 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .project-header p {
+            font-size: 1.1rem;
+            color: #f1f1f1;
+        }
+
+        .tech-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0 30px;
+        }
+
+        .tech-badges img {
+            height: 25px;
+        }
+
+        .project-carousel {
+            margin-bottom: 35px;
+        }
+
         .carousel-inner img {
             width: 100%;
-            max-height: 400px; /* Adjusted image size */
+            max-height: 400px;
             object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .documentation {
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        .documentation h2 {
+            color: #8ed8ff;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            padding-bottom: 8px;
+        }
+
+        .documentation h3 {
+            color: #d7efff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 22px;
+            margin-bottom: 10px;
+        }
+
+        .documentation p {
+            margin-bottom: 15px;
+        }
+
+        .documentation ul,
+        .documentation ol {
+            padding-left: 25px;
+        }
+
+        .documentation li {
+            margin-bottom: 7px;
+        }
+
+        .documentation a {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .documentation a:hover {
+            color: #8ed8ff;
+        }
+
+        .table-responsive {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .documentation table {
+            color: #fff;
+            margin-bottom: 0;
+        }
+
+        .documentation table th {
+            background-color: #033b52;
+            color: #fff;
+        }
+
+        .documentation table td {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+
+        .code-block {
+            background-color: #17212b;
+            color: #d8e6f0;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .code-block code {
+            color: inherit;
+            white-space: pre;
+        }
+
+        .github-link {
+            text-align: center;
+            margin-top: 35px;
+            padding: 20px;
+            background-color: rgba(3, 59, 82, 0.55);
+            border-radius: 8px;
+        }
+
+        .github-link a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .github-link a:hover {
+            color: #8ed8ff;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .project-header h1 {
+                font-size: 1.7rem;
+            }
+
+            .documentation h2 {
+                font-size: 1.35rem;
+            }
+
+            .documentation h3 {
+                font-size: 1.1rem;
+            }
+
+            .carousel-inner img {
+                max-height: 280px;
+            }
+
+            .tech-badges img {
+                height: 22px;
+            }
         }
     </style>
 </head>
+
 <body>
-<br><br>
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html">DL Tech</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <a class="navbar-brand" href="home.html">
+                DL Tech
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+
                     <li class="nav-item">
-                        <a class="nav-link active" href="home.html">Home</a>
+                        <a class="nav-link" href="home.html">
+                            Home
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="projetos.html">Projetos</a>
+                        <a class="nav-link active" href="projetos.html">
+                            Projetos
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="experi.html">Experiências</a>
+                        <a class="nav-link" href="experi.html">
+                            Experiências
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="cv.html">Currículo</a>
+                        <a class="nav-link" href="cv.html">
+                            Currículo
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Entrar em Contato</a>
+                        <a class="nav-link" href="contato.html">
+                            Entrar em Contato
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="ref.html">Referências</a>
+                        <a class="nav-link" href="ref.html">
+                            Referências
+                        </a>
                     </li>
+
                 </ul>
             </div>
         </div>
     </nav>
-<div class="content">
-<div class="container content-container">
-        <h1 class="text-center mb-4">Mercúrio - Sistema de Estoque</h1>
 
-        <div id="carouselExampleIndicators" class="carousel slide mb-4" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10" aria-label="Slide 11"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11" aria-label="Slide 12"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="12" aria-label="Slide 13"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="13" aria-label="Slide 14"></button>
+    <!-- Conteúdo principal -->
+    <div class="content">
+        <div class="container content-container">
+
+            <!-- Cabeçalho -->
+            <header class="project-header">
+
+                <h1>
+                    Mercurio
+                </h1>
+
+                <p>
+                    Sistema de Gerenciamento de Estoque
+                </p>
+
+                <div class="tech-badges">
+
+                    <img
+                        src="https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white"
+                        alt="PHP"
+                    >
+
+                    <img
+                        src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white"
+                        alt="MySQL"
+                    >
+
+                    <img
+                        src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black"
+                        alt="JavaScript"
+                    >
+
+                    <img
+                        src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white"
+                        alt="HTML5"
+                    >
+
+                    <img
+                        src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white"
+                        alt="CSS3"
+                    >
+
+                </div>
+
+            </header>
+
+            <!-- Carrossel de imagens -->
+            <div
+                id="carouselExampleIndicators"
+                class="carousel slide project-carousel"
+                data-bs-ride="carousel"
+            >
+
+                <div class="carousel-indicators">
+
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="12" aria-label="Slide 13"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="13" aria-label="Slide 14"></button>
+
+                </div>
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img src="imagens/Mercurio_1.png" class="d-block w-100" alt="Mercurio - Tela 1">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="imagens/Mercurio_2.png" class="d-block w-100" alt="Mercurio - Tela 2">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="imagens/Mercurio_3.png" class="d-block w-100" alt="Mercurio - Tela 3">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="imagens/Mercurio_4.png" class="d-block w-100" alt="Mercurio - Tela 4">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="imagens/Mercurio_5.png" class="d-block w-100" alt="Mercurio - Tela 5">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="imagens/Mercurio_6.png" class="d-block w-100" alt="Mercurio - Tela 6">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="imagens/Mercurio_7.png" class="d-block w-100" alt="Mercurio - Tela 7">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="imagens/Mercurio_8.png" class="d-block w-100" alt="Mercurio - Tela 8">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="imagens/Mercurio_9.png" class="d-block w-100" alt="Mercurio - Tela 9">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="imagens/Mercurio_10.png" class="d-block w-100" alt="Mercurio - Tela 10">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="imagens/Mercurio_11.png" class="d-block w-100" alt="Mercurio - Tela 11">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="imagens/Mercurio_12.png" class="d-block w-100" alt="Mercurio - Tela 12">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="imagens/Mercurio_13.png" class="d-block w-100" alt="Mercurio - Tela 13">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="imagens/Mercurio_14.png" class="d-block w-100" alt="Mercurio - Tela 14">
+                    </div>
+
+                </div>
+
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="imagens/Mercurio_1.png" class="d-block w-100" alt="First Slide">
+
+            <!-- Documentação -->
+            <main class="documentation" id="texto">
+
+                <h2>📌 Sobre o projeto</h2>
+
+                <p>
+                    O <strong>Mercurio</strong> é um sistema web desenvolvido
+                    para gerenciamento e controle de estoque, oferecendo
+                    recursos para administração de produtos, fornecedores,
+                    usuários e movimentações de materiais.
+                </p>
+
+                <p>
+                    A aplicação foi desenvolvida em PHP e organizada em
+                    módulos, permitindo centralizar operações administrativas
+                    e facilitar o acompanhamento das movimentações realizadas
+                    no estoque.
+                </p>
+
+                <p>
+                    O projeto busca proporcionar maior organização,
+                    rastreabilidade e controle dos processos relacionados
+                    à gestão de materiais.
+                </p>
+
+                <h2>🎯 Objetivos</h2>
+
+                <ul>
+                    <li>Centralizar o gerenciamento de materiais e produtos.</li>
+                    <li>Controlar entradas e baixas de estoque.</li>
+                    <li>Administrar fornecedores.</li>
+                    <li>Gerenciar usuários e permissões de acesso.</li>
+                    <li>Manter histórico das movimentações.</li>
+                    <li>Disponibilizar relatórios para acompanhamento administrativo.</li>
+                    <li>Facilitar a rotina operacional e o controle de materiais.</li>
+                </ul>
+
+                <h2>⚙️ Funcionalidades</h2>
+
+                <h3>📦 Gestão de estoque</h3>
+
+                <ul>
+                    <li>Cadastro de produtos e materiais.</li>
+                    <li>Atualização de informações do estoque.</li>
+                    <li>Registro de movimentações.</li>
+                    <li>Controle de baixas de materiais.</li>
+                    <li>Consulta de informações dos produtos.</li>
+                </ul>
+
+                <h3>🏢 Gestão de fornecedores</h3>
+
+                <ul>
+                    <li>Cadastro de fornecedores.</li>
+                    <li>Atualização de informações cadastrais.</li>
+                    <li>Consulta e listagem de fornecedores.</li>
+                </ul>
+
+                <h3>👥 Gestão de usuários</h3>
+
+                <ul>
+                    <li>Cadastro de usuários.</li>
+                    <li>Atualização de informações.</li>
+                    <li>Listagem e gerenciamento de contas.</li>
+                    <li>Autenticação de acesso.</li>
+                    <li>Redefinição de senha.</li>
+                </ul>
+
+                <h3>📊 Relatórios e histórico</h3>
+
+                <ul>
+                    <li>Consulta do histórico de movimentações.</li>
+                    <li>Geração de relatórios.</li>
+                    <li>Acompanhamento das operações de estoque.</li>
+                </ul>
+
+                <h3>🔐 Administração e segurança</h3>
+
+                <ul>
+                    <li>Tela de autenticação.</li>
+                    <li>Separação de áreas administrativas.</li>
+                    <li>Gerenciamento de sessões.</li>
+                    <li>Controle de acesso às funcionalidades.</li>
+                </ul>
+
+                <h2>🛠️ Tecnologias utilizadas</h2>
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered align-middle">
+
+                        <thead>
+                            <tr>
+                                <th>Tecnologia</th>
+                                <th>Aplicação</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>PHP</td>
+                                <td>Desenvolvimento do Back-end e regras de negócio.</td>
+                            </tr>
+
+                            <tr>
+                                <td>MySQL</td>
+                                <td>Persistência e gerenciamento dos dados.</td>
+                            </tr>
+
+                            <tr>
+                                <td>JavaScript</td>
+                                <td>Interatividade e funcionalidades da interface.</td>
+                            </tr>
+
+                            <tr>
+                                <td>HTML5</td>
+                                <td>Estruturação das páginas.</td>
+                            </tr>
+
+                            <tr>
+                                <td>CSS3</td>
+                                <td>Estilização da aplicação.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Composer</td>
+                                <td>Gerenciamento de dependências PHP.</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
                 </div>
-                <div class="carousel-item">
-                    <img src="imagens/Mercurio_2.png" class="d-block w-100" alt="First Slide">
+
+                <h2>📂 Estrutura do projeto</h2>
+
+                <p>
+                    Abaixo está uma representação resumida dos principais
+                    diretórios e arquivos identificados na estrutura do projeto.
+                </p>
+
+                <pre class="code-block"><code>Mercurio/
+│
+├── css/                       # Arquivos de estilização
+│
+├── js/                        # Scripts JavaScript
+│
+├── model/                     # Modelos e componentes de dados
+│
+├── vendor/                    # Dependências externas
+│
+├── add_estoque.php            # Cadastro de estoque
+├── atualiza_estoque.php       # Atualização de estoque
+├── baixa.php                  # Interface de baixa
+├── baixa_estoque.php          # Processamento de baixa
+├── registra_estoque.php       # Registro de movimentações
+│
+├── add_fornecedor.php         # Cadastro de fornecedores
+├── atualiza_fornecedor.php    # Atualização de fornecedores
+├── registra_fornecedor.php    # Registro de fornecedores
+├── lista_fornecedor.php       # Listagem de fornecedores
+│
+├── add_user.php               # Cadastro de usuários
+├── atualiza_user.php          # Atualização de usuários
+├── registra_user.php          # Registro de usuários
+├── lista_user.php             # Listagem de usuários
+│
+├── login.php                  # Autenticação
+├── sair.php                   # Encerramento de sessão
+├── reset.php                  # Redefinição de acesso
+│
+├── historic.php               # Histórico de operações
+├── relatorio.php              # Relatórios
+│
+├── hub_estoque.php            # Área de estoque
+├── hub_fornecedor.php         # Área de fornecedores
+├── hub_usuario.php            # Área de usuários
+├── hub_relatorio.php          # Área de relatórios
+│
+├── tiarea.php                 # Área administrativa de TI
+├── comumarea.php              # Área de acesso comum
+│
+└── composer.json              # Configuração do Composer</code></pre>
+
+                <p>
+                    <em>
+                        Estrutura resumida dos principais diretórios e arquivos
+                        identificados no repositório.
+                    </em>
+                </p>
+
+                <h2>🚀 Ambiente de desenvolvimento</h2>
+
+                <p>
+                    Para executar o projeto localmente, recomenda-se utilizar:
+                </p>
+
+                <ul>
+                    <li>Windows ou Linux.</li>
+                    <li>Servidor web Apache.</li>
+                    <li>PHP.</li>
+                    <li>MySQL ou MariaDB.</li>
+                    <li>XAMPP ou ambiente equivalente.</li>
+                    <li>Composer.</li>
+                </ul>
+
+                <h3>Instalação</h3>
+
+                <ol>
+                    <li>
+                        Clone o repositório:
+
+                        <pre class="code-block"><code>git clone https://github.com/DiLeoneLucas/Mercurio.git</code></pre>
+                    </li>
+
+                    <li>
+                        Acesse o diretório:
+
+                        <pre class="code-block"><code>cd Mercurio</code></pre>
+                    </li>
+
+                    <li>
+                        Disponibilize o projeto no diretório público
+                        do servidor web.
+
+                        <p>No XAMPP, por exemplo:</p>
+
+                        <pre class="code-block"><code>C:\xampp\htdocs\Mercurio</code></pre>
+                    </li>
+
+                    <li>
+                        Inicie os serviços Apache e MySQL.
+                    </li>
+
+                    <li>
+                        Configure a conexão com o banco de dados conforme
+                        os parâmetros utilizados nos arquivos de configuração
+                        do projeto.
+                    </li>
+
+                    <li>
+                        Importe a estrutura do banco de dados, caso possua
+                        o respectivo arquivo SQL.
+                    </li>
+
+                    <li>
+                        Acesse pelo navegador:
+
+                        <pre class="code-block"><code>http://localhost/Mercurio/</code></pre>
+                    </li>
+                </ol>
+
+                <p>
+                    <strong>Observação:</strong> os parâmetros de conexão
+                    e a estrutura do banco devem ser conferidos no ambiente
+                    de implantação. O repositório não apresenta um script SQL
+                    de instalação identificado na estrutura principal.
+                </p>
+
+                <h2>🔒 Segurança</h2>
+
+                <p>
+                    Por trabalhar com informações administrativas e dados
+                    de estoque, recomenda-se:
+                </p>
+
+                <ul>
+                    <li>Restringir o acesso às áreas administrativas.</li>
+                    <li>Utilizar senhas seguras.</li>
+                    <li>Proteger as credenciais de conexão com o banco de dados.</li>
+                    <li>Validar os dados recebidos pelos formulários.</li>
+                    <li>Utilizar consultas preparadas para operações SQL.</li>
+                    <li>Implementar controle adequado de sessões.</li>
+                    <li>Manter backups periódicos do banco de dados.</li>
+                </ul>
+
+                <!-- Link do GitHub -->
+                <div class="github-link">
+
+                    <h3>💻 Acesse o repositório</h3>
+
+                    <p>
+                        Confira o código-fonte e os arquivos do projeto
+                        no GitHub.
+                    </p>
+
+                    <a
+                        href="https://github.com/DiLeoneLucas/Mercurio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Visualizar projeto no GitHub
+                    </a>
+
                 </div>
-                <div class="carousel-item">
-                    <img src="imagens/Mercurio_3.png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/Mercurio_4.png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/Mercurio_5.png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/Mercurio_6.png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/Mercurio_7.png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/Mercurio_8.png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/Mercurio_9.png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/Mercurio_10.png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/Mercurio_11.png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/Mercurio_12.png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/Mercurio_13.png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/Mercurio_14.png" class="d-block w-100" alt="First Slide">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+
+            </main>
+
         </div>
-
-        <p class="text-center">O Mercúrio é um sistema de estoque.<br>
-            Atualmente está na versão pré alfa.<br>
-            O sistema possui uma tela de login, apenas usuários cadastrados e ativos podem acessar a área segura.<br>
-            Na área segura algumas opções de menu irão mudar dependendo do tipo do usuário:<br>
-            - Usuário Normal: Possui acessos limitados, não podendo adicionar fornecedores, nem produtos e nem  uauários, apenas consegue gerar relatórios e dar baixa em produtos.<br>
-            - Usuário ADM: Pode adicionar produtos e fornecedores e pode fazer tudo que o Usuário Padrão Faz.<br>
-            - Usuário TI: Pode fazer tudo que os outros usuário faz e inclusive consegue criar novos usuários, desabilitar usuários e alteerar senhas.<br><br>
-            Pelo padrão da LGP após 365 logins no sistema, o mercúrio solicita que o usuário altere a senha, impedindo que seja igual a senha anterior.<br>
-            O Mercúrio possui uma inteligência que quando um produto no estoque chegar a uma quantidade crítica ele irá enviar um email, automaticamente, para o email do setor de compras da empresa.<br><br>
-            Sistema feito utilizando <b>HTML5, Bootstrap, MySQL e PHP<br></b><br>
-            O Sistema pode ser acessado via <a style="color: white;" target="_blank" href="https://github.com/DiLeoneLucas/Mercurio">Github</a>.</p>
-    </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

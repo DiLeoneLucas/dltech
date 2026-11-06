@@ -1,170 +1,1007 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ForseTi</title>
+
+    <title>ForseTI</title>
+
     <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
     <style>
         body {
             margin: 0;
             background-color: #084D6E;
             font-family: Arial, sans-serif;
-        }
-
-        .content {
-            background-color: rgba(128, 128, 128, 0.7);
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            color: #fff;
-        }
-        .content-2 {
-            
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
             color: #fff;
         }
 
         .navbar {
             background-color: #033b52;
-        }
-
-        .navbar a {
-            color: #fff !important;
-        }
-        .img-fluid {
-            border-radius: 15px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .navbar {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1030;
         }
 
-        .content-container {
-            padding-top: 80px; /* Adjust for fixed navbar height */
+        .navbar a {
+            color: #fff !important;
         }
+
+        .content-container {
+            padding-top: 100px;
+            padding-bottom: 30px;
+        }
+
+        .content {
+            background-color: rgba(128, 128, 128, 0.7);
+            padding: 25px;
+            margin: 20px;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .project-header h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .project-header p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .tech-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .tech-badges img {
+            height: 25px;
+        }
+
+        .project-carousel {
+            max-width: 950px;
+            margin: 0 auto 35px;
+        }
+
         .carousel-inner img {
             width: 100%;
-            max-height: 400px; /* Adjusted image size */
+            max-height: 400px;
             object-fit: contain;
+            border-radius: 15px;
+        }
+
+        .documentation {
+            text-align: left;
+            line-height: 1.7;
+        }
+
+        .documentation h2 {
+            color: #8ed8ff;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 8px;
+        }
+
+        .documentation h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 22px;
+            margin-bottom: 10px;
+        }
+
+        .documentation ul {
+            padding-left: 25px;
+        }
+
+        .documentation li {
+            margin-bottom: 7px;
+        }
+
+        .table-responsive {
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .documentation table {
+            color: #fff;
+            vertical-align: middle;
+        }
+
+        .documentation th {
+            background-color: #033b52;
+            color: #fff;
+        }
+
+        .documentation td {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+
+        .code-block {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .code-block code {
+            color: #e2e8f0;
+            white-space: pre;
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #033b52;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .github-link:hover {
+            background-color: #022b3d;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .content-container {
+                padding-top: 85px;
+            }
+
+            .project-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .documentation h2 {
+                font-size: 1.3rem;
+            }
+
+            .documentation h3 {
+                font-size: 1.1rem;
+            }
+
+            .carousel-inner img {
+                max-height: 280px;
+            }
         }
     </style>
 </head>
+
 <body>
-<br><br>
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html">DL Tech</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <a class="navbar-brand" href="home.html">
+                DL Tech
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Abrir navegação"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+
                     <li class="nav-item">
-                        <a class="nav-link active" href="home.html">Home</a>
+                        <a class="nav-link" href="home.html">
+                            Home
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="projetos.html">Projetos</a>
+                        <a class="nav-link active" href="projetos.html">
+                            Projetos
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="experi.html">Experiências</a>
+                        <a class="nav-link" href="experi.html">
+                            Experiências
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="cv.html">Currículo</a>
+                        <a class="nav-link" href="cv.html">
+                            Currículo
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Entrar em Contato</a>
+                        <a class="nav-link" href="contato.html">
+                            Entrar em Contato
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="ref.html">Referências</a>
+                        <a class="nav-link" href="ref.html">
+                            Referências
+                        </a>
                     </li>
+
                 </ul>
             </div>
         </div>
     </nav>
-<div class="content">
-<div class="container content-container">
-        <h1 class="text-center mb-4">ForseTi - Gerador de Fichas para Controle de Atendimento</h1>
 
-        <div id="carouselExampleIndicators" class="carousel slide mb-4" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10" aria-label="Slide 11"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11" aria-label="Slide 12"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="12" aria-label="Slide 13"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="13" aria-label="Slide 14"></button>
+    <!-- Conteúdo principal -->
+    <div class="content">
+        <div class="container content-container">
+
+            <!-- Cabeçalho -->
+            <header class="project-header">
+
+                <h1>
+                    ForseTI
+                </h1>
+
+                <p>
+                    Sistema de Gerenciamento de Atendimento
+                </p>
+
+                <div class="tech-badges">
+
+                    <img
+                        src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"
+                        alt="PHP"
+                    >
+
+                    <img
+                        src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"
+                        alt="MySQL"
+                    >
+
+                    <img
+                        src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+                        alt="HTML5"
+                    >
+
+                    <img
+                        src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+                        alt="CSS3"
+                    >
+
+                    <img
+                        src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"
+                        alt="Bootstrap"
+                    >
+
+                    <img
+                        src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
+                        alt="JavaScript"
+                    >
+
+                    <img
+                        src="https://img.shields.io/badge/AJAX-005571?style=for-the-badge"
+                        alt="AJAX"
+                    >
+
+                    <img
+                        src="https://img.shields.io/badge/LDAP-2C3E50?style=for-the-badge"
+                        alt="LDAP"
+                    >
+
+                </div>
+            </header>
+
+            <!-- Carrossel -->
+            <div
+                id="carouselExampleIndicators"
+                class="carousel slide project-carousel mb-4"
+                data-bs-ride="carousel"
+            >
+
+                <div class="carousel-indicators">
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="Slide 1"
+                    ></button>
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="1"
+                        aria-label="Slide 2"
+                    ></button>
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="2"
+                        aria-label="Slide 3"
+                    ></button>
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="3"
+                        aria-label="Slide 4"
+                    ></button>
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="4"
+                        aria-label="Slide 5"
+                    ></button>
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="5"
+                        aria-label="Slide 6"
+                    ></button>
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="6"
+                        aria-label="Slide 7"
+                    ></button>
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="7"
+                        aria-label="Slide 8"
+                    ></button>
+
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="8"
+                        aria-label="Slide 9"
+                    ></button>
+
+                </div>
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img
+                            src="imagens/forseti (1).png"
+                            class="d-block w-100"
+                            alt="Tela do sistema ForseTI - imagem 1"
+                        >
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                            src="imagens/forseti (2).png"
+                            class="d-block w-100"
+                            alt="Tela do sistema ForseTI - imagem 2"
+                        >
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                            src="imagens/forseti (3).png"
+                            class="d-block w-100"
+                            alt="Tela do sistema ForseTI - imagem 3"
+                        >
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                            src="imagens/forseti (4).png"
+                            class="d-block w-100"
+                            alt="Tela do sistema ForseTI - imagem 4"
+                        >
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                            src="imagens/forseti (5).png"
+                            class="d-block w-100"
+                            alt="Tela do sistema ForseTI - imagem 5"
+                        >
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                            src="imagens/forseti (6).png"
+                            class="d-block w-100"
+                            alt="Tela do sistema ForseTI - imagem 6"
+                        >
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                            src="imagens/forseti (7).png"
+                            class="d-block w-100"
+                            alt="Tela do sistema ForseTI - imagem 7"
+                        >
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                            src="imagens/forseti (8).png"
+                            class="d-block w-100"
+                            alt="Tela do sistema ForseTI - imagem 8"
+                        >
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                            src="imagens/forseti (9).png"
+                            class="d-block w-100"
+                            alt="Tela do sistema ForseTI - imagem 9"
+                        >
+                    </div>
+
+                </div>
+
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev"
+                >
+                    <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span class="visually-hidden">
+                        Anterior
+                    </span>
+                </button>
+
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next"
+                >
+                    <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span class="visually-hidden">
+                        Próximo
+                    </span>
+                </button>
+
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="imagens/forseti (1).png" class="d-block w-100" alt="First Slide">
+
+            <!-- Documentação -->
+            <div class="documentation" id="texto">
+
+                <h2>
+                    1. Sobre o Projeto
+                </h2>
+
+                <p>
+                    O <strong>ForseTI</strong> é um sistema web desenvolvido
+                    para gerenciamento e organização de filas de atendimento,
+                    permitindo o controle de fichas, acompanhamento dos
+                    atendimentos e visualização das chamadas em tempo real
+                    por meio de um painel de TV.
+                </p>
+
+                <p>
+                    O projeto foi desenvolvido utilizando tecnologias web,
+                    com foco na organização dos processos de atendimento,
+                    facilidade de utilização e integração com a infraestrutura
+                    de TI.
+                </p>
+
+                <h2>
+                    2. Objetivo do Projeto
+                </h2>
+
+                <p>
+                    Centralizar o gerenciamento dos atendimentos de TI,
+                    proporcionando maior organização, agilidade e transparência
+                    no fluxo de atendimento.
+                </p>
+
+                <p>
+                    O sistema permite controlar as fichas, acompanhar a chamada
+                    dos usuários e disponibilizar as informações em uma tela
+                    de visualização pública.
+                </p>
+
+                <h2>
+                    3. Tecnologias Utilizadas
+                </h2>
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered">
+
+                        <thead>
+                            <tr>
+                                <th>Tecnologia</th>
+                                <th>Utilização</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>PHP</td>
+                                <td>
+                                    Desenvolvimento da aplicação e das regras
+                                    de negócio.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>MySQL</td>
+                                <td>
+                                    Armazenamento e gerenciamento dos dados.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>HTML5</td>
+                                <td>
+                                    Estruturação das páginas.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CSS3</td>
+                                <td>
+                                    Estilização das interfaces.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Bootstrap 5</td>
+                                <td>
+                                    Desenvolvimento de interfaces responsivas.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>JavaScript</td>
+                                <td>
+                                    Implementação de funcionalidades interativas.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>AJAX</td>
+                                <td>
+                                    Comunicação assíncrona e atualização
+                                    das informações.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>LDAP</td>
+                                <td>
+                                    Autenticação e integração com o ambiente
+                                    corporativo.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>TXT</td>
+                                <td>
+                                    Armazenamento auxiliar das informações
+                                    de fichas e histórico de chamadas.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Apache</td>
+                                <td>
+                                    Servidor web utilizado para execução
+                                    da aplicação.
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
                 </div>
-                <div class="carousel-item">
-                    <img src="imagens/forseti (2).png" class="d-block w-100" alt="First Slide">
+
+                <h2>
+                    4. Funcionalidades
+                </h2>
+
+                <h3>
+                    4.1. Gerenciamento de Fichas
+                </h3>
+
+                <ul>
+                    <li>
+                        Controle das fichas de atendimento.
+                    </li>
+
+                    <li>
+                        Gerenciamento da ficha atualmente chamada.
+                    </li>
+
+                    <li>
+                        Organização do fluxo de atendimento.
+                    </li>
+
+                    <li>
+                        Registro e acompanhamento das chamadas.
+                    </li>
+                </ul>
+
+                <h3>
+                    4.2. Painel de Atendimento
+                </h3>
+
+                <ul>
+                    <li>
+                        Interface para gerenciamento operacional.
+                    </li>
+
+                    <li>
+                        Controle das chamadas de atendimento.
+                    </li>
+
+                    <li>
+                        Identificação dos usuários autenticados.
+                    </li>
+
+                    <li>
+                        Controle de permissões de acesso.
+                    </li>
+
+                    <li>
+                        Restrição de funcionalidades administrativas
+                        aos usuários autorizados de TI.
+                    </li>
+                </ul>
+
+                <h3>
+                    4.3. Painel de TV
+                </h3>
+
+                <ul>
+                    <li>
+                        Exibição da ficha atualmente chamada.
+                    </li>
+
+                    <li>
+                        Apresentação do histórico das últimas cinco fichas.
+                    </li>
+
+                    <li>
+                        Atualização automática das informações.
+                    </li>
+
+                    <li>
+                        Consulta periódica utilizando AJAX.
+                    </li>
+
+                    <li>
+                        Reprodução de aviso sonoro durante as chamadas.
+                    </li>
+
+                    <li>
+                        Interface desenvolvida para visualização em monitores
+                        e televisores.
+                    </li>
+                </ul>
+
+                <h3>
+                    4.4. Autenticação e Controle de Acesso
+                </h3>
+
+                <ul>
+                    <li>
+                        Integração com LDAP.
+                    </li>
+
+                    <li>
+                        Gerenciamento de sessões de usuários.
+                    </li>
+
+                    <li>
+                        Identificação do nome completo do usuário.
+                    </li>
+
+                    <li>
+                        Diferenciação dos tipos de acesso.
+                    </li>
+
+                    <li>
+                        Restrição de operações administrativas conforme
+                        o perfil.
+                    </li>
+                </ul>
+
+                <h2>
+                    5. Infraestrutura
+                </h2>
+
+                <p>
+                    O projeto foi desenvolvido inicialmente em ambiente
+                    Windows utilizando XAMPP, com planejamento de implantação
+                    em ambiente Linux.
+                </p>
+
+                <h3>
+                    Ambiente de Desenvolvimento
+                </h3>
+
+                <ul>
+                    <li>Windows / XAMPP.</li>
+                    <li>Apache.</li>
+                    <li>PHP.</li>
+                    <li>MySQL.</li>
+                </ul>
+
+                <h3>
+                    Ambiente Linux Planejado
+                </h3>
+
+                <ul>
+                    <li>Ubuntu Server 24.04.2.</li>
+                    <li>Servidor Apache.</li>
+                    <li>PHP.</li>
+                    <li>MySQL.</li>
+                    <li>Integração LDAP.</li>
+                </ul>
+
+                <h3>
+                    Endereço do Ambiente de Desenvolvimento Linux
+                </h3>
+
+                <div class="code-block">
+                    <code>http://192.168.0.114/forseti</code>
                 </div>
-                <div class="carousel-item">
-                    <img src="imagens/forseti (3).png" class="d-block w-100" alt="First Slide">
+
+                <p>
+                    <em>
+                        Observação: o endereço acima corresponde a um ambiente
+                        interno de desenvolvimento e não representa um endereço
+                        público de acesso.
+                    </em>
+                </p>
+
+                <h2>
+                    6. Arquivos de Controle
+                </h2>
+
+                <p>
+                    O sistema utiliza arquivos auxiliares para comunicação
+                    e atualização do painel de atendimento.
+                </p>
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered">
+
+                        <thead>
+                            <tr>
+                                <th>Arquivo</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <code>ficha_atual.txt</code>
+                                </td>
+
+                                <td>
+                                    Armazena a informação da ficha atualmente
+                                    chamada.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>fichas_anteriores.txt</code>
+                                </td>
+
+                                <td>
+                                    Mantém o histórico das últimas cinco
+                                    fichas chamadas.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>aviso.mp3</code>
+                                </td>
+
+                                <td>
+                                    Arquivo de áudio utilizado para sinalização
+                                    sonora das chamadas.
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
                 </div>
-                <div class="carousel-item">
-                    <img src="imagens/forseti (4).png" class="d-block w-100" alt="First Slide">
+
+                <h2>
+                    7. Identidade Visual
+                </h2>
+
+                <p>
+                    O sistema utiliza uma identidade visual baseada em uma
+                    paleta de cores que busca transmitir organização,
+                    clareza e facilidade de navegação.
+                </p>
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered">
+
+                        <thead>
+                            <tr>
+                                <th>Cor</th>
+                                <th>Código</th>
+                                <th>Visualização</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Azul escuro</td>
+                                <td><code>#2c3e50</code></td>
+                                <td>
+                                    <span
+                                        style="display:inline-block;width:35px;height:20px;background:#2c3e50;border-radius:4px;"
+                                    ></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Laranja</td>
+                                <td><code>#d35400</code></td>
+                                <td>
+                                    <span
+                                        style="display:inline-block;width:35px;height:20px;background:#d35400;border-radius:4px;"
+                                    ></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Azul</td>
+                                <td><code>#3498db</code></td>
+                                <td>
+                                    <span
+                                        style="display:inline-block;width:35px;height:20px;background:#3498db;border-radius:4px;"
+                                    ></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Verde</td>
+                                <td><code>#27ae60</code></td>
+                                <td>
+                                    <span
+                                        style="display:inline-block;width:35px;height:20px;background:#27ae60;border-radius:4px;"
+                                    ></span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
                 </div>
-                <div class="carousel-item">
-                    <img src="imagens/forseti (5).png" class="d-block w-100" alt="First Slide">
+
+                <h2>
+                    8. Melhorias e Evoluções
+                </h2>
+
+                <p>
+                    Entre as possibilidades de evolução técnica do projeto
+                    estão:
+                </p>
+
+                <ul>
+                    <li>
+                        Aprimoramento da comunicação entre o painel
+                        administrativo e a TV.
+                    </li>
+
+                    <li>
+                        Otimização da atualização automática das fichas.
+                    </li>
+
+                    <li>
+                        Aperfeiçoamento da integração entre PHP e MySQL.
+                    </li>
+
+                    <li>
+                        Evolução da comunicação em tempo real utilizando
+                        WebSocket.
+                    </li>
+
+                    <li>
+                        Melhorias de segurança e controle de permissões.
+                    </li>
+
+                    <li>
+                        Aprimoramento da infraestrutura Linux.
+                    </li>
+                </ul>
+
+                <h2>
+                    9. Repositório do Projeto
+                </h2>
+
+                <p>
+                    O código-fonte do ForseTI está disponível no GitHub.
+                </p>
+
+                <div class="text-center">
+
+                    <a
+                        href="https://github.com/DiLeoneLucas/ForseTI"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="github-link"
+                    >
+                        <strong>
+                            Acessar repositório no GitHub
+                        </strong>
+                    </a>
+
                 </div>
-                <div class="carousel-item">
-                    <img src="imagens/forseti (6).png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/forseti (7).png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/forseti (8).png" class="d-block w-100" alt="First Slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="imagens/forseti (9).png" class="d-block w-100" alt="First Slide">
-                </div>
+
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+
         </div>
-
-        <p class="text-center">O ForseTi é um sistema que gera fichas para controle de atendimento físico de usuários.<br>
-            Atualmente está na versão pré alfa.<br>
-            O sistema possui uma tela de login, apenas usuários cadastrados e ativos conectado no Active Directory da empresa.<br>
-            Na área segura algumas opções de menu irão mudar dependendo do tipo do usuário:<br>
-            - Usuário Vendas: Possui acessos limitados, tendo acesso apenas para "pegar" uma nova ficha retirada;<br>
-            - Usuário ADM: Pode gerar relatórios e pode fazer tudo que o Usuário Padrão Faz.<br>
-            - Usuário TI: Pode fazer tudo que os outros usuário faz e pode alterar o nome do Ponto de Atendimento (PA) caso seja preciso.<br><br>
-            Sistema feito utilizando <b>HTML5, Bootstrap, MySQL, AJAX e PHP<br></b><br>
-            O sistema já imprime automaticamente a ficha para o cliente e quando ele é chamado pela TV é informado por um efeito sonoro.<br>
-            O Sistema pode ser acessado via <a style="color: white;" target="_blank" href="https://github.com/DiLeoneLucas/ForseTI">Github</a>.</p>
-    </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
