@@ -1,110 +1,692 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
-<head>    
+<html lang="pt-BR">
+
+<head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entre em Contato</title>
-    <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Entre em Contato | DL Tech</title>
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="imagens/icones/favicon.ico"
+    >
+
+    <!-- Bootstrap 5.3.1 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Ícones Bootstrap -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
     <style>
+
         body {
+
             margin: 0;
+
             background-color: #084D6E;
+
             font-family: Arial, sans-serif;
+
+            min-height: 100vh;
+
         }
 
-        .content {
-            background-color: rgba(128, 128, 128, 0.7);
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            color: #fff;
-        }
+        /* MENU DE NAVEGAÇÃO */
 
         .navbar {
+
             background-color: #033b52;
+
+            position: fixed;
+
+            top: 0;
+
+            width: 100%;
+
+            z-index: 1030;
+
         }
 
         .navbar a {
+
             color: #fff !important;
+
         }
 
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1030;
+        .navbar-brand {
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
         }
+
+        .navbar .nav-link:hover {
+
+            color: #a8dff5 !important;
+
+        }
+
+        /* CONTEÚDO PRINCIPAL */
 
         .content-container {
-            padding-top: 80px; /* Adjust for fixed navbar height */
+
+            padding-top: 110px;
+
+            padding-bottom: 40px;
+
         }
+
+        .content {
+
+            background-color: rgba(128, 128, 128, 0.7);
+
+            padding: 35px;
+
+            margin: 20px auto;
+
+            border-radius: 12px;
+
+            color: #fff;
+
+            max-width: 850px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .contact-header {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+        }
+
+        .contact-header i {
+
+            font-size: 55px;
+
+            color: #25D366;
+
+        }
+
+        .contact-header h1 {
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            margin-top: 15px;
+
+        }
+
+        .contact-header p {
+
+            font-size: 15px;
+
+            color: #f1f1f1;
+
+        }
+
+        /* FORMULÁRIO */
+
+        .form-label {
+
+            font-weight: bold;
+
+        }
+
+        .form-control {
+
+            border-radius: 7px;
+
+            padding: 11px;
+
+            border: none;
+
+        }
+
+        .form-control:focus {
+
+            box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.3);
+
+        }
+
+        textarea {
+
+            resize: vertical;
+
+        }
+
+        /* BOTÃO WHATSAPP */
+
+        .btn-whatsapp {
+
+            background-color: #25D366;
+
+            color: #fff;
+
+            border: none;
+
+            border-radius: 7px;
+
+            padding: 13px 25px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            width: 100%;
+
+            transition: 0.3s;
+
+        }
+
+        .btn-whatsapp:hover {
+
+            background-color: #1ebe5d;
+
+            color: #fff;
+
+            transform: translateY(-2px);
+
+        }
+
+        .btn-whatsapp i {
+
+            margin-right: 8px;
+
+            font-size: 20px;
+
+        }
+
+        .contact-info {
+
+            text-align: center;
+
+            margin-top: 25px;
+
+            font-size: 13px;
+
+            color: #f1f1f1;
+
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 576px) {
+
+            .content {
+
+                padding: 22px;
+
+                margin: 10px;
+
+            }
+
+            .contact-header h1 {
+
+                font-size: 24px;
+
+            }
+
+            .content-container {
+
+                padding-top: 90px;
+
+            }
+
+        }
+
     </style>
+
 </head>
+
 <body>
-    <br><br>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+
     <nav class="navbar navbar-expand-lg navbar-dark">
+
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html">DL Tech</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <a
+                class="navbar-brand"
+                href="home.html"
+            >
+                DL Tech
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Abrir menu"
+            >
+
                 <span class="navbar-toggler-icon"></span>
+
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+
+            <div
+                class="collapse navbar-collapse"
+                id="navbarNav"
+            >
+
                 <ul class="navbar-nav">
+
                     <li class="nav-item">
-                        <a class="nav-link active" href="home.html">Home</a>
+
+                        <a
+                            class="nav-link"
+                            href="home.html"
+                        >
+                            Home
+                        </a>
+
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="projetos.html">Projetos</a>
+
+                        <a
+                            class="nav-link"
+                            href="projetos.html"
+                        >
+                            Projetos
+                        </a>
+
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="experi.html">Experiências</a>
+
+                        <a
+                            class="nav-link"
+                            href="experi.html"
+                        >
+                            Experiências
+                        </a>
+
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="cv.html">Currículo</a>
+
+                        <a
+                            class="nav-link"
+                            href="cv.html"
+                        >
+                            Currículo
+                        </a>
+
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Entrar em Contato</a>
+
+                        <a
+                            class="nav-link active"
+                            href="contato.html"
+                            aria-current="page"
+                        >
+                            Entre em Contato
+                        </a>
+
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="ref.html">Referências</a>
+
+                        <a
+                            class="nav-link"
+                            href="ref.html"
+                        >
+                            Referências
+                        </a>
+
                     </li>
+
                 </ul>
+
             </div>
+
         </div>
+
     </nav>
 
-    <div class="container mt-4">
-        <div class="content">
-            <form action="dispara.php" method="POST">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nome Completo</label>
-                    <input type="text" class="form-control" id="name" name="name" required placeholder="Digite seu nome completo">
-                </div>
-                <div class="mb-3">
-                    <label for="company" class="form-label">Nome da Empresa</label>
-                    <input type="text" class="form-control" id="company" name="company" placeholder="Digite o nome da sua empresa">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required placeholder="Digite o seu email aqui">
-                </div>
-                <div class="mb-3">
-                    <label for="title" class="form-label">Título</label>
-                    <input type="text" class="form-control" id="title" name="title" required placeholder="Digite o título do email aqui">
-                </div>
-                <div class="mb-3">
-                    <label for="body" class="form-label">Corpo do Email</label>
-                    <textarea class="form-control" id="body" name="body" rows="5" required placeholder="Digite aqui"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" disabled>Enviar</button>
-            </form>
-        </div>
-    </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main class="container content-container">
+
+        <div class="content">
+
+            <!-- CABEÇALHO -->
+
+            <div class="contact-header">
+
+                <i class="bi bi-whatsapp"></i>
+
+                <h1>Entre em Contato</h1>
+
+                <p>
+                    Tem alguma dúvida, proposta ou projeto?
+                    Envie sua mensagem diretamente pelo WhatsApp.
+                </p>
+
+            </div>
+
+
+            <!-- FORMULÁRIO DE CONTATO -->
+
+            <form id="whatsappForm">
+
+                <!-- NOME -->
+
+                <div class="mb-3">
+
+                    <label
+                        for="name"
+                        class="form-label"
+                    >
+                        Nome Completo *
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        required
+                        placeholder="Digite seu nome completo"
+                    >
+
+                </div>
+
+
+                <!-- EMPRESA -->
+
+                <div class="mb-3">
+
+                    <label
+                        for="company"
+                        class="form-label"
+                    >
+                        Nome da Empresa
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="company"
+                        name="company"
+                        placeholder="Digite o nome da sua empresa"
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="mb-3">
+
+                    <label
+                        for="email"
+                        class="form-label"
+                    >
+                        E-mail *
+                    </label>
+
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="Digite seu e-mail"
+                    >
+
+                </div>
+
+
+                <!-- ASSUNTO -->
+
+                <div class="mb-3">
+
+                    <label
+                        for="subject"
+                        class="form-label"
+                    >
+                        Assunto *
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="subject"
+                        name="subject"
+                        required
+                        placeholder="Qual o assunto do contato?"
+                    >
+
+                </div>
+
+
+                <!-- MENSAGEM -->
+
+                <div class="mb-4">
+
+                    <label
+                        for="message"
+                        class="form-label"
+                    >
+                        Mensagem *
+                    </label>
+
+                    <textarea
+                        class="form-control"
+                        id="message"
+                        name="message"
+                        rows="5"
+                        required
+                        placeholder="Digite sua mensagem aqui..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- BOTÃO WHATSAPP -->
+
+                <button
+                    type="submit"
+                    class="btn btn-whatsapp"
+                >
+
+                    <i class="bi bi-whatsapp"></i>
+
+                    Enviar pelo WhatsApp
+
+                </button>
+
+            </form>
+
+
+            <!-- INFORMAÇÃO -->
+
+            <div class="contact-info">
+
+                <p>
+                    <i class="bi bi-info-circle"></i>
+
+                    Ao clicar em enviar, o WhatsApp será aberto
+                    com sua mensagem pronta para envio.
+                </p>
+
+                <p>
+                    DL Tech | Tecnologia e Soluções
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        /*
+        =====================================================
+        CONFIGURAÇÃO DO WHATSAPP
+        =====================================================
+
+        Adicione o número abaixo quando desejar ativar
+        o recebimento das mensagens.
+
+        Utilize o formato internacional:
+
+        55 + DDD + NÚMERO
+
+        Somente números, sem espaços, parênteses ou traços.
+
+        Exemplo de formato:
+        5551999999999
+
+        =====================================================
+        */
+
+        const whatsappNumber = "5551994556329";
+
+
+        /*
+        =====================================================
+        ENVIO DA MENSAGEM
+        =====================================================
+        */
+
+        document
+            .getElementById("whatsappForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                // Verifica se o número foi configurado
+
+                if (!whatsappNumber.trim()) {
+
+                    alert(
+                        "O número do WhatsApp ainda não foi configurado. Adicione o número no código da página."
+                    );
+
+                    return;
+
+                }
+
+
+                // Captura os dados do formulário
+
+                const name = document
+                    .getElementById("name")
+                    .value
+                    .trim();
+
+                const company = document
+                    .getElementById("company")
+                    .value
+                    .trim();
+
+                const email = document
+                    .getElementById("email")
+                    .value
+                    .trim();
+
+                const subject = document
+                    .getElementById("subject")
+                    .value
+                    .trim();
+
+                const message = document
+                    .getElementById("message")
+                    .value
+                    .trim();
+
+
+                // Monta a mensagem para o WhatsApp
+
+                const whatsappMessage =
+
+                    "Olá! Gostaria de entrar em contato com a DL Tech.\n\n" +
+
+                    "*Nome:* " + name + "\n" +
+
+                    "*Empresa:* " +
+                    (company || "Não informada") + "\n" +
+
+                    "*E-mail:* " + email + "\n" +
+
+                    "*Assunto:* " + subject + "\n\n" +
+
+                    "*Mensagem:*\n" + message;
+
+
+                // Codifica a mensagem para a URL
+
+                const encodedMessage = encodeURIComponent(
+                    whatsappMessage
+                );
+
+
+                // Remove caracteres que não sejam números
+
+                const phone = whatsappNumber.replace(/\D/g, "");
+
+
+                // Monta o endereço do WhatsApp
+
+                const whatsappURL =
+                    "https://wa.me/" +
+                    phone +
+                    "?text=" +
+                    encodedMessage;
+
+
+                // Abre o WhatsApp em uma nova aba
+
+                window.open(
+                    whatsappURL,
+                    "_blank",
+                    "noopener,noreferrer"
+                );
+
+            });
+
+    </script>
+
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
 </body>
+
 </html>
+```
