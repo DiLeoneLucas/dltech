@@ -1,0 +1,1203 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="imagens/icones/favicon.ico">
+
+    <title>DexFolio | DL Tech</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        body {
+            margin: 0;
+            background-color: #084D6E;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background-color: #033b52;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+        }
+
+        .navbar a {
+            color: #fff !important;
+        }
+
+        .navbar .nav-link:hover {
+            color: #35c5ff !important;
+        }
+
+        /* CONTEÚDO */
+
+        .content-container {
+            padding-top: 100px;
+            padding-bottom: 40px;
+        }
+
+        .content {
+            background-color: rgba(20, 35, 45, 0.88);
+            padding: 35px;
+            margin: 20px;
+            border-radius: 15px;
+            color: #fff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        /* CABEÇALHO DO PROJETO */
+
+        .project-header {
+            text-align: center;
+            padding: 20px 10px 35px;
+        }
+
+        .project-header h1 {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #35c5ff;
+            margin-bottom: 10px;
+        }
+
+        .project-header h2 {
+            font-size: 1.3rem;
+            color: #d6eaf3;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+
+        .project-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .info-item {
+            background-color: rgba(3, 59, 82, 0.8);
+            border: 1px solid rgba(53, 197, 255, 0.3);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .info-item strong {
+            color: #35c5ff;
+        }
+
+        /* SEÇÕES */
+
+        .documentation-section {
+            margin-top: 35px;
+            padding-top: 20px;
+        }
+
+        .documentation-section h2 {
+            color: #35c5ff;
+            font-size: 1.65rem;
+            font-weight: bold;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(53, 197, 255, 0.4);
+        }
+
+        .documentation-section h3 {
+            color: #a8e5ff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .documentation-section p {
+            color: #e4edf2;
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        /* LISTAS */
+
+        .documentation-section ul {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .documentation-section li {
+            color: #e4edf2;
+            line-height: 1.9;
+            padding-left: 5px;
+        }
+
+        .documentation-section li::marker {
+            color: #35c5ff;
+        }
+
+        /* TABELAS */
+
+        .table-container {
+            background-color: rgba(3, 59, 82, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .table {
+            margin-bottom: 0;
+            color: #fff;
+        }
+
+        .table thead th {
+            background-color: #033b52;
+            color: #35c5ff;
+            border-color: rgba(255,255,255,0.15);
+            padding: 14px;
+        }
+
+        .table tbody td {
+            background-color: rgba(255,255,255,0.04);
+            color: #e4edf2;
+            border-color: rgba(255,255,255,0.1);
+            padding: 12px 14px;
+        }
+
+        /* DESTAQUES */
+
+        .highlight-box {
+            background-color: rgba(3, 59, 82, 0.65);
+            border-left: 4px solid #35c5ff;
+            border-radius: 6px;
+            padding: 18px 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .important-box {
+            background-color: rgba(130, 90, 20, 0.25);
+            border-left: 4px solid #ffc107;
+            border-radius: 6px;
+            padding: 18px 20px;
+            margin: 20px 0;
+        }
+
+        .important-box p {
+            margin-bottom: 0;
+        }
+
+        /* ETAPAS */
+
+        .stage-box {
+            background-color: rgba(3, 59, 82, 0.55);
+            border: 1px solid rgba(53, 197, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .stage-box h3 {
+            color: #35c5ff;
+            margin-top: 0;
+        }
+
+        .stage-box ul {
+            margin-bottom: 0;
+        }
+
+        /* RODAPÉ DO PROJETO */
+
+        .project-footer {
+            text-align: center;
+            margin-top: 45px;
+            padding: 30px 15px;
+            border-top: 1px solid rgba(53, 197, 255, 0.3);
+        }
+
+        .project-footer h3 {
+            color: #35c5ff;
+            font-size: 1.3rem;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        .github-link {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .github-link a {
+            color: #35c5ff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .github-link a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 768px) {
+
+            .content {
+                margin: 10px;
+                padding: 20px 16px;
+            }
+
+            .content-container {
+                padding-top: 90px;
+            }
+
+            .project-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .project-header h2 {
+                font-size: 1.1rem;
+            }
+
+            .documentation-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .documentation-section p {
+                text-align: left;
+                font-size: 0.95rem;
+            }
+
+            .info-item {
+                width: 100%;
+            }
+
+        }
+
+
+        /* CARROSSEL DE IMAGENS DO PROJETO */
+        .project-carousel {
+            max-width: 950px;
+            margin: 10px auto 40px;
+            border: 1px solid rgba(53, 197, 255, 0.35);
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: rgba(3, 59, 82, 0.7);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+        }
+
+        .project-carousel .carousel-item {
+            height: 460px;
+            text-align: center;
+        }
+
+        .project-carousel .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 12px;
+        }
+
+        /* VÍDEOS NO CARROSSEL */
+        .project-carousel .carousel-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 12px;
+            background-color: #061f2b;
+        }
+
+        .project-carousel .video-slide {
+            position: relative;
+        }
+
+        .project-carousel .video-caption {
+            position: absolute;
+            left: 50%;
+            bottom: 18px;
+            transform: translateX(-50%);
+            width: max-content;
+            max-width: 85%;
+            background: rgba(3, 35, 50, 0.88);
+            color: #35c5ff;
+            border-radius: 8px;
+            padding: 8px 14px;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .project-carousel .carousel-caption {
+            background: rgba(3, 35, 50, 0.82);
+            border-radius: 8px;
+            padding: 10px 15px;
+            bottom: 18px;
+        }
+
+        .project-carousel .carousel-caption h5 {
+            color: #35c5ff;
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .project-carousel .carousel-item {
+                height: 280px;
+            }
+
+            .project-carousel .carousel-caption {
+                padding: 6px 10px;
+                bottom: 10px;
+            }
+
+            .project-carousel .carousel-caption h5 {
+                font-size: 1rem;
+            }
+
+            .project-carousel .carousel-caption p {
+                font-size: 0.8rem;
+                margin-bottom: 0;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="home.html">
+                DL Tech
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="projetos.html">Projetos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="experi.html">Experiências</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv.html">Currículo</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Entrar em Contato</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="ref.html">Referências</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <div class="container content-container">
+
+        <div class="content">
+
+            <!-- CABEÇALHO -->
+
+            <header class="project-header">
+
+                <h1>DexFolio</h1>
+
+                <h2>
+                    Seu fichário digital de cartas Pokémon
+                </h2>
+
+                <div class="project-info">
+
+                    <div class="info-item">
+                        <strong>Versão:</strong> 1.0
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Plataforma:</strong> Android
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Projeto:</strong> DexFolio
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Desenvolvimento:</strong> Lucas Fernandes Di Leone
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CARROSSEL DE IMAGENS DO PROJETO -->
+            <section class="project-carousel" aria-label="Imagens do aplicativo DexFolio">
+                <div id="dexfolioCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false" data-bs-wrap="true">
+
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#dexfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#dexfolioCarousel" data-bs-slide-to="1" aria-label="Imagem 2"></button>
+                        <button type="button" data-bs-target="#dexfolioCarousel" data-bs-slide-to="2" aria-label="Imagem 3"></button>
+                        <button type="button" data-bs-target="#dexfolioCarousel" data-bs-slide-to="3" aria-label="Imagem 4"></button>
+                        <button type="button" data-bs-target="#dexfolioCarousel" data-bs-slide-to="4" aria-label="Imagem 5"></button>
+                        <button type="button" data-bs-target="#dexfolioCarousel" data-bs-slide-to="5" aria-label="Imagem 6"></button>
+                        <button type="button" data-bs-target="#dexfolioCarousel" data-bs-slide-to="6" aria-label="Imagem 7"></button>
+                        <button type="button" data-bs-target="#dexfolioCarousel" data-bs-slide-to="7" aria-label="Imagem 8"></button>
+                        <button type="button" data-bs-target="#dexfolioCarousel" data-bs-slide-to="8" aria-label="Vídeo 1"></button>
+                        <button type="button" data-bs-target="#dexfolioCarousel" data-bs-slide-to="9" aria-label="Vídeo 2"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="imagens/dexfolio (1).jpeg"
+                                alt="Tela inicial do aplicativo DexFolio">
+                            <div class="carousel-caption d-none d-sm-block">
+                                                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="imagens/dexfolio (2).jpeg"
+                                alt="Fichário digital de cartas Pokémon">
+                            <div class="carousel-caption d-none d-sm-block">
+
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="imagens/dexfolio (4).jpeg"
+                                alt="Tela de identificação de cartas Pokémon">
+                            <div class="carousel-caption d-none d-sm-block">
+
+                            </div>
+                        </div>
+                                                <div class="carousel-item">
+                            <img src="imagens/dexfolio (5).jpeg"
+                                alt="Tela de identificação de cartas Pokémon">
+                            <div class="carousel-caption d-none d-sm-block">
+
+                            </div>
+                        </div>
+                                                <div class="carousel-item">
+                            <img src="imagens/dexfolio (6).jpeg"
+                                alt="Tela de identificação de cartas Pokémon">
+                            <div class="carousel-caption d-none d-sm-block">
+
+                            </div>
+                        </div>
+                                                <div class="carousel-item">
+                            <img src="imagens/dexfolio (7).jpeg"
+                                alt="Tela de identificação de cartas Pokémon">
+                            <div class="carousel-caption d-none d-sm-block">
+
+                            </div>
+                        </div>
+                                                <div class="carousel-item">
+                            <img src="imagens/dexfolio (8).jpeg"
+                                alt="Tela de identificação de cartas Pokémon">
+                            <div class="carousel-caption d-none d-sm-block">
+
+                            </div>
+                        </div>
+                                                <div class="carousel-item">
+                            <img src="imagens/dexfolio (9).jpeg"
+                                alt="Tela de identificação de cartas Pokémon">
+                            <div class="carousel-caption d-none d-sm-block">
+
+                            </div>
+                        </div>
+
+                        <!-- VÍDEO 1: substitua o caminho pelo arquivo do primeiro vídeo -->
+                        <div class="carousel-item video-slide">
+                            <video controls playsinline preload="metadata"
+                                aria-label="Vídeo demonstrativo 1 do DexFolio">
+                                <source src="imagens/videos/dexflio_video (1).mp4" type="video/mp4">
+                                Seu navegador não suporta a reprodução de vídeos.
+                            </video>
+                            <div class="video-caption">Demonstração 1</div>
+                        </div>
+
+                        <!-- VÍDEO 2: substitua o caminho pelo arquivo do segundo vídeo -->
+                        <div class="carousel-item video-slide">
+                            <video controls playsinline preload="metadata"
+                                aria-label="Vídeo demonstrativo 2 do DexFolio">
+                                <source src="imagens/videos/dexflio_video (2).mp4" type="video/mp4">
+                                Seu navegador não suporta a reprodução de vídeos.
+                            </video>
+                            <div class="video-caption">Demonstração 2</div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button"
+                        data-bs-target="#dexfolioCarousel" data-bs-slide="prev"
+                        aria-label="Slide anterior">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button"
+                        data-bs-target="#dexfolioCarousel" data-bs-slide="next"
+                        aria-label="Próximo slide">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+
+                </div>
+            </section>
+
+            <!-- 1. SOBRE O PROJETO -->
+
+            <section class="documentation-section">
+
+                <h2>1. Sobre o projeto</h2>
+
+                <p>
+                    O DexFolio é um aplicativo Android desenvolvido para auxiliar
+                    colecionadores de cartas Pokémon a organizar, catalogar e
+                    acompanhar suas coleções de maneira digital.
+                </p>
+
+                <p>
+                    A proposta é transformar o fichário físico em uma experiência
+                    digital, permitindo fotografar cartas, identificá-las por
+                    inteligência artificial, organizar os registros seguindo a
+                    Pokédex Nacional e acompanhar o valor estimado da coleção.
+                </p>
+
+                <p>
+                    O aplicativo busca oferecer uma experiência intuitiva,
+                    organizada e acessível, tanto para colecionadores iniciantes
+                    quanto para aqueles que possuem grandes coleções.
+                </p>
+
+            </section>
+
+
+            <!-- 2. OBJETIVOS -->
+
+            <section class="documentation-section">
+
+                <h2>2. Objetivos</h2>
+
+                <ul>
+                    <li>Digitalizar coleções físicas de cartas Pokémon.</li>
+                    <li>Identificar cartas por meio de fotografias e inteligência artificial.</li>
+                    <li>Organizar cartas conforme a Pokédex Nacional.</li>
+                    <li>Identificar cartas repetidas.</li>
+                    <li>Permitir a substituição de fotografias de cartas cadastradas.</li>
+                    <li>Consultar valores estimados de mercado.</li>
+                    <li>Calcular o valor total da coleção.</li>
+                    <li>Disponibilizar suporte a diferentes idiomas.</li>
+                    <li>Permitir o gerenciamento local da coleção.</li>
+                </ul>
+
+            </section>
+
+
+            <!-- 3. FUNCIONALIDADES -->
+
+            <section class="documentation-section">
+
+                <h2>3. Funcionalidades previstas</h2>
+
+                <h3>3.1 Menu principal</h3>
+
+                <p>
+                    O aplicativo contará com três opções principais:
+                </p>
+
+                <ul>
+                    <li><strong>Tirar Foto da Carta:</strong> acesso à câmera para fotografar e identificar cartas.</li>
+                    <li><strong>Seu Fichário:</strong> acesso à coleção digital.</li>
+                    <li><strong>Configurações:</strong> gerenciamento das preferências do aplicativo.</li>
+                </ul>
+
+
+                <h3>3.2 Identificação de cartas</h3>
+
+                <p>
+                    O usuário poderá fotografar uma carta Pokémon.
+                </p>
+
+                <p>
+                    A inteligência artificial deverá auxiliar na identificação de:
+                </p>
+
+                <ul>
+                    <li>Nome do Pokémon.</li>
+                    <li>Número na Pokédex.</li>
+                    <li>Coleção e expansão.</li>
+                    <li>Número identificador da carta.</li>
+                    <li>Variante e raridade, quando disponíveis.</li>
+                    <li>Idioma da carta.</li>
+                    <li>Imagem de referência.</li>
+                </ul>
+
+                <p>
+                    Após a identificação, o usuário poderá confirmar o cadastro
+                    no fichário.
+                </p>
+
+
+                <h3>3.3 Controle de cartas repetidas</h3>
+
+                <p>
+                    Quando o aplicativo identificar que uma carta já está
+                    cadastrada, deverá apresentar o seguinte modal:
+                </p>
+
+                <div class="highlight-box">
+
+                    <p>
+                        <strong>Trocar a Carta na Coleção?</strong>
+                    </p>
+
+                    <ul>
+                        <li><strong>Sim:</strong> substitui a fotografia cadastrada pela nova.</li>
+                        <li><strong>Não:</strong> mantém o registro atual sem alterações.</li>
+                    </ul>
+
+                </div>
+
+                <p>
+                    A identificação deverá considerar a carta específica,
+                    evitando confundir diferentes versões de um mesmo Pokémon.
+                </p>
+
+
+                <h3>3.4 Fichário digital</h3>
+
+                <p>
+                    O fichário será organizado seguindo a ordem numérica da
+                    Pokédex Nacional.
+                </p>
+
+                <p><strong>Características previstas:</strong></p>
+
+                <ul>
+                    <li>Organização por número.</li>
+                    <li>Exibição das cartas adquiridas.</li>
+                    <li>Espaços reservados para cartas faltantes.</li>
+                    <li>Identificação de Mega Evoluções.</li>
+                    <li>Filtros por tipo de Pokémon.</li>
+                    <li>Filtros por situação da coleção.</li>
+                    <li>Visualização individual das cartas.</li>
+                </ul>
+
+
+                <h3>3.5 Filtros</h3>
+
+                <p><strong>Por tipo:</strong></p>
+
+                <ul>
+                    <li>Grama</li>
+                    <li>Fogo</li>
+                    <li>Água</li>
+                    <li>Elétrico</li>
+                    <li>Psíquico</li>
+                    <li>Lutador</li>
+                    <li>Noturno</li>
+                    <li>Metal</li>
+                    <li>Fada</li>
+                    <li>Dragão</li>
+                    <li>Incolor</li>
+                </ul>
+
+                <p><strong>Por situação:</strong></p>
+
+                <ul>
+                    <li>Todos</li>
+                    <li>Possuo</li>
+                    <li>Não possuo</li>
+                </ul>
+
+
+                <h3>3.6 Avaliação financeira da coleção</h3>
+
+                <p>
+                    O DexFolio deverá consultar fontes externas de preços
+                    para apresentar uma estimativa de valor das cartas.
+                </p>
+
+                <p><strong>Informações armazenadas:</strong></p>
+
+                <ul>
+                    <li>Valor estimado.</li>
+                    <li>Moeda.</li>
+                    <li>Fonte da cotação.</li>
+                    <li>Data da consulta.</li>
+                    <li>Condição de conservação considerada.</li>
+                </ul>
+
+                <p><strong>O aplicativo deverá apresentar:</strong></p>
+
+                <ul>
+                    <li>Valor individual das cartas.</li>
+                    <li>Valor total estimado da coleção.</li>
+                    <li>Quantidade de cartas avaliadas.</li>
+                    <li>Quantidade de cartas sem cotação.</li>
+                </ul>
+
+                <p>
+                    Futuramente, poderá ser implementado um histórico de
+                    valorização da coleção.
+                </p>
+
+                <div class="important-box">
+
+                    <p>
+                        <strong>Importante:</strong> os valores apresentados serão
+                        estimativas de mercado, não garantias de venda.
+                    </p>
+
+                </div>
+
+
+                <h3>3.7 Configurações e idiomas</h3>
+
+                <p>
+                    O aplicativo disponibilizará sete opções de idioma:
+                </p>
+
+                <div class="table-container table-responsive">
+
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <th>Idioma</th>
+                                <th>Código</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr><td>Português (Brasil)</td><td>pt-BR</td></tr>
+                            <tr><td>Português (Portugal)</td><td>pt-PT</td></tr>
+                            <tr><td>Espanhol</td><td>es</td></tr>
+                            <tr><td>Inglês</td><td>en</td></tr>
+                            <tr><td>Francês</td><td>fr</td></tr>
+                            <tr><td>Chinês</td><td>zh-CN</td></tr>
+                            <tr><td>Japonês</td><td>ja</td></tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    A preferência deverá permanecer salva no dispositivo.
+                </p>
+
+            </section>
+
+
+            <!-- 4. IDENTIDADE VISUAL -->
+
+            <section class="documentation-section">
+
+                <h2>4. Identidade visual</h2>
+
+                <p>
+                    O nome oficial do aplicativo é <strong>DexFolio</strong>.
+                </p>
+
+                <p>
+                    O ícone escolhido representa um fichário aberto contendo
+                    cartas Pokémon, com elementos visuais inspirados na Pokébola.
+                </p>
+
+                <p><strong>Diretrizes visuais:</strong></p>
+
+                <ul>
+                    <li>Fundo azul-escuro.</li>
+                    <li>Detalhes em azul elétrico.</li>
+                    <li>Elementos em vermelho e branco.</li>
+                    <li>Interface moderna.</li>
+                    <li>Navegação intuitiva.</li>
+                    <li>Identidade visual consistente entre as telas.</li>
+                </ul>
+
+            </section>
+
+
+            <!-- 5. TECNOLOGIAS -->
+
+            <section class="documentation-section">
+
+                <h2>5. Tecnologias</h2>
+
+                <p>
+                    A arquitetura inicialmente planejada contempla:
+                </p>
+
+                <div class="table-container table-responsive">
+
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <th>Tecnologia</th>
+                                <th>Finalidade</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr><td>Kotlin</td><td>Linguagem principal</td></tr>
+                            <tr><td>Android SDK</td><td>Plataforma de desenvolvimento</td></tr>
+                            <tr><td>Jetpack Compose</td><td>Interface gráfica</td></tr>
+                            <tr><td>SQLite</td><td>Banco de dados local</td></tr>
+                            <tr><td>Room</td><td>Persistência de dados</td></tr>
+                            <tr><td>CameraX</td><td>Captura de imagens</td></tr>
+                            <tr><td>IA / OCR</td><td>Identificação de cartas</td></tr>
+                            <tr><td>PokéAPI</td><td>Informações dos Pokémon</td></tr>
+                            <tr><td>TCGdex</td><td>Informações de cartas Pokémon</td></tr>
+                            <tr><td>GitHub Actions</td><td>Automação de compilação</td></tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    As integrações externas serão implementadas conforme a
+                    evolução do projeto.
+                </p>
+
+            </section>
+
+
+            <!-- 6. BANCO DE DADOS -->
+
+            <section class="documentation-section">
+
+                <h2>6. Banco de dados</h2>
+
+                <p>
+                    O banco de dados local deverá armazenar informações sobre:
+                </p>
+
+                <ul>
+                    <li>Pokémon.</li>
+                    <li>Cartas.</li>
+                    <li>Expansões.</li>
+                    <li>Variantes.</li>
+                    <li>Imagens.</li>
+                    <li>Situação da coleção.</li>
+                    <li>Valores estimados.</li>
+                    <li>Histórico de cotações.</li>
+                    <li>Preferências do usuário.</li>
+                </ul>
+
+                <p>
+                    Uma distinção fundamental será mantida entre o Pokémon e suas
+                    respectivas cartas. Um mesmo Pokémon poderá possuir diversas
+                    cartas, ilustrações, expansões e variantes.
+                </p>
+
+            </section>
+
+
+            <!-- 7. ESTRUTURA DE DESENVOLVIMENTO -->
+
+            <section class="documentation-section">
+
+                <h2>7. Estrutura de desenvolvimento</h2>
+
+                <p>
+                    O projeto será desenvolvido em etapas:
+                </p>
+
+
+                <div class="stage-box">
+
+                    <h3>Etapa 1 — Estrutura inicial</h3>
+
+                    <ul>
+                        <li>Criação do projeto Android.</li>
+                        <li>Menu principal.</li>
+                        <li>Identidade visual.</li>
+                        <li>Ícone oficial.</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="stage-box">
+
+                    <h3>Etapa 2 — Fichário</h3>
+
+                    <ul>
+                        <li>Organização da Pokédex.</li>
+                        <li>Cadastro de cartas.</li>
+                        <li>Filtros.</li>
+                        <li>Controle de duplicatas.</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="stage-box">
+
+                    <h3>Etapa 3 — Banco de dados</h3>
+
+                    <ul>
+                        <li>SQLite / Room.</li>
+                        <li>Persistência da coleção.</li>
+                        <li>Gerenciamento dos registros.</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="stage-box">
+
+                    <h3>Etapa 4 — Identificação</h3>
+
+                    <ul>
+                        <li>Integração com câmera.</li>
+                        <li>Reconhecimento por IA.</li>
+                        <li>Consulta de informações das cartas.</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="stage-box">
+
+                    <h3>Etapa 5 — Avaliação financeira</h3>
+
+                    <ul>
+                        <li>Consulta de preços.</li>
+                        <li>Cadastro de cotações.</li>
+                        <li>Cálculo do patrimônio estimado.</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="stage-box">
+
+                    <h3>Etapa 6 — Internacionalização</h3>
+
+                    <ul>
+                        <li>Implementação dos sete idiomas.</li>
+                        <li>Tradução das interfaces.</li>
+                        <li>Persistência das preferências.</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="stage-box">
+
+                    <h3>Etapa 7 — Testes e distribuição</h3>
+
+                    <ul>
+                        <li>Testes funcionais.</li>
+                        <li>Correções.</li>
+                        <li>Compilação do APK.</li>
+                        <li>Validação em dispositivos Android.</li>
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- 8. COMPILAÇÃO E DISTRIBUIÇÃO -->
+
+            <section class="documentation-section">
+
+                <h2>8. Compilação e distribuição</h2>
+
+                <p>
+                    O projeto utilizará GitHub Actions para automatizar a
+                    compilação do aplicativo.
+                </p>
+
+                <p>
+                    A geração do APK deverá ocorrer a partir do workflow
+                    configurado no repositório.
+                </p>
+
+                <p>
+                    O artefato gerado será disponibilizado para download na
+                    execução correspondente do GitHub Actions.
+                </p>
+
+            </section>
+
+
+            <!-- 9. VERSIONAMENTO -->
+
+            <section class="documentation-section">
+
+                <h2>9. Versionamento</h2>
+
+                <p>
+                    Os arquivos compactados do projeto seguirão nomenclatura
+                    sequencial:
+                </p>
+
+                <ul>
+                    <li>DexFolio-V1.zip</li>
+                    <li>DexFolio-V2.zip</li>
+                    <li>DexFolio-V3.zip</li>
+                    <li>DexFolio-V4.zip</li>
+                </ul>
+
+                <p>
+                    Cada nova entrega deverá incrementar a versão anterior.
+                </p>
+
+                <p>
+                    O nome oficial do aplicativo permanecerá sempre
+                    <strong>DexFolio</strong>, independentemente da versão do pacote.
+                </p>
+
+            </section>
+
+
+            <!-- 10. CONSIDERAÇÕES FUTURAS -->
+
+            <section class="documentation-section">
+
+                <h2>10. Considerações futuras</h2>
+
+                <p>
+                    Funcionalidades que poderão ser incorporadas:
+                </p>
+
+                <ul>
+                    <li>Histórico de valorização.</li>
+                    <li>Controle de cartas repetidas em quantidade.</li>
+                    <li>Exportação da coleção.</li>
+                    <li>Backup e restauração.</li>
+                    <li>Sincronização em nuvem.</li>
+                    <li>Estatísticas de conclusão da Pokédex.</li>
+                    <li>Compartilhamento de coleções.</li>
+                    <li>Identificação de cartas raras.</li>
+                    <li>Controle de cartas por estado de conservação.</li>
+                </ul>
+
+            </section>
+
+
+            <!-- RODAPÉ -->
+
+            <footer class="project-footer">
+
+                <h3>
+                    DexFolio — Organize sua coleção.<br>
+                    Conheça suas cartas. Complete sua Pokédex.
+                </h3>
+
+                <div class="github-link">
+
+                    <p>
+                        O código-fonte do projeto pode ser acessado pelo GitHub:
+                    </p>
+
+                    <a
+                        href="https://github.com/DiLeoneLucas/DexFolio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="bi bi-github"></i>
+                        Acessar repositório DexFolio
+                    </a>
+
+                </div>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const dexfolioCarouselElement = document.getElementById('dexfolioCarousel');
+        const dexfolioCarousel = bootstrap.Carousel.getOrCreateInstance(
+            dexfolioCarouselElement,
+            { interval: 5000, pause: false, wrap: true }
+        );
+
+        // Interrompe qualquer vídeo que esteja tocando ao trocar de slide.
+        dexfolioCarouselElement.addEventListener('slide.bs.carousel', function () {
+            dexfolioCarouselElement.querySelectorAll('video').forEach(function (video) {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+
+        // Enquanto um vídeo estiver tocando, mantém o slide na tela.
+        dexfolioCarouselElement.querySelectorAll('video').forEach(function (video) {
+            video.addEventListener('play', function () {
+                dexfolioCarousel.pause();
+            });
+
+            // Ao terminar o vídeo, avança para o próximo item do carrossel.
+            video.addEventListener('ended', function () {
+                dexfolioCarousel.next();
+                dexfolioCarousel.cycle();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
